@@ -1,4 +1,7 @@
-@import 'node_modules/modern-normalize/modern-normalize.css';
+/* @import 'node_modules/modern-normalize/modern-normalize.css'; */
+:root {
+  --font-family: 'Manrope', sans-serif;
+}
 
 body {
   background-color: #000;
