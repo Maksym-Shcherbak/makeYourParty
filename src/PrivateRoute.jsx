@@ -13,9 +13,13 @@ import {
 //   return shouldRedirect ? <Navigate to={redirectTo} /> : Component;
 // };
 
-export const PrivateRoute = () => {
+export const PrivateRoute = ({ shouldRedirect = true }) => {
   const isLoggedIn = useSelector(selectAuthenticated);
   const isLoading = useSelector(selectAuthIsLoading);
-  const shouldRedirect = !isLoggedIn && !isLoading;
-  return shouldRedirect ? <Navigate to="welcome" /> : <Outlet />;
+  // const shouldRedirect = !isLoggedIn && !isLoading;
+  return shouldRedirect && !isLoggedIn && !isLoading ? (
+    <Navigate to="welcome" />
+  ) : (
+    <Outlet />
+  );
 };

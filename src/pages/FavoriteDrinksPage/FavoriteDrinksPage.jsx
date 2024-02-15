@@ -1,8 +1,10 @@
+import { FavoriteDrinks } from '../../components/FavoriteDrinks/FavoriteDrinks';
+
 const FavoriteDrinksPage = () => {
   return (
-    <div>
-      <h1>Favorite Drinks</h1>
-    </div>
+    <>
+      <FavoriteDrinks />
+    </>
   );
 };
 
