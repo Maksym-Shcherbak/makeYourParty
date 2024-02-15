@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
-import { PrivateRoute } from './PrivateRoute';
+// import { PrivateRoute } from './PrivateRoute';
 // import { Suspense, lazy } from 'react';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignupPage from './pages/SignupPage/SighupPage';
@@ -34,7 +34,7 @@ function App() {
         <Route path="/welcome" element={<WelcomePage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signin" element={<SigninPage />} />
-        <Route element={<PrivateRoute />}>
+        {/* <Route element={<PrivateRoute />}> */}
           <Route path="/" element={<SharedLayout />}>
             <Route path="/home" element={<HomePage />} />
             <Route path="/drinks" element={<DrinksPage />} />
@@ -44,7 +44,7 @@ function App() {
             <Route path="/my" element={<MyDrinksPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Route>
-        </Route>
+        {/* </Route> */}
       </Routes>
     </AppWrapper>
   );
