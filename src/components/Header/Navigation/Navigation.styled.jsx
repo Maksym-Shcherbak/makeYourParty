@@ -23,12 +23,24 @@ export const NavContainer = styled.nav`
 		padding: 8px 16px;
 		border: 1px solid rgba(243, 243, 243, 0.2);
 		border-radius: 40px;
+		color:#F3F3F3;
 	}
 
 	a.active {
 		padding: 8px 16px;
 		background-color: rgba(243, 243, 243, 0.2);
 	}
+
+	.list {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 16px;
+		margin: 20% auto 0 auto;
+			display: flex;
+			flex-direction: row;
+			margin: 0;
+		}
 `;
 
 export const List = styled.div`
@@ -36,7 +48,8 @@ export const List = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 16px;
-	margin: 20% auto 0 auto;
+	margin: 20 auto 0 auto;
+	
 
 	@media screen and (min-width: 1024px) {
 		display: flex;
@@ -51,10 +64,8 @@ export const ListItem = styled.div`
 	border-radius: 40px;
 	font-size: 14px;
 	font-weight: 500;
-	transition: transform $transitionDuration $transitionTimingFunction;
 
-    @media screen and (min-width: 1024px) {
-        
-    }
+    @media screen and (min-width: 1024px) 
 	}
 `;
+

@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { NavContainer, List, ListItem } from "./Navigation.styled";
+import { NavContainer, List, ListItem} from "./Navigation.styled";
+
 
 
 
@@ -47,3 +48,4 @@ export const Navigation = () => {
   );
 };
 
+Navigation.displayName = "Navigation";

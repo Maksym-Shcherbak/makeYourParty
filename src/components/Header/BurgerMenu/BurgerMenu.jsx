@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 import styled from "styled-components";
 import Navigation from "../Navigation/Navigation";
 import PropTypes from "prop-types";
@@ -7,21 +7,19 @@ import PropTypes from "prop-types";
 import icons from "../../../../images/icons.svg";
 
 // Создаем стилизованный компонент для иконки
-const Icon = styled.svg`{
-    @media screen and (min-width: 1024px) 
-        display: none;
-}
-
+const Icon = styled.svg`
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
 `;
 
-
-const BurgerMenuContainer = styled.div`{
-  @media screen and (min-width: 1024px) 
+const BurgerMenuContainer = styled.div`
+  @media screen and (min-width: 1024px) {
     display: none;
+  }
+`;
 
-}`;
-
-export default function BurgerMenu({ toggleMenu, isOpenBurgerMenu, isDesktop }) {
+export function BurgerMenu({ toggleMenu, isOpenBurgerMenu, isDesktop }) {
   const nodeRef = useRef(null);
 
   return (
@@ -33,17 +31,17 @@ export default function BurgerMenu({ toggleMenu, isOpenBurgerMenu, isDesktop }) 
           <use href={`${icons}#burger`} />
         )}
       </Icon>
-      <CSSTransition
+      {/* <CSSTransition
         in={isOpenBurgerMenu && !isDesktop}
         nodeRef={nodeRef}
         timeout={250}
         classNames="burger"
         unmountOnExit
-        onEnter={() => toggleMenu}
-        onExited={() => toggleMenu}
+        onEnter={toggleMenu}
+        onExited={toggleMenu}
       >
         <Navigation ref={nodeRef} />
-      </CSSTransition>
+      </CSSTransition> */}
     </BurgerMenuContainer>
   );
 }

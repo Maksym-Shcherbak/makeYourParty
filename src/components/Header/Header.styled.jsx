@@ -3,6 +3,10 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(243, 243, 243, 0.2);
 `;
 
 export const Navigation = styled.nav`
