@@ -1,0 +1,65 @@
+{
+  "hash": "3fdc3485",
+  "browserHash": "a196755e",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "31c7e4ce",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "b71a6555",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "e7138fda",
+      "needsInterop": true
+    },
+    "react-redux": {
+      "src": "../../node_modules/react-redux/dist/react-redux.mjs",
+      "file": "react-redux.js",
+      "fileHash": "29ef1106",
+      "needsInterop": false
+    },
+    "@reduxjs/toolkit": {
+      "src": "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs",
+      "file": "@reduxjs_toolkit.js",
+      "fileHash": "b5f213a9",
+      "needsInterop": false
+    },
+    "@emotion/styled": {
+      "src": "../../node_modules/@emotion/styled/dist/emotion-styled.browser.esm.js",
+      "file": "@emotion_styled.js",
+      "fileHash": "72fe9ff7",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "cf5ec9bd",
+      "needsInterop": false
+    },
+    "styled-components": {
+      "src": "../../node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "file": "styled-components.js",
+      "fileHash": "1b3cf9f8",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-ZZT5TH3B": {
+      "file": "chunk-ZZT5TH3B.js"
+    },
+    "chunk-G4O6EYSD": {
+      "file": "chunk-G4O6EYSD.js"
+    },
+    "chunk-ZC22LKFR": {
+      "file": "chunk-ZC22LKFR.js"
+    }
+  }
+}

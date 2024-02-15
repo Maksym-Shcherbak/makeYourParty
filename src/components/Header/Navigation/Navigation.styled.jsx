@@ -24,6 +24,16 @@ export const NavContainer = styled.nav`
 		border: 1px solid rgba(243, 243, 243, 0.2);
 		border-radius: 40px;
 		color:#F3F3F3;
+		&:hover,
+  &:focus {
+    color: #00baff; /* Blue text color on hover/focus */
+    text-shadow:
+      0 0 5px #00baff,
+      0 0 10px #00baff,
+      0 0 20px #00baff,
+      0 0 40px #00baff,
+      0 0 80px #00baff;
+  }
 	}
 
 	a.active {
