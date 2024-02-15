@@ -14,6 +14,7 @@ import FavoriteDrinksPage from './pages/FavoriteDrinksPage/FavoriteDrinksPage';
 import MyDrinksPage from './pages/MyDrinksPage/MyDrinksPage';
 import DrinkPage from './pages/DrinkPage/DrinkPage';
 
+
 // const WelcomePage = lazy(() => import('pages/WelcomePage'));
 // const HomePage = lazy(() => import('pages/HomePage'));
 // const SignupPage = lazy(() => import('pages/SignupPage'));

@@ -1,11 +1,10 @@
 import {
   HeaderContainer,
-  Navigation,
   StyledLink,
   IconWrapper,
 } from './Header.styled';
 import sprite from 'assets/sprite.svg';
-
+import {Navigation} from './Navigation/Navigation';
 export const Header = () => {
 
   return (
