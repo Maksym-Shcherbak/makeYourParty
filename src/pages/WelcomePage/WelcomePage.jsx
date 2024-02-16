@@ -7,6 +7,9 @@ import {
   WelcomeText,
 } from './WelcomePage.styled';
 
+
+
+
 const WelcomePage = () => {
   return (
     <Container>
