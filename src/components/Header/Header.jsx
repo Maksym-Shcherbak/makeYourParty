@@ -3,34 +3,34 @@ import {
   StyledLink,
   IconWrapper, 
 } from './Header.styled';
-import sprite from 'assets/sprite.svg';
+
 
 import {Navigation} from './Navigation/Navigation';
 import Logo from './Logo/Logo';
+import icons from '../../images/icons.svg';
 // import BurgerMenu from "./BurgerMenu/BurgerMenu";
-
-
-
+import {ControlledSwitches} from "./Switcher/Switcher";
+import {BurgerMenu} from "./BurgerMenu/BurgerMenu";
 export const Header = () => {
 
   return (
     <HeaderContainer>
       <Logo/>
       <Navigation />
-
-        <StyledLink to="/first">
+     <ControlledSwitches />
+        <BurgerMenu	/>
+        <StyledLink to="/second">
           <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
+            <use href={`${icons}#icon-user_my`} />
           </IconWrapper>
-          Switcher
+          
         </StyledLink>
         <StyledLink to="/second">
           <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
+        <use href={`${icons}#burger`} />        
           </IconWrapper>
-          User
+          
         </StyledLink>
-      
       {/* <BurgerMenu	/>  */}
     </HeaderContainer>
   );
