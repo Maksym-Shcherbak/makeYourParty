@@ -183,7 +183,7 @@ Error generating stack: `+a.message+`
 
     @media screen and (min-width: 1024px) 
 	}
-`,Om=()=>{const e=In();return I.jsx(yv,{children:I.jsxs(bv,{children:[I.jsx(ua,{children:I.jsx(vt,{className:e.pathname==="/drinks"?"active":"",to:"/drinks",children:"Drinks"})}),I.jsx(ua,{children:I.jsx(vt,{className:e.pathname==="/add"?"active":"",to:"/add",children:"Add recipes"})}),I.jsx(ua,{children:I.jsx(vt,{className:e.pathname==="/my"?"active":"",to:"/my",children:"My recipes"})}),I.jsx(ua,{children:I.jsx(vt,{className:e.pathname==="/favorite"?"active":"",to:"/favorite",children:"Favorites"})})]})})};Om.displayName="Navigation";const kv="/makeYourParty/assets/icons-e1e0e8fb.svg",wv=F.div`
+`,Om=()=>{const e=In();return I.jsx(yv,{children:I.jsxs(bv,{children:[I.jsx(ua,{children:I.jsx(vt,{className:e.pathname==="/drinks"?"active":"",to:"/drinks",children:"Drinks"})}),I.jsx(ua,{children:I.jsx(vt,{className:e.pathname==="/add"?"active":"",to:"/add",children:"Add recipes"})}),I.jsx(ua,{children:I.jsx(vt,{className:e.pathname==="/my"?"active":"",to:"/my",children:"My recipes"})}),I.jsx(ua,{children:I.jsx(vt,{className:e.pathname==="/favorite"?"active":"",to:"/favorites",children:"Favorites"})})]})})};Om.displayName="Navigation";const kv="/makeYourParty/assets/icons-e1e0e8fb.svg",wv=F.div`
 display: flex;
   gap: 8px;
    margin-right: auto;
