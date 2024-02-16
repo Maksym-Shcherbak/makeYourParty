@@ -14,7 +14,6 @@ import FavoriteDrinksPage from './pages/FavoriteDrinksPage/FavoriteDrinksPage';
 import MyDrinksPage from './pages/MyDrinksPage/MyDrinksPage';
 import DrinkPage from './pages/DrinkPage/DrinkPage';
 
-
 // const WelcomePage = lazy(() => import('pages/WelcomePage'));
 // const HomePage = lazy(() => import('pages/HomePage'));
 // const SignupPage = lazy(() => import('pages/SignupPage'));
@@ -35,15 +34,15 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signin" element={<SigninPage />} />
         {/* <Route element={<PrivateRoute />}> */}
-          <Route path="/" element={<SharedLayout />}>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/drinks" element={<DrinksPage />} />
-            <Route path="/drinks/:drinkId" element={<DrinkPage />} />
-            <Route path="/add" element={<AddDrinkPage />} />
-            <Route path="/favorites" element={<FavoriteDrinksPage />} />
-            <Route path="/my" element={<MyDrinksPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Route>
+        <Route path="/" element={<SharedLayout />}>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/drinks" element={<DrinksPage />} />
+          <Route path="/drinks/:drinkId" element={<DrinkPage />} />
+          <Route path="/add" element={<AddDrinkPage />} />
+          <Route path="/favorites" element={<FavoriteDrinksPage />} />
+          <Route path="/my" element={<MyDrinksPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Route>
         {/* </Route> */}
       </Routes>
     </AppWrapper>
