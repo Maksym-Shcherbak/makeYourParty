@@ -38,9 +38,12 @@ export const Navigation = () => {
           >
             Favorites
           </NavLink>
+          
         </ListItem>
       </List>
+      
     </NavContainer>
+    
   );
 };
 
