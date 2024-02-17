@@ -25,12 +25,6 @@ export const Header = () => {
           </IconWrapper>
           
         </StyledLink>
-        <StyledLink to="/second">
-          <IconWrapper>
-        <use href={`${icons}#burger`} />        
-          </IconWrapper>
-          
-        </StyledLink>
       {/* <BurgerMenu	/>  */}
     </HeaderContainer>
   );
