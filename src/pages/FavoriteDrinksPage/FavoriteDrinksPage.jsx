@@ -1,9 +1,15 @@
 import { FavoriteDrinks } from '../../components/FavoriteDrinks/FavoriteDrinks';
+import { Section } from '../../styled/Section';
+import { Container } from '../../styled/Container';
 
 const FavoriteDrinksPage = () => {
   return (
     <>
-      <FavoriteDrinks />
+      <Section>
+        <Container>
+          <FavoriteDrinks />
+        </Container>
+      </Section>
     </>
   );
 };

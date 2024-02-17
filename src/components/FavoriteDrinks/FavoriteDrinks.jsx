@@ -26,7 +26,7 @@ export const FavoriteDrinks = () => {
         </EmptyFavoriteDrinksContainer>
       ) : (
         favoriteDrinks.map((drink) => {
-          <DrinksItem key={drink._id} drink={drink} />;
+          <DrinksItem key={drink._id.$oid} drink={drink} />;
         })
       )}
     </>
