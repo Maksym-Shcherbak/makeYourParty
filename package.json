@@ -15,7 +15,9 @@
     "@emotion/styled": "^11.11.0",
     "@reduxjs/toolkit": "^2.2.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
+    "air-datepicker": "^3.4.0",
     "axios": "^1.6.7",
+    "format": "^0.2.2",
     "formik": "^2.4.5",
     "modern-normalize": "^2.0.0",
     "normalize.css": "^8.0.1",
@@ -27,6 +29,7 @@
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.15.0",
     "react-select": "^5.8.0",
+    "react-toastify": "^10.0.4",
     "styled-components": "^6.0.7",
     "vite-plugin-svgr": "^3.2.0"
   },
