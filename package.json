@@ -13,7 +13,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@reduxjs/toolkit": "^2.2.0",
+    "@reduxjs/toolkit": "^2.2.1",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "axios": "^1.6.7",
     "formik": "^2.4.5",
@@ -27,6 +27,7 @@
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.15.0",
     "react-select": "^5.8.0",
+    "redux-persist": "^6.0.0",
     "styled-components": "^6.0.7",
     "vite-plugin-svgr": "^3.2.0"
   },

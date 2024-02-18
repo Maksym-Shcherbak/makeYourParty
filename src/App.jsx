@@ -13,6 +13,9 @@ import AddDrinkPage from './pages/AddDrinkPage/AddDrinkPage';
 import FavoriteDrinksPage from './pages/FavoriteDrinksPage/FavoriteDrinksPage';
 import MyDrinksPage from './pages/MyDrinksPage/MyDrinksPage';
 import DrinkPage from './pages/DrinkPage/DrinkPage';
+import { useEffect } from 'react';
+import { currentUser } from './redux/auth/authOperations';
+import { useDispatch } from 'react-redux';
 
 // const WelcomePage = lazy(() => import('pages/WelcomePage'));
 // const HomePage = lazy(() => import('pages/HomePage'));
@@ -23,10 +26,15 @@ import DrinkPage from './pages/DrinkPage/DrinkPage';
 // const FavoriteDrinksPage = lazy(() => import('pages/FavoriteDrinksPage'));
 // const MyDrinksPage = lazy(() => import('pages/MyDrinksPage'));
 
-const test = import.meta.env.VITE_API_TEST;
+// const test = import.meta.env.VITE_API_TEST;
 
 function App() {
-  console.log(test);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(currentUser());
+  }, [dispatch]);
+
   return (
     <AppWrapper>
       <Routes>
