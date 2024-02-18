@@ -3,27 +3,26 @@ import {
   DrinkItemImg,
   DrinkItemTitle,
   DrinkItemDescription,
-  DrinkBtnSee,
-  DrinkBtnDel,
+  StyledLink,
+  DeleteBtn,
   DrinkStatus,
   DrinkWrapperBtn,
 } from './DrinkItemStyle';
-import deleteBtn from '../../images/deleteBtn.svg';
 
-const DrinkItem = ({ url, title, alcoholic, description, text }) => {
+import { DeleteIcon } from '../../components/DeleteIcon/DeleteIcon';
+
+const DrinkItem = ({ id, url, title, alcoholic, description, text }) => {
   return (
-    <DrinkItemWrapper>
+    <DrinkItemWrapper id={id}>
       <DrinkItemImg src={url} alt="Photo Coctail" />
       <DrinkItemTitle>{title}</DrinkItemTitle>
       <DrinkStatus>{alcoholic}</DrinkStatus>
       <DrinkItemDescription>{description}</DrinkItemDescription>
       <DrinkWrapperBtn>
-        <DrinkBtnSee type="button" onClick={null}>
-          {text}
-        </DrinkBtnSee>
-        <DrinkBtnDel type="button" onClick={null}>
-          <img src={deleteBtn} alt="React Logo" />
-        </DrinkBtnDel>
+        <StyledLink to={`/drinks/${id}`}>{text}</StyledLink>
+        <DeleteBtn>
+          <DeleteIcon />
+        </DeleteBtn>
       </DrinkWrapperBtn>
     </DrinkItemWrapper>
   );

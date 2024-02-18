@@ -1,9 +1,12 @@
-import { Svg } from './DeleteIcon.styled';
+import { LuTrash2 } from 'react-icons/lu';
+import { IconContext } from 'react-icons';
 
 export const DeleteIcon = () => {
   return (
-    <Svg width="24" height="24">
-      <use href="../../images/icons.svg#remove"></use>
-    </Svg>
+    <IconContext.Provider
+      value={{ color: '#F3F3F3', className: 'global-class-name', size: 24 }}
+    >
+      <LuTrash2 />
+    </IconContext.Provider>
   );
 };

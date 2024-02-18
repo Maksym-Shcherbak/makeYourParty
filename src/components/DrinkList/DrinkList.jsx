@@ -1,19 +1,23 @@
 import DrinkItem from './DrinkItem';
-import { DrinksList } from './DrinkListStile';
+import { DrinksList } from './DrinkListStyle';
+import getFavorites from '../../data/favorites.json';
 
-const DrinkList = ({ drinks, text }) => {
+export const DrinkList = ({ text }) => {
   return (
     <DrinksList>
-      {drinks?.map(({ id, drink, alcoholic, description, drinkThumb }) => (
-        <DrinkItem
-          key={id}
-          title={drink}
-          alcoholic={alcoholic}
-          description={description}
-          text={text}
-          url={drinkThumb}
-        />
-      ))}
+      {getFavorites.map(
+        ({ _id, drink, alcoholic, description, drinkThumb }) => (
+          <DrinkItem
+            key={_id.$oid}
+            id={_id.$oid}
+            title={drink}
+            alcoholic={alcoholic}
+            description={description}
+            text={text}
+            url={drinkThumb}
+          />
+        )
+      )}
     </DrinksList>
   );
 };

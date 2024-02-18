@@ -1,11 +1,10 @@
-import { Title } from "./PageTitleStyle";
-const PageTitle = ({ title }) => {
+import { Title } from './PageTitleStyle';
+export const PageTitle = ({ title }) => {
   return (
     <div>
       <Title>{title}</Title>
     </div>
-  )
-  
-}
+  );
+};
 
 export default PageTitle;
