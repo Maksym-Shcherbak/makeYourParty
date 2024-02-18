@@ -89,7 +89,7 @@ const AuthForm = () => {
                 type="text"
                 value={values.dateOfBirth}
                 setFieldValue={setFieldValue}
-                placeholder="Date of birth"
+                placeholder="dd/mm/yyyy"
                 error={
                   errors.dateOfBirth && touched.dateOfBirth ? 'true' : 'false'
                 }

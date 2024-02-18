@@ -6,7 +6,7 @@ const SignupPage = () => {
   return (
     <section>
       <div>
-        <WelcomeTitle />
+        <WelcomeTitle title="Sign Up" />
         <AuthForm />
         <nav>
           <NavLink to="/signin">Sign In</NavLink>

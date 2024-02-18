@@ -3,7 +3,7 @@ import { AiOutlineEye } from 'react-icons/ai';
 import { AiOutlineEyeInvisible } from 'react-icons/ai';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
-// import transition from '../../utils/transition';
+import transition from '../../transition/transition';
 
 import styled from 'styled-components';
 
@@ -35,6 +35,10 @@ export const Input = styled(Field)`
     border: 1px solid rgba(243, 243, 243, 0.5);
     background-color: transparent;
     color: rgba(243, 243, 243, 0.5);
+
+    transition:
+      border ${transition},
+      background-color ${transition};
   }
   /* &::placeholder {
     color: rgba(243, 243, 243, 0.5);
@@ -84,6 +88,9 @@ export const Button = styled.button`
     background-color: transparent;
     color: #f3f3f3;
     border: 1px solid rgba(243, 243, 243, 0.58);
+    transition:
+      border ${transition},
+      background-color ${transition};
   }
 
   @media screen and (min-width: 768px) {
