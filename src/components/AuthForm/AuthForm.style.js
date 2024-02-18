@@ -66,7 +66,7 @@ export const Input = styled(Field)`
   }
 `;
 
-export const Button = styled.button`
+export const SignUpBtn = styled.button`
   position: relative;
   padding: 18px;
   background-color: #f3f3f3;
@@ -99,7 +99,7 @@ export const Button = styled.button`
   }
 `;
 
-export const TogglePasswordButton = styled.button`
+export const EyePasswordBtn = styled.button`
   background-color: transparent;
   border: none;
   position: absolute;
@@ -107,16 +107,14 @@ export const TogglePasswordButton = styled.button`
   right: 24px;
   padding: 0;
 `;
-export const PasswordInputWrap = styled.div`
+export const ImputFild = styled.div`
   position: relative;
 `;
-export const StyledDontShowPasswordIcon = styled(AiOutlineEye)`
+export const HidePasswordIconEye = styled(AiOutlineEye)`
   fill: #f3f3f3;
   width: 18px;
   height: 18px;
-  /* position: absolute;
-  top: 20px;
-  left: 239px; */
+
   @media screen and (min-width: 375px) {
     left: 290px;
   }
@@ -126,7 +124,7 @@ export const StyledDontShowPasswordIcon = styled(AiOutlineEye)`
     height: 20px;
   }
 `;
-export const StyledShowPasswordIcon = styled(AiOutlineEyeInvisible)`
+export const ShowPasswordIconEye = styled(AiOutlineEyeInvisible)`
   fill: #f3f3f3;
   width: 18px;
   height: 18px;

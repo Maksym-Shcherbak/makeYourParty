@@ -17,7 +17,7 @@ export const Container = styled.div`
   background-image: linear-gradient(85deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
     linear-gradient(2deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
     url('../../src/images/Welcome.png');
-  /* background-color: ${({ theme }) => theme.sectionBackgroundColor}; */
+
   background-position: center;
   background-size: contain;
   background-position: right center;
@@ -50,101 +50,20 @@ export const Container = styled.div`
       left: 50%;
       transform: translate(-90%, -120%);
     }
-    @media screen and (min-width: 1440px) {
-      width: 387px;
-      height: 381px;
-      background: rgba(188, 230, 210, 0.4);
-      top: 50%;
-      left: 50%;
-      transform: translate(-129%, -160%);
-    }
-  }
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: -20%;
-    right: 90%;
-    width: 520px;
-    height: 550px;
-    transform: translateY(-50%, 50%);
-    border-radius: 550px;
-    background: rgba(64, 112, 205, 0.5);
-    filter: blur(104.8543701171875px);
-    z-index: 1;
-    pointer-events: none;
-    @media screen and (min-width: 768px) {
-      width: 784px;
-      height: 829.931px;
-      border-radius: 829.931px;
-      top: -50%;
+    &:after {
+      content: '';
+      position: absolute;
+      top: -20%;
       right: 90%;
+      width: 520px;
+      height: 550px;
+      transform: translateY(-50%, 50%);
+      border-radius: 550px;
+      background: rgba(64, 112, 205, 0.5);
+      filter: blur(104.8543701171875px);
       z-index: 1;
-    }
-    @media screen and (min-width: 1440px) {
-      height: 849px;
-      top: -25%;
-      right: 85%;
-      z-index: 1;
-    }
-  }
-
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: linear-gradient(
-        85deg,
-        #0a0a11 0%,
-        rgba(10, 10, 17, 0) 100%
-      ),
-      linear-gradient(2deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
-      url('../../src/images/Welcome.png');
-  }
-
-  @media screen and (min-width: 768px) {
-    background-image: linear-gradient(
-        85deg,
-        #0a0a11 0%,
-        rgba(10, 10, 17, 0) 100%
-      ),
-      linear-gradient(2deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
-      url('../../src/images/Welcome.png');
-    justify-content: left;
-    padding-left: 62px;
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: linear-gradient(
-          85deg,
-          #0a0a11 0%,
-          rgba(10, 10, 17, 0) 100%
-        ),
-        linear-gradient(2deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
-        url('../../src/images/Welcome.png');
-    }
-  }
-  @media screen and (min-width: 1440px) {
-    background-image: linear-gradient(
-        85deg,
-        #0a0a11 0%,
-        rgba(10, 10, 17, 0) 100%
-      ),
-      linear-gradient(2deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
-      url('../../src/images/Welcome.png');
-    background-color: rgb(7, 7, 11);
-    padding-left: 97px;
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: linear-gradient(
-          85deg,
-          #0a0a11 0%,
-          rgba(10, 10, 17, 0) 100%
-        ),
-        linear-gradient(2deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
-        url('../../src/images/Welcome.png');
+      pointer-events: none;
     }
   }
 `;

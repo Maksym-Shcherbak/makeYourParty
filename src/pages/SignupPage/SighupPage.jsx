@@ -1,5 +1,4 @@
 import AuthForm from '../../components/AuthForm/AuthForm';
-// import { NavLink } from 'react-router-dom';
 import WelcomeTitle from '../../components/WelcomeTitle/WelcomeTitle';
 import { Container } from '../WelcomePage/WelcomePage.styled';
 import { Link, Wrap, Nav } from './SignupPage.styled';

@@ -1,8 +1,8 @@
-import { Formik, Form } from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
+import { Formik } from 'formik';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { registerThunk } from '../../redux/auth/authOperations.js';
-import { selectAuthIsLoading } from '../../redux/auth/authSelectors.js';
+// import { selectAuthIsLoading } from '../../redux/auth/authSelectors.js';
 // import { Styledselector } from './AuthForm.style.js';
 import { format } from 'date-fns';
 import { toast } from 'react-toastify';
@@ -13,11 +13,11 @@ import * as Yup from 'yup';
 import {
   SignForm,
   Input,
-  Button,
-  TogglePasswordButton,
-  PasswordInputWrap,
-  StyledShowPasswordIcon,
-  StyledDontShowPasswordIcon,
+  SignUpBtn,
+  EyePasswordBtn,
+  ImputFild,
+  ShowPasswordIconEye,
+  HidePasswordIconEye,
   ErrorIcon,
   SuccessIcon,
 } from './AuthForm.style.js';
@@ -25,18 +25,18 @@ import {
 const initialValues = { name: '', dateOfBirth: '', email: '', password: '' };
 
 const schema = Yup.object().shape({
-  name: Yup.string().min(3).required('Name is required'),
-  dateOfBirth: Yup.date().required('dateOfBirth is required'),
+  name: Yup.string().min(2).required(true),
+  dateOfBirth: Yup.date().required(true),
   email: Yup.string()
     .matches(
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
       'Email must contain only digits, letters and . - _ symbols. e.g. test@mail.com'
     )
     .email('Invalid email format, test@mail.com')
-    .required('Email is required'),
+    .required(true),
   password: Yup.string()
-    .min(6, 'Password must be at least 6 characters long')
-    .required('Password is required')
+    .min(8, 'Password must be at least 8 characters long')
+    .required(true)
     .matches(/[a-zA-Z]/, 'Password must contain at least one letter')
     .matches(/[0-9]/, 'Password must contain at least one number'),
 });
@@ -48,7 +48,8 @@ const AuthForm = () => {
   };
 
   const dispatch = useDispatch();
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (e, values, { resetForm }) => {
+    e.preventDefault();
     const { name, dateOfBirth, email, password } = values;
     const birthDate = format(new Date(dateOfBirth), "yyyy-MM-dd'T'HH:mm:ssXXX");
     dispatch(registerThunk({ name, birthDate, email, password }))
@@ -66,7 +67,7 @@ const AuthForm = () => {
       {({ values, setFieldValue, errors, touched }) => (
         <SignForm>
           <>
-            <PasswordInputWrap>
+            <ImputFild>
               <Input
                 type="text"
                 name="name"
@@ -81,7 +82,7 @@ const AuthForm = () => {
               ) : values.name && !errors.name ? (
                 <SuccessIcon />
               ) : null}
-            </PasswordInputWrap>
+            </ImputFild>
 
             <div>
               <DatePicker
@@ -100,7 +101,7 @@ const AuthForm = () => {
               <FormErr name="dateOfBirth" />
             </div>
 
-            <PasswordInputWrap>
+            <ImputFild>
               <Input
                 type="email"
                 name="email"
@@ -114,9 +115,9 @@ const AuthForm = () => {
               ) : values.email && !errors.email ? (
                 <SuccessIcon />
               ) : null}
-            </PasswordInputWrap>
+            </ImputFild>
 
-            <PasswordInputWrap>
+            <ImputFild>
               <Input
                 type={showPassword ? 'text' : 'password'}
                 value={values.password}
@@ -126,20 +127,17 @@ const AuthForm = () => {
                 success={values.password && !errors.password ? 'true' : 'false'}
               />
               <FormErr name="password" />
-              <TogglePasswordButton
-                type="button"
-                onClick={handleTogglePassword}
-              >
+              <EyePasswordBtn type="button" onClick={handleTogglePassword}>
                 {showPassword ? (
-                  <StyledDontShowPasswordIcon />
+                  <HidePasswordIconEye />
                 ) : (
-                  <StyledShowPasswordIcon />
+                  <ShowPasswordIconEye />
                 )}
-              </TogglePasswordButton>
-            </PasswordInputWrap>
+              </EyePasswordBtn>
+            </ImputFild>
           </>
 
-          <Button type="submit">Sign Up</Button>
+          <SignUpBtn type="submit">Sign Up</SignUpBtn>
         </SignForm>
       )}
     </Formik>
