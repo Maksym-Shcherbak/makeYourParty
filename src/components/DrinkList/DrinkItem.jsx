@@ -11,16 +11,24 @@ import {
 
 import { DeleteIcon } from '../../components/DeleteIcon/DeleteIcon';
 
-const DrinkItem = ({ id, url, title, alcoholic, description, text }) => {
+const DrinkItem = ({
+  id,
+  url,
+  title,
+  alcoholic,
+  description,
+  text,
+  handleDelete,
+}) => {
   return (
-    <DrinkItemWrapper id={id}>
+    <DrinkItemWrapper>
       <DrinkItemImg src={url} alt="Photo Coctail" />
       <DrinkItemTitle>{title}</DrinkItemTitle>
       <DrinkStatus>{alcoholic}</DrinkStatus>
       <DrinkItemDescription>{description}</DrinkItemDescription>
       <DrinkWrapperBtn>
         <StyledLink to={`/drinks/${id}`}>{text}</StyledLink>
-        <DeleteBtn>
+        <DeleteBtn onClick={handleDelete}>
           <DeleteIcon />
         </DeleteBtn>
       </DrinkWrapperBtn>

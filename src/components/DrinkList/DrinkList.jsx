@@ -1,23 +1,29 @@
+import { removeFavoriteDrink } from '../../redux/drinks/drinksOperations';
 import DrinkItem from './DrinkItem';
 import { DrinksList } from './DrinkListStyle';
-import getFavorites from '../../data/favorites.json';
+import { useDispatch } from 'react-redux';
 
-export const DrinkList = ({ text }) => {
+const DrinkList = ({ drinks, text }) => {
+  const dispatch = useDispatch();
+
+  const handleDelete = (id) => {
+    dispatch(removeFavoriteDrink({ drinkId: id }));
+  };
+
   return (
     <DrinksList>
-      {getFavorites.map(
-        ({ _id, drink, alcoholic, description, drinkThumb }) => (
-          <DrinkItem
-            key={_id.$oid}
-            id={_id.$oid}
-            title={drink}
-            alcoholic={alcoholic}
-            description={description}
-            text={text}
-            url={drinkThumb}
-          />
-        )
-      )}
+      {drinks?.map(({ _id, drink, alcoholic, description, drinkThumb }) => (
+        <DrinkItem
+          key={_id}
+          id={_id}
+          title={drink}
+          alcoholic={alcoholic}
+          description={description}
+          text={text}
+          url={drinkThumb}
+          handleDelete={() => handleDelete(_id)}
+        />
+      ))}
     </DrinksList>
   );
 };

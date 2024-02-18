@@ -8,18 +8,9 @@ const DrinksPage = () => {
     <div>
       <h1>All drinks</h1>
       <FaceBookBtn>
-        {/* <IconContext.Provider
-          value={{
-            color: '#F3F3F3',
-            opacity: '0.8',
-            className: 'global-class-name',
-            size: 28,
-          }}
-        > */}
         <BiLogoFacebook
           style={{ color: '#F3F3F3', opacity: 0.8, fontSize: 28 }}
         />
-        {/* </IconContext.Provider> */}
       </FaceBookBtn>
       <InstBtn>
         <AiFillInstagram

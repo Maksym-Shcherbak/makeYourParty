@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://project-backend-0pzg.onrender.com/';
+http: axios.defaults.baseURL = 'https://project-backend-0pzg.onrender.com/api';
 
 export const getCategories = createAsyncThunk(
   'filters/categories',

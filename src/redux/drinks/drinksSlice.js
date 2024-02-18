@@ -172,7 +172,7 @@ const drinksSlice = createSlice({
       })
       .addCase(removeFavoriteDrink.fulfilled, (state, action) => {
         const index = state.favorite.findIndex(
-          (favorite) => favorite.id === action.payload.id
+          (favorite) => favorite.drinkId === action.payload.drinkId
         );
         state.contacts.splice(index, 1);
         state.isLoading = false;
