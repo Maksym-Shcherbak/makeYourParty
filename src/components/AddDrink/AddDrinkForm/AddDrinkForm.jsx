@@ -11,6 +11,10 @@ import {
   SelectWrapper,
   SelectCategories,
   OptionSelect,
+  RadioWrapper,
+  InputRadio,
+  LabelRadio,
+  AddDrinkWrapper,
 } from './AddDrinkForm.styled';
 import SectionTitle from '../../Drink/titleDrink/titleDrinks';
 // import data from '../../../data/recipes.json';
@@ -18,48 +22,60 @@ import SectionTitle from '../../Drink/titleDrink/titleDrinks';
 const AddDrinkForm = () => {
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
+  const [counter, setCounter] = useState(0);
 
-  const handleOnChange = (event) => {
-    event.preventDefault();
-
+  const handleOnChangeImage = (event) => {
     const file = event.target.files[0];
     setImage(file);
     setImageURL(URL.createObjectURL(file));
+  };
+
+  const increaseCounter = () => {
+    setCounter((prevCount) => prevCount + 1);
+  };
+
+  const decreaseCounter = () => {
+    setCounter((prevCount) => prevCount - 1);
+    if (counter <= 0) {
+      setCounter(0);
+    }
   };
 
   return (
     <>
       <Container>
         <SectionTitle title={'Add Drink'} />
-        <form>
-          <InputWrapper>
-            {image ? (
-              <DrinkImg src={imageURL} alt="drinkImage" />
-            ) : (
-              <>
-                <InputFile
-                  type="file"
-                  name="image"
-                  id="uploadImage"
-                  onChange={handleOnChange}
-                />
-                <InputLabel htmlFor="uploadImage">
-                  <IconWrapper>
-                    <svg width="28" height="28">
-                      <path
-                        d="M14.5 5.833v16.334M6.332 14h16.333"
-                        stroke="#161F37"
-                      />
-                    </svg>
-                  </IconWrapper>
-                  <span>Add image</span>
-                </InputLabel>
-              </>
-            )}
-          </InputWrapper>
 
-          {/* data drink */}
-          <div>
+        <form>
+          <AddDrinkWrapper>
+            <InputWrapper>
+              {image ? (
+                <DrinkImg src={imageURL} alt="drinkImage" />
+              ) : (
+                <>
+                  <InputFile
+                    type="file"
+                    name="image"
+                    id="uploadImage"
+                    onChange={handleOnChangeImage}
+                  />
+                  <InputLabel htmlFor="uploadImage">
+                    <IconWrapper>
+                      <svg width="28" height="28">
+                        <path
+                          d="M14.5 5.833v16.334M6.332 14h16.333"
+                          stroke="#161F37"
+                        />
+                      </svg>
+                    </IconWrapper>
+                    <span>Add image</span>
+                  </InputLabel>
+                </>
+              )}
+            </InputWrapper>
+
+            {/* data drink */}
+
             <InputList>
               <InputDrink
                 type="text"
@@ -82,13 +98,10 @@ const AddDrinkForm = () => {
                   placeholder="Category"
                 />
                 <SelectCategories name="category" id="categoryDrink">
-                  <OptionSelect value="">Cocktail</OptionSelect>
-                  <OptionSelect value="">Homemade Liqueur</OptionSelect>
-                  <OptionSelect value="">Homemade Liqueur</OptionSelect>
-                  <OptionSelect value="">Homemade Liqueur</OptionSelect>
-                  <OptionSelect value="">Homemade Liqueur</OptionSelect>
-                  <OptionSelect value="">Homemade Liqueur</OptionSelect>
-                  <OptionSelect value="">Homemade Liqueur</OptionSelect>
+                  <OptionSelect value="Cocktail">Cocktail</OptionSelect>
+                  <OptionSelect value="Homemade Liqueur">
+                    Homemade Liqueur
+                  </OptionSelect>
                 </SelectCategories>
               </SelectWrapper>
               <SelectWrapper>
@@ -101,28 +114,60 @@ const AddDrinkForm = () => {
                 <SelectCategories name="glass" id="glassDrink" htmlFor="glass">
                   <OptionSelect value="">Cocktail glass</OptionSelect>
                   <OptionSelect value="">Old-fashioned glass</OptionSelect>
-                  <OptionSelect value="">Old-fashioned glass</OptionSelect>
-                  <OptionSelect value="">Old-fashioned glass</OptionSelect>
-                  <OptionSelect value="">Old-fashioned glass</OptionSelect>
-                  <OptionSelect value="">Old-fashioned glass</OptionSelect>
-                  <OptionSelect value="">Old-fashioned glass</OptionSelect>
                 </SelectCategories>
               </SelectWrapper>
+
+              <RadioWrapper>
+                <LabelRadio htmlFor="alcoholic">
+                  <span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <rect
+                        x="2.65"
+                        y="2.65"
+                        width="14.7"
+                        height="14.7"
+                        rx="7.35"
+                        stroke="rgba(243, 243, 243, 0.5)"
+                      />
+                    </svg>
+                  </span>
+                  <InputRadio type="radio" name="alcoholic" id="alcoholic" />
+                  Alcoholic
+                </LabelRadio>
+                <LabelRadio htmlFor="non-alcoholic">
+                  <span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <rect
+                        x="2.65"
+                        y="2.65"
+                        width="14.7"
+                        height="14.7"
+                        rx="7.35"
+                        stroke="rgba(243, 243, 243, 0.5)"
+                      />
+                    </svg>
+                  </span>
+                  <InputRadio
+                    type="radio"
+                    name="non-alcoholic"
+                    id="non-alcoholic"
+                  />
+                  Non-alcoholic
+                </LabelRadio>
+              </RadioWrapper>
             </InputList>
-            <div>
-              <input type="radio" name="alcoholic" id="alcoholic" />
-              <label>Alcoholic</label>
-              <input type="radio" name="non-alcoholic" id="non-alcoholic" />
-              <label>Non-alcoholic</label>
-            </div>
-          </div>
+          </AddDrinkWrapper>
           {/* Ingredients */}
           <div>
             <SectionTitle title={'Ingredients'} />
             <div>
-              <button type="button">-</button>
-              <span>0</span>
-              <button type="button">+</button>
+              <button type="button" onClick={decreaseCounter}>
+                -
+              </button>
+              <span>{counter}</span>
+              <button type="button" onClick={increaseCounter}>
+                +
+              </button>
             </div>
           </div>
           {/* Recipe Preparation */}

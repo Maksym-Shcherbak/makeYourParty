@@ -128,13 +128,8 @@ export const SelectCategories = styled.select`
 
   &:after {
     content: '';
-    display: block;
-    width: 25px;
-    height: 25px;
-    background-image: url('./plus.svg');
-    position: absolute;
-    right: 5px;
-    top: 5px;
+
+    background-color: transparent;
   }
 `;
 
@@ -145,4 +140,38 @@ export const OptionSelect = styled.option`
   line-height: 1.33333;
   background-color: #161f37;
   border: none;
+`;
+
+export const RadioWrapper = styled.div`
+  display: flex;
+  column-gap: 14px;
+  @media screen and (min-width: 768px) {
+    margin-top: 39px;
+  }
+`;
+
+export const InputRadio = styled.input`
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+`;
+
+export const LabelRadio = styled.label`
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgba(243, 243, 243, 0.5);
+
+  display: flex;
+  column-gap: 4px;
+  align-items: center;
+`;
+
+export const AddDrinkWrapper = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    column-gap: 32px;
+  }
+  @media screen and (min-width: 1440x) {
+    column-gap: 40px;
+  }
 `;
