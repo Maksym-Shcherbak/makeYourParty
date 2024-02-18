@@ -1,18 +1,20 @@
 import AuthForm from '../../components/AuthForm/AuthForm';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import WelcomeTitle from '../../components/WelcomeTitle/WelcomeTitle';
+import { Container } from '../WelcomePage/WelcomePage.styled';
+import { Link, Wrap, Nav } from './SignupPage.styled';
 
 const SignupPage = () => {
   return (
-    <section>
-      <div>
+    <Container>
+      <Wrap>
         <WelcomeTitle title="Sign Up" />
         <AuthForm />
-        <nav>
-          <NavLink to="/signin">Sign In</NavLink>
-        </nav>
-      </div>
-    </section>
+        <Nav>
+          <Link to="/signin">Sign In</Link>
+        </Nav>
+      </Wrap>
+    </Container>
   );
 };
 
