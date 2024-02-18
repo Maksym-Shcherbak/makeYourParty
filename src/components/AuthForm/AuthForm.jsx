@@ -28,10 +28,10 @@ const schema = Yup.object().shape({
   name: Yup.string().min(2).required(true),
   dateOfBirth: Yup.date().required(true),
   email: Yup.string()
-    .matches(
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      'Email must contain only digits, letters and . - _ symbols. e.g. test@mail.com'
-    )
+    // .matches(
+    //   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+    //   'Email must contain only digits, letters and . - _ symbols. e.g. test@mail.com'
+    // )
     .email('Invalid email format, test@mail.com')
     .required(true),
   password: Yup.string()
