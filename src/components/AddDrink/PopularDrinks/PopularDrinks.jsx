@@ -1,10 +1,11 @@
 import { Container } from '../../../styled/Container';
+import { TitlePopularDrinks } from './PopularDrinks.styled';
 
 const PopularDrinks = () => {
   return (
     <>
       <Container>
-        <h3>Popular drinks</h3>
+        <TitlePopularDrinks>Popular drinks</TitlePopularDrinks>
         <ul></ul>
       </Container>
     </>

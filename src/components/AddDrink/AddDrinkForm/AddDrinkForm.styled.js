@@ -1,5 +1,35 @@
 import styled from 'styled-components';
 
+export const SectionTitleAddDrink = styled.h2`
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 118.75%;
+
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 704px) {
+    font-size: 56px;
+    line-height: 107.43%;
+    argin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1240px) {
+    font-size: 62px;
+    line-height: 106.25%;
+  }
+`;
+
+export const AddDrinkWrapper = styled.div`
+  margin-bottom: 80px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    column-gap: 32px;
+  }
+  @media screen and (min-width: 1440x) {
+    column-gap: 40px;
+  }
+`;
+
 export const InputWrapper = styled.div`
   width: 280px;
   height: 280px;
@@ -74,7 +104,7 @@ export const InputList = styled.div`
   flex-direction: column;
   row-gap: 30px;
 
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
 
   @media screen and (min-width: 375px) {
     width: 335px;
@@ -97,7 +127,7 @@ export const InputDrink = styled.input`
   font-size: 14px;
 
   border: none;
-  background: transparent;
+  background-color: transparent;
 
   padding: 0px 0px 14px 0px;
 
@@ -142,12 +172,14 @@ export const OptionSelect = styled.option`
   border: none;
 `;
 
+// radio alcoholic / non-alcoholic
+
 export const RadioWrapper = styled.div`
   display: flex;
   column-gap: 14px;
-  @media screen and (min-width: 768px) {
-    margin-top: 39px;
-  }
+  // @media screen and (min-width: 768px) {
+  //   margin-top: 39px;
+  // }
 `;
 
 export const InputRadio = styled.input`
@@ -166,12 +198,109 @@ export const LabelRadio = styled.label`
   align-items: center;
 `;
 
-export const AddDrinkWrapper = styled.div`
+// ingredients
+
+export const IngredientsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 34px;
+`;
+
+export const ButtonWrapper = styled.div`
+  width: 104px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 12px;
+
+  border: 1px solid rgba(243, 243, 243, 0.5);
+  border-radius: 200px;
+`;
+
+export const ButtonAction = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 16px;
+  border: none;
+
+  font-size: 26px;
+  line-height: 1.28571;
+
+  background-color: transparent;
+  color: rgba(243, 243, 243, 0.3);
+`;
+
+export const CounterValue = styled.span`
+  font-size: 14px;
+  line-height: 1.28571;
+
   @media screen and (min-width: 768px) {
-    display: flex;
-    column-gap: 32px;
+    font-size: 17px;
+    line-height: 1.56;
   }
-  @media screen and (min-width: 1440x) {
-    column-gap: 40px;
+`;
+
+// Recipe Preparation
+
+export const TextereaWrapper = styled.div`
+  margin-bottom: 20px;
+`;
+
+export const RecipeTexterea = styled.textarea`
+  width: 335px;
+  height: 184px;
+
+  border: 1px solid rgba(243, 243, 243, 0.5);
+  border-radius: 14px;
+  background-color: transparent;
+  color: #f3f3f3;
+
+  padding: 16px 18px;
+`;
+
+export const SectionTitleAdd = styled.h2`
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 118.75%;
+
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 704px) {
+    font-size: 56px;
+    line-height: 107.43%;
+  }
+
+  @media screen and (min-width: 1240px) {
+    font-size: 62px;
+    line-height: 106.25%;
+  }
+`;
+
+export const ButtonAdd = styled.button`
+  padding: 14px 40px;
+  width: 107px;
+  height: 46px;
+
+  border-radius: 42px;
+  border: none;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.28571;
+
+  background-color: #f3f3f3;
+  color: #161f37;
+
+  @media screen and (min-width: 704px) {
+    line-height: 1.125;
+    padding: 18px 44px;
+    width: 118px;
+    height: 54px;
   }
 `;

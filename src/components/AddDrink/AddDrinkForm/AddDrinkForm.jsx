@@ -15,7 +15,18 @@ import {
   InputRadio,
   LabelRadio,
   AddDrinkWrapper,
+  IngredientsWrapper,
+  ButtonWrapper,
+  ButtonAction,
+  CounterValue,
+  RecipeTexterea,
+  SectionTitleAdd,
+  SectionTitleAddDrink,
+  TextereaWrapper,
+  ButtonAdd,
 } from './AddDrinkForm.styled';
+import { GoPlus } from 'react-icons/go';
+import { IoMdRadioButtonOff } from 'react-icons/io';
 import SectionTitle from '../../Drink/titleDrink/titleDrinks';
 // import data from '../../../data/recipes.json';
 
@@ -41,12 +52,17 @@ const AddDrinkForm = () => {
     }
   };
 
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+    console.dir(e.currentTarget);
+  };
+
   return (
     <>
       <Container>
-        <SectionTitle title={'Add Drink'} />
+        <SectionTitleAddDrink>Add Drink</SectionTitleAddDrink>
 
-        <form>
+        <form onSubmit={onSubmitForm}>
           <AddDrinkWrapper>
             <InputWrapper>
               {image ? (
@@ -61,12 +77,12 @@ const AddDrinkForm = () => {
                   />
                   <InputLabel htmlFor="uploadImage">
                     <IconWrapper>
-                      <svg width="28" height="28">
-                        <path
-                          d="M14.5 5.833v16.334M6.332 14h16.333"
-                          stroke="#161F37"
-                        />
-                      </svg>
+                      <GoPlus
+                        style={{
+                          color: '#161F37',
+                          fontSize: 28,
+                        }}
+                      />
                     </IconWrapper>
                     <span>Add image</span>
                   </InputLabel>
@@ -120,32 +136,24 @@ const AddDrinkForm = () => {
               <RadioWrapper>
                 <LabelRadio htmlFor="alcoholic">
                   <span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <rect
-                        x="2.65"
-                        y="2.65"
-                        width="14.7"
-                        height="14.7"
-                        rx="7.35"
-                        stroke="rgba(243, 243, 243, 0.5)"
-                      />
-                    </svg>
+                    <IoMdRadioButtonOff
+                      style={{
+                        color: 'rgba(243, 243, 243, 0.5)',
+                        fontSize: 20,
+                      }}
+                    />
                   </span>
                   <InputRadio type="radio" name="alcoholic" id="alcoholic" />
                   Alcoholic
                 </LabelRadio>
                 <LabelRadio htmlFor="non-alcoholic">
                   <span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <rect
-                        x="2.65"
-                        y="2.65"
-                        width="14.7"
-                        height="14.7"
-                        rx="7.35"
-                        stroke="rgba(243, 243, 243, 0.5)"
-                      />
-                    </svg>
+                    <IoMdRadioButtonOff
+                      style={{
+                        color: 'rgba(243, 243, 243, 0.5)',
+                        fontSize: 20,
+                      }}
+                    />
                   </span>
                   <InputRadio
                     type="radio"
@@ -158,33 +166,34 @@ const AddDrinkForm = () => {
             </InputList>
           </AddDrinkWrapper>
           {/* Ingredients */}
-          <div>
+          <IngredientsWrapper>
             <SectionTitle title={'Ingredients'} />
-            <div>
-              <button type="button" onClick={decreaseCounter}>
+            <ButtonWrapper>
+              <ButtonAction type="button" onClick={decreaseCounter}>
                 -
-              </button>
-              <span>{counter}</span>
-              <button type="button" onClick={increaseCounter}>
+              </ButtonAction>
+              <CounterValue>{counter}</CounterValue>
+              <ButtonAction type="button" onClick={increaseCounter}>
                 +
-              </button>
-            </div>
+              </ButtonAction>
+            </ButtonWrapper>
+          </IngredientsWrapper>
+          <div>
+            <ul>
+              <li></li>
+            </ul>
           </div>
           {/* Recipe Preparation */}
-          <div>
-            <SectionTitle title={'Recipe Preparation'} />
-            <textarea
+          <TextereaWrapper>
+            <SectionTitleAdd>Recipe Preparation</SectionTitleAdd>
+            <RecipeTexterea
               name="instructions"
               id="instructions"
-              cols="30"
-              rows="10"
               placeholder="Enter the recipe"
-            ></textarea>
-          </div>
+            ></RecipeTexterea>
+          </TextereaWrapper>
 
-          <div>
-            <button type="submit">Add</button>
-          </div>
+          <ButtonAdd type="submit">Add</ButtonAdd>
         </form>
       </Container>
     </>

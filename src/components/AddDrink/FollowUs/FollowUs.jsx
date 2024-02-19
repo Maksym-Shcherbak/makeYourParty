@@ -1,13 +1,35 @@
 import { Container } from '../../../styled/Container';
+import { BiLogoFacebook } from 'react-icons/bi';
+import { AiFillInstagram, AiOutlineYoutube } from 'react-icons/ai';
+import { IConList, IconBtn, TitleFollowUs } from './FollowUs.styled';
 
 const FollowUs = () => {
   return (
     <>
       <Container>
-        <h3>Follow Us</h3>
-        <a href="https://www.facebook.com/goITclub/">icon</a>
-        <a href="https://www.instagram.com/goitclub/">icon</a>
-        <a href="https://www.youtube.com/c/GoIT">icon</a>
+        <TitleFollowUs>Follow Us</TitleFollowUs>
+        <IConList>
+          <IconBtn href="https://www.facebook.com/goITclub/">
+            <BiLogoFacebook
+              style={{ color: '#F3F3F3', opacity: 0.8, fontSize: 28 }}
+            />
+          </IconBtn>
+          <IconBtn href="https://www.instagram.com/goitclub/">
+            <AiFillInstagram
+              style={{ color: '#F3F3F3', opacity: 0.8, fontSize: 28 }}
+            />
+          </IconBtn>
+
+          <IconBtn href="https://www.youtube.com/c/GoIT">
+            <AiOutlineYoutube
+              style={{
+                color: '#F3F3F3',
+                opacity: 0.8,
+                fontSize: 28,
+              }}
+            />
+          </IconBtn>
+        </IConList>
       </Container>
     </>
   );
