@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Navigate, Outlet } from 'react-router-dom';
 import {
-  selectAuthIsLoading,
-  selectAuthenticated,
+  selectIsLoading,
+  selectIsLoggedIn,
 } from '../src/redux/auth/authSelectors';
 
 // export const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
@@ -13,13 +13,9 @@ import {
 //   return shouldRedirect ? <Navigate to={redirectTo} /> : Component;
 // };
 
-export const PrivateRoute = ({ shouldRedirect = true }) => {
-  const isLoggedIn = useSelector(selectAuthenticated);
-  const isLoading = useSelector(selectAuthIsLoading);
-  // const shouldRedirect = !isLoggedIn && !isLoading;
-  return shouldRedirect && !isLoggedIn && !isLoading ? (
-    <Navigate to="welcome" />
-  ) : (
-    <Outlet />
-  );
+export const PrivateRoute = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isLoading = useSelector(selectIsLoading);
+  const shouldRedirect = !isLoggedIn && !isLoading;
+  return shouldRedirect ? <Navigate to="welcome" /> : <Outlet />;
 };
