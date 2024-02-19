@@ -1,8 +1,19 @@
+import AuthForm from '../../components/AuthForm/AuthForm';
+import WelcomeTitle from '../../components/WelcomeTitle/WelcomeTitle';
+import { Container } from '../WelcomePage/WelcomePage.styled';
+import { Link, Wrap, Nav } from './SignupPage.styled';
+
 const SignupPage = () => {
   return (
-    <div>
-      <h1>Sign Up</h1>
-    </div>
+    <Container>
+      <Wrap>
+        <WelcomeTitle title="Sign Up" />
+        <AuthForm />
+        <Nav>
+          <Link to="/signin">Sign In</Link>
+        </Nav>
+      </Wrap>
+    </Container>
   );
 };
 
