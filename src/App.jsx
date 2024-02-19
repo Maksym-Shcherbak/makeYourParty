@@ -13,6 +13,9 @@ import AddDrinkPage from './pages/AddDrinkPage/AddDrinkPage';
 import FavoriteDrinksPage from './pages/FavoriteDrinksPage/FavoriteDrinksPage';
 import MyDrinksPage from './pages/MyDrinksPage/MyDrinksPage';
 import DrinkPage from './pages/DrinkPage/DrinkPage';
+import { useEffect } from 'react';
+import { currentUser } from './redux/auth/authOperations';
+import { useDispatch } from 'react-redux';
 
 // const WelcomePage = lazy(() => import('pages/WelcomePage'));
 // const HomePage = lazy(() => import('pages/HomePage'));
@@ -23,10 +26,15 @@ import DrinkPage from './pages/DrinkPage/DrinkPage';
 // const FavoriteDrinksPage = lazy(() => import('pages/FavoriteDrinksPage'));
 // const MyDrinksPage = lazy(() => import('pages/MyDrinksPage'));
 
-const test = import.meta.env.VITE_API_TEST;
+// const test = import.meta.env.VITE_API_TEST;
 
 function App() {
-  console.log(test);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(currentUser());
+  }, [dispatch]);
+
   return (
     <AppWrapper>
       <Routes>
@@ -34,15 +42,15 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signin" element={<SigninPage />} />
         {/* <Route element={<PrivateRoute />}> */}
-          <Route path="/" element={<SharedLayout />}>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/drinks" element={<DrinksPage />} />
-            <Route path="/drinks/:drinkId" element={<DrinkPage />} />
-            <Route path="/add" element={<AddDrinkPage />} />
-            <Route path="/favorites" element={<FavoriteDrinksPage />} />
-            <Route path="/my" element={<MyDrinksPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Route>
+        <Route path="/" element={<SharedLayout />}>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/drinks" element={<DrinksPage />} />
+          <Route path="/drinks/:drinkId" element={<DrinkPage />} />
+          <Route path="/add" element={<AddDrinkPage />} />
+          <Route path="/favorites" element={<FavoriteDrinksPage />} />
+          <Route path="/my" element={<MyDrinksPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Route>
         {/* </Route> */}
       </Routes>
     </AppWrapper>
