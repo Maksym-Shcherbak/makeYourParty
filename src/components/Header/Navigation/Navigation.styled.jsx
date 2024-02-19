@@ -12,11 +12,14 @@ export const NavContainer = styled.nav`
 
 	@media screen and (min-width: 768px) {
 		top: 84px;
+		
 	}
 
 	@media screen and (min-width: 1024px) {
 		position: static;
 		display: block;
+		
+		
 	}
 
 	 a {
@@ -45,11 +48,30 @@ export const NavContainer = styled.nav`
 		display: inline-flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 16px;
+		gap: 16 px;
 		margin: 20% auto 0 auto;
 			display: flex;
 			flex-direction: row;
 			margin: 0;
+			
+		}
+		
+		@media(max-width:768px) {
+			
+			position: fixed;
+			left: -100%;
+			right: 0;
+			top: 0;			
+			width: 100%;
+			height: 100vh;
+			transition: left 1s;
+		
+		}
+		.nav {
+			left: 0;
+		}
+		@media(max-width:1023px) {
+		padding-top: 256px;
 		}
 `;
 
@@ -59,13 +81,23 @@ export const List = styled.div`
 	align-items: center;
 	gap: 16px;
 	margin: 20 auto 0 auto;
+	@media screen and (min-width: 1024px) {
+		
+	}
 	
-
 	@media screen and (min-width: 1024px) {
 		display: flex;
 		flex-direction: row;
 		margin: 0;
+		
 	}
+	
+
+.burger_close{
+	cursor: pointer;
+}
+}
+	
 `;
 
 export const ListItem = styled.div`
@@ -75,7 +107,9 @@ export const ListItem = styled.div`
 	font-size: 14px;
 	font-weight: 500;
 
-    @media screen and (min-width: 1024px) 
+    @media screen and (max-width: 768px) {
+	 display: none;
 	}
+	
 `;
 
