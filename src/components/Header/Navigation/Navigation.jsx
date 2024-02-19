@@ -1,7 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { NavContainer, List, ListItem} from "./Navigation.styled";
 import React from 'react';
-
 export const Navigation = ({ isOpen }) => {
   const location = useLocation();
 

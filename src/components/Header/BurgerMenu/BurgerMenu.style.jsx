@@ -24,8 +24,8 @@ import styled from 'styled-components';
 export const BurgerButton = styled.div`
 gap: 24px;
 cursor: pointer;
-	@media(min-width: 1024px) {	 
-	// display: none;	
+	@media(min-width: 768px) {	 
+	display: none;	
 }
 
   .burger_close {

@@ -27,6 +27,7 @@ export const MobileMenuContainer = styled.div`
   align-items: center;
   justify-content: center;
   row-gap: 16px;
+  
 
   background: radial-gradient(
       circle,
