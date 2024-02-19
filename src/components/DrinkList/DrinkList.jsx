@@ -1,15 +1,7 @@
-import { removeFavoriteDrink } from '../../redux/drinks/drinksOperations';
 import DrinkItem from './DrinkItem';
 import { DrinksList } from './DrinkListStyle';
-import { useDispatch } from 'react-redux';
 
-const DrinkList = ({ drinks, text }) => {
-  const dispatch = useDispatch();
-
-  const handleDelete = (id) => {
-    dispatch(removeFavoriteDrink({ drinkId: id }));
-  };
-
+const DrinkList = ({ drinks, text, onDelete }) => {
   return (
     <DrinksList>
       {drinks?.map(({ _id, drink, alcoholic, description, drinkThumb }) => (
@@ -21,7 +13,7 @@ const DrinkList = ({ drinks, text }) => {
           description={description}
           text={text}
           url={drinkThumb}
-          handleDelete={() => handleDelete(_id)}
+          handleDelete={() => onDelete(_id)}
         />
       ))}
     </DrinksList>
