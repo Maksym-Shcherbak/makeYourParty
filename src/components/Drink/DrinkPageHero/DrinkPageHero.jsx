@@ -7,8 +7,8 @@ import {
   SupTitle,
 } from './DrinkPageHero.styled';
 
-const DrinkPageHero = ({ data } = data) => {
-  const { drink, alcoholic, glass, description, drinkThumb } = data;
+const DrinkPageHero = ({ recipe }) => {
+  const { drink, alcoholic, glass, description, drinkThumb } = recipe;
 
   return (
     <DrinkWrapper>

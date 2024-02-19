@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3001/api';
+axios.defaults.baseURL = 'https://project-backend-0pzg.onrender.com/api';
 
 export const getCategories = createAsyncThunk(
   'filters/categories',
@@ -80,10 +80,10 @@ export const getSearch = createAsyncThunk(
 );
 
 export const getById = createAsyncThunk(
-  'drinks/id',
-  async ({ id }, thunkAPI) => {
+  'drinks/drinkId',
+  async (drinkId, thunkAPI) => {
     try {
-      const { data } = await axios.get(`/drinks/${id}`);
+      const { data } = await axios.get(`/drinks/${drinkId}`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

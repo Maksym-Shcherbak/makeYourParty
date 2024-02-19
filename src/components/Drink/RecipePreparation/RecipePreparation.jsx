@@ -12,7 +12,7 @@ const RecipePreparation = ({ description }) => {
     <>
       <TitleRecipe>Recipe Preparation</TitleRecipe>
       <Wraper>
-        <Recipe>{description}</Recipe>
+        <Recipe>{description.description}</Recipe>
         <Images src={images} alt="Cocktails" />
       </Wraper>
     </>
