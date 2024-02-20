@@ -8,31 +8,33 @@ export const UserLogoPopup = ({ isPopupOpen, handleClosePopup }) => {
   const [isUserInfoModalOpen, setIsUserInfoModalOpen] = useState(false);
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
 
-  const toggleModal = (modalName) => {
-    if (modalName === 'userInfo') {
-      setIsUserInfoModalOpen((state) => !state);
-    } else if (modalName === 'logout') {
-      setIsLogoutModalOpen((state) => !state);
-    }
+
+  const handleToggleUserModal = () => {
+    setIsUserInfoModalOpen((state) => !state);
+    handleClosePopup();
+  };
+
+  const handleToggleLogoutModal = () => {
+    setIsLogoutModalOpen((state) => !state);
     handleClosePopup();
   };
 
   return (
     <>
       <Wrapper ispopupopen={isPopupOpen.toString()}>
-        <EditProfile onClick={() => toggleModal('userInfo')}>
+        <EditProfile onClick={handleToggleUserModal}>
           Edit profile <FiEdit2 size={14} />
         </EditProfile>
-        <LogoutBtn onClick={() => toggleModal('logout')}>Log out</LogoutBtn>
+        <LogoutBtn onClick={handleToggleLogoutModal}>Log out</LogoutBtn>
       </Wrapper>
 
       <UserInfoModal
         isOpen={isUserInfoModalOpen}
-        handleClose={() => toggleModal('userInfo')}
+        handleClose={handleToggleUserModal}
       />
       <LogoutModal
         isOpen={isLogoutModalOpen}
-        handleClose={() => toggleModal('logout')}
+        handleClose={handleToggleLogoutModal}
       />
       <Backdrop
         ispopupopen={isPopupOpen.toString()}
