@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
@@ -14,7 +14,7 @@ import AddDrinkPage from './pages/AddDrinkPage/AddDrinkPage';
 import FavoriteDrinksPage from './pages/FavoriteDrinksPage/FavoriteDrinksPage';
 import MyDrinksPage from './pages/MyDrinksPage/MyDrinksPage';
 import DrinkPage from './pages/DrinkPage/DrinkPage';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { currentUser } from './redux/auth/authOperations';
 import { useDispatch } from 'react-redux';
 
@@ -40,21 +40,15 @@ function App() {
       <Routes>
         <Route
           path="/welcome"
-          element={
-            <RestrictedRoute redirectTo="/home" component={<WelcomePage />} />
-          }
+          element={<RestrictedRoute component={<WelcomePage />} />}
         />
         <Route
           path="/signup"
-          element={
-            <RestrictedRoute redirectTo="/home" component={<SignupPage />} />
-          }
+          element={<RestrictedRoute component={<SignupPage />} />}
         />
         <Route
           path="/signin"
-          element={
-            <RestrictedRoute redirectTo="/home" component={<SigninPage />} />
-          }
+          element={<RestrictedRoute component={<SigninPage />} />}
         />
         <Route element={<PrivateRoute />}>
           <Route path="/" element={<SharedLayout />}>
