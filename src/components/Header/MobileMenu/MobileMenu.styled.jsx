@@ -90,6 +90,7 @@ export const MobileMenuContainer = styled.div`
 `;
 
 export const NavLink = styled(RouterNavLink)`
+color: white;
   padding: 8px 16px;
   color: ${({ theme }) => theme.headerText};
   border-radius: 40px;
