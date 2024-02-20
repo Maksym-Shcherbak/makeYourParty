@@ -15,12 +15,12 @@ import {
   Input,
   SignUpBtn,
   EyePasswordBtn,
-  ImputFild,
+  InputFild,
   ShowPasswordIconEye,
   HidePasswordIconEye,
   ErrorIcon,
   SuccessIcon,
-} from './AuthForm.style.js';
+} from './AuthForm.styled.jsx';
 
 const initialValues = { name: '', dateOfBirth: '', email: '', password: '' };
 
@@ -48,11 +48,11 @@ const AuthForm = () => {
   };
 
   const dispatch = useDispatch();
-  const handleSubmit = (e, values, { resetForm }) => {
-    e.preventDefault();
+  const handleSubmit = (values, { resetForm }) => {
+    console.log(values);
     const { name, dateOfBirth, email, password } = values;
-    const birthDate = format(new Date(dateOfBirth), "yyyy-MM-dd'T'HH:mm:ssXXX");
-    dispatch(signUp({ name, birthDate, email, password }))
+    // const birthDate = format(new Date(dateOfBirth), 'yyyy-MM-dd');
+    dispatch(signUp({ name, dateOfBirth, email, password }))
       .unwrap()
       .then(() => toast.success('Registration successfully'))
       .catch(() => toast.error('Something went wrong. Try later'));
@@ -64,10 +64,10 @@ const AuthForm = () => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      {({ values, setFieldValue, errors, touched }) => (
-        <SignForm>
+      {({ values, setFieldValue, errors, touched, handleSubmit }) => (
+        <SignForm onSubmit={handleSubmit}>
           <>
-            <ImputFild>
+            <InputFild>
               <Input
                 type="text"
                 name="name"
@@ -82,7 +82,7 @@ const AuthForm = () => {
               ) : values.name && !errors.name ? (
                 <SuccessIcon />
               ) : null}
-            </ImputFild>
+            </InputFild>
 
             <div>
               <DatePicker
@@ -101,7 +101,7 @@ const AuthForm = () => {
               <FormErr name="dateOfBirth" />
             </div>
 
-            <ImputFild>
+            <InputFild>
               <Input
                 type="email"
                 name="email"
@@ -115,9 +115,9 @@ const AuthForm = () => {
               ) : values.email && !errors.email ? (
                 <SuccessIcon />
               ) : null}
-            </ImputFild>
+            </InputFild>
 
-            <ImputFild>
+            <InputFild>
               <Input
                 type={showPassword ? 'text' : 'password'}
                 value={values.password}
@@ -134,7 +134,7 @@ const AuthForm = () => {
                   <ShowPasswordIconEye />
                 )}
               </EyePasswordBtn>
-            </ImputFild>
+            </InputFild>
           </>
 
           <SignUpBtn type="submit">Sign Up</SignUpBtn>
