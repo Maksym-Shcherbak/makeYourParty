@@ -8,6 +8,8 @@ import image from '../../images/main_blue_coctail.png';
 
 
 const HomePage = () => {
+
+
   return (
     <Container>
       <HomeSection>
