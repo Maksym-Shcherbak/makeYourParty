@@ -2,7 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
-// import { PrivateRoute } from './PrivateRoute';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
 // import { Suspense, lazy } from 'react';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignupPage from './pages/SignupPage/SighupPage';
@@ -29,7 +30,6 @@ import { useDispatch } from 'react-redux';
 // const test = import.meta.env.VITE_API_TEST;
 
 function App() {
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(currentUser());
@@ -38,20 +38,35 @@ function App() {
   return (
     <AppWrapper>
       <Routes>
-        <Route path="/welcome" element={<WelcomePage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/signin" element={<SigninPage />} />
-        {/* <Route element={<PrivateRoute />}> */}
-        <Route path="/" element={<SharedLayout />}>
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/drinks" element={<DrinksPage />} />
-          <Route path="/drinks/:drinkId" element={<DrinkPage />} />
-          <Route path="/add" element={<AddDrinkPage />} />
-          <Route path="/favorites" element={<FavoriteDrinksPage />} />
-          <Route path="/my" element={<MyDrinksPage />} />
-          <Route path="*" element={<ErrorPage />} />
+        <Route
+          path="/welcome"
+          element={
+            <RestrictedRoute redirectTo="/home" component={<WelcomePage />} />
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <RestrictedRoute redirectTo="/home" component={<SignupPage />} />
+          }
+        />
+        <Route
+          path="/signin"
+          element={
+            <RestrictedRoute redirectTo="/home" component={<SigninPage />} />
+          }
+        />
+        <Route element={<PrivateRoute />}>
+          <Route path="/" element={<SharedLayout />}>
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/drinks" element={<DrinksPage />} />
+            <Route path="/drinks/:drinkId" element={<DrinkPage />} />
+            <Route path="/add" element={<AddDrinkPage />} />
+            <Route path="/favorites" element={<FavoriteDrinksPage />} />
+            <Route path="/my" element={<MyDrinksPage />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Route>
         </Route>
-        {/* </Route> */}
       </Routes>
     </AppWrapper>
   );

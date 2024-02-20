@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3001/api';
+axios.defaults.baseURL = 'https://project-backend-0pzg.onrender.com/api';
 
 export const getCategories = createAsyncThunk(
   'filters/categories',
@@ -148,10 +148,8 @@ export const addFavoriteDrink = createAsyncThunk(
 export const removeFavoriteDrink = createAsyncThunk(
   'drinks/favorite/remove',
   async ({ drinkId }, thunkAPI) => {
-    console.log(drinkId);
     try {
       const { data } = await axios.delete(`/drinks/favorite/remove/${drinkId}`);
-      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

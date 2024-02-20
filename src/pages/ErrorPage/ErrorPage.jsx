@@ -1,9 +1,13 @@
-import { Container, Title } from './ErrorPage.styled';
+import { Container } from '../../styled/Container';
+import { Section } from '../../styled/Section';
+import { NotFound } from '../../components/NotFound/NotFound';
 
 const ErrorPage = () => {
   return (
     <Container>
-      <Title>404</Title>
+      <Section>
+        <NotFound />
+      </Section>
     </Container>
   );
 };

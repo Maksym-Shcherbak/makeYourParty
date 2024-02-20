@@ -19,16 +19,16 @@ const getById = (id) => {
 };
 
 const DrinkPage = () => {
-  const { drinkId } = useParams();
-  const drink = getById(drinkId);
+  const { _id } = useParams();
+  // const drink = getById(_id);
 
   return (
     <Section>
       <Container>
-        <SectionTitle title={drink.drink} />
+        {/* <SectionTitle title={drink.drink} />
         <DrinkPageHero data={drink} />
         <DrinkIngredientsList data={drink.ingredients} />
-        <RecipePreparation description={drink.description} />
+        <RecipePreparation description={drink.description} /> */}
       </Container>
     </Section>
   );
