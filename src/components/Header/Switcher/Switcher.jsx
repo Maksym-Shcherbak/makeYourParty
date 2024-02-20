@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Switch from '@mui/material/Switch';
-
+// import Switch from '@mui/material/Switch';
+import { IoToggle } from "react-icons/io5";
 
 export const ControlledSwitches = ()=> {
   const [checked, setChecked] = React.useState(true);
