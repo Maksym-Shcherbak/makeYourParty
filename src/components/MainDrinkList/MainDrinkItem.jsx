@@ -1,5 +1,17 @@
-const MainDrinkItem = () => {
-  return(<li><img></img><h3></h3><a><span></span></a></li>)
+
+import { MainDrinkImg, MainDrinkTitle, MainDrinkLinkText, MainDrTitlelinkWrap, MainDrinksItem } from "./MainDrinkItemStyle";
+
+
+const MainDrinkItem = ({ title, url, text }) => {
+  return (
+    <MainDrinksItem>
+        <MainDrinkImg src={url} alt="Photo drinks" />
+      <MainDrTitlelinkWrap>
+        <MainDrinkTitle>{title}</MainDrinkTitle>    
+              <MainDrinkLinkText>{text}</MainDrinkLinkText>   
+      </MainDrTitlelinkWrap>
+      
+  </MainDrinksItem>)
 }
 
 export default MainDrinkItem;
