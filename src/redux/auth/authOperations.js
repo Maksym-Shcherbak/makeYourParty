@@ -95,12 +95,3 @@ export const subscribeUser = createAsyncThunk(
     }
   }
 );
-
-
-export const registerThunk = () => {
- 
-};
-
-export const useAuth = () => {
-  
-}
