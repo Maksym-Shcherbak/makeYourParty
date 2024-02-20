@@ -19,13 +19,15 @@ import {
 import { useAuth } from '../../../redux/hooks/useAuth';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { useResize } from '../../../redux/hooks/useResize';
 import { toast } from 'react-toastify';
+
 export const UserInfoModal = ({ isOpen, handleClose }) => {
   const {
     user: { avatarURL, name },
   } = useAuth();
-  const { width } = useResize();
+  const {width} = useResize();
 
   const [username, setUsername] = useState(name);
   const [file, setFile] = useState(null);
@@ -75,6 +77,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
             <SelectAvatarInput
               type="file"
               name="file"
+              value={username}
                onChange={handleFileChange}
             />
             <AddIconWrapper>

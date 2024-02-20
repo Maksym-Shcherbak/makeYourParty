@@ -96,9 +96,10 @@ export const SubmitBtn = styled.button`
   padding: 17px;
   border-radius: 42px;
   line-height: 1.285;
-  background-color: ${({ theme }) => theme.modalBtnBg};
+   background-color: ${({ theme }) => theme.modalBtnBg};
+  background-color: #546081;
   border: 1px solid ${({ theme }) => theme.modalBg};
-  color: ${({ theme }) => theme.modalBtnText};
+   color: ${({ theme }) => theme.modalBtnText};
 
   transition:
     background-color ${transition},

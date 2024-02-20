@@ -9,6 +9,8 @@ export const UserLogoPopup = ({ isPopupOpen, handleClosePopup }) => {
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
 
 
+
+
   const handleToggleUserModal = () => {
     setIsUserInfoModalOpen((state) => !state);
     handleClosePopup();

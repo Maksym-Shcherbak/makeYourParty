@@ -98,9 +98,9 @@ export const subscribeUser = createAsyncThunk(
 
 
 export const registerThunk = () => {
-  // ваша реализация
+ 
 };
 
 export const useAuth = () => {
-  // ваша реализация
+  
 }
