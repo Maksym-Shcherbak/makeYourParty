@@ -9,12 +9,12 @@ import {
   Input,
   SignUpBtn,
   EyePasswordBtn,
-  ImputFild,
+  InputFild,
   ShowPasswordIconEye,
   HidePasswordIconEye,
   ErrorIcon,
   SuccessIcon,
-} from '../AuthForm/AuthForm.style';
+} from '../AuthForm/AuthForm.styled';
 import { signIn } from '../../redux/auth/authOperations';
 
 const initialValues = { email: '', password: '' };
@@ -57,7 +57,7 @@ export default function SigninForm() {
       {({ values, errors, touched }) => (
         <SignForm>
           <>
-            <ImputFild>
+            <InputFild>
               <Input
                 type="email"
                 name="email"
@@ -71,9 +71,9 @@ export default function SigninForm() {
               ) : values.email && !errors.email ? (
                 <SuccessIcon />
               ) : null}
-            </ImputFild>
+            </InputFild>
 
-            <ImputFild>
+            <InputFild>
               <Input
                 type={showPassword ? 'text' : 'password'}
                 value={values.password}
@@ -90,7 +90,7 @@ export default function SigninForm() {
                   <ShowPasswordIconEye />
                 )}
               </EyePasswordBtn>
-            </ImputFild>
+            </InputFild>
           </>
 
           <SignUpBtn type="submit">Sign In</SignUpBtn>
