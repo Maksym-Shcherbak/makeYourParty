@@ -1,19 +1,24 @@
 import AddDrinkForm from '../../components/AddDrink/AddDrinkForm/AddDrinkForm';
+import { SectionTitleAddDrink } from '../../components/AddDrink/AddDrinkForm/AddDrinkForm.styled';
 import FollowUs from '../../components/AddDrink/FollowUs/FollowUs';
 import PopularDrinks from '../../components/AddDrink/PopularDrinks/PopularDrinks';
+import { Container } from '../../styled/Container';
+import { SideBar, Wrapper } from './AddDrinkPage.styled';
 // import SectionTitle from '../../components/Drink/titleDrink/titleDrinks';
 // import { Container } from '../../styled/Container';
-import { Section } from '../../styled/Section';
 
 const AddDrinkPage = () => {
   return (
-    <>
-      <Section>
+    <Container>
+      <SectionTitleAddDrink>Add Drink</SectionTitleAddDrink>
+      <Wrapper>
         <AddDrinkForm />
-      </Section>
-      <FollowUs />
-      <PopularDrinks />
-    </>
+        <SideBar>
+          <FollowUs />
+          <PopularDrinks />
+        </SideBar>
+      </Wrapper>
+    </Container>
   );
 };
 

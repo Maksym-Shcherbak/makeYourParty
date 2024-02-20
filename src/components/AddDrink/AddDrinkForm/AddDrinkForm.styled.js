@@ -13,7 +13,7 @@ export const SectionTitleAddDrink = styled.h2`
     argin-bottom: 60px;
   }
 
-  @media screen and (min-width: 1240px) {
+  @media screen and (min-width: 1440px) {
     font-size: 62px;
     line-height: 106.25%;
   }
@@ -201,10 +201,38 @@ export const LabelRadio = styled.label`
 // ingredients
 
 export const IngredientsWrapper = styled.div`
+  width: 280px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 34px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 375px) {
+    width: 335px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 704px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 540px;
+  }
+`;
+
+export const SectionTitleIngredients = styled.h2`
+  font-weight: 600;
+
+  margin: 0;
+  @media screen and (min-width: 375px) {
+    font-size: 32px;
+    line-height: 118.75%;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+    line-height: 1.1;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -253,7 +281,7 @@ export const TextereaWrapper = styled.div`
 `;
 
 export const RecipeTexterea = styled.textarea`
-  width: 335px;
+  width: 280px;
   height: 184px;
 
   border: 1px solid rgba(243, 243, 243, 0.5);
@@ -262,6 +290,16 @@ export const RecipeTexterea = styled.textarea`
   color: #f3f3f3;
 
   padding: 16px 18px;
+
+  @media screen and (min-width: 375px) {
+    width: 335px;
+    height: 184px;
+  }
+
+  @media screen and (min-width: 768px) {
+    border-radius: 20px;
+    width: 480px;
+  }
 `;
 
 export const SectionTitleAdd = styled.h2`
@@ -271,14 +309,9 @@ export const SectionTitleAdd = styled.h2`
 
   margin-bottom: 40px;
 
-  @media screen and (min-width: 704px) {
-    font-size: 56px;
-    line-height: 107.43%;
-  }
-
-  @media screen and (min-width: 1240px) {
-    font-size: 62px;
-    line-height: 106.25%;
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+    line-height: 1.1;
   }
 `;
 
@@ -297,7 +330,9 @@ export const ButtonAdd = styled.button`
   background-color: #f3f3f3;
   color: #161f37;
 
-  @media screen and (min-width: 704px) {
+  margin-bottom: 80px;
+
+  @media screen and (min-width: 768px) {
     line-height: 1.125;
     padding: 18px 44px;
     width: 118px;
