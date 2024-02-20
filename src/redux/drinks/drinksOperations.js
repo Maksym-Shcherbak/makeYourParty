@@ -79,17 +79,14 @@ export const getSearch = createAsyncThunk(
   }
 );
 
-export const getById = createAsyncThunk(
-  'drinks/id',
-  async ({ id }, thunkAPI) => {
-    try {
-      const { data } = await axios.get(`/drinks/${id}`);
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
+export const getById = createAsyncThunk('drinks/id', async (id, thunkAPI) => {
+  try {
+    const { data } = await axios.get(`/drinks/${id}`);
+    return data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
   }
-);
+});
 
 export const addDrinkOwn = createAsyncThunk(
   'drinks/own/add',
