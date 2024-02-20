@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import { HiPlusSm } from 'react-icons/hi';
 import { FiEdit2 } from 'react-icons/fi';
-
+import { updateUser } from '../../../redux/auth/authOperations';
 
 import Modal from '../Modal/Modal';
 import {

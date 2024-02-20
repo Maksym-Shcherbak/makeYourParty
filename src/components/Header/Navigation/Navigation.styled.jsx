@@ -11,11 +11,11 @@ export const NavContainer = styled.nav`
 	background-color: $backgroundColor;
 
 	@media screen and (min-width: 768px) {
-		top: 84px;
+		position: static;
 		
 	}
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width:768px) {
 		position: static;
 		 display: block;
 		
@@ -85,10 +85,13 @@ export const List = styled.div`
 		
 	}
 	
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 768px) {
 		display: flex;
 		flex-direction: row;
-		margin: 0;
+        justify-content: center;
+		align-self: flex-start;
+	
+		
 		
 	}
 	
@@ -107,7 +110,7 @@ export const ListItem = styled.div`
 	font-size: 14px;
 	font-weight: 500;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width:768px) {
 	 display: none;
 	}
 	

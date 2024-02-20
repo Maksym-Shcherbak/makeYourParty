@@ -1,7 +1,7 @@
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import styled from 'styled-components';
 
-const transition = '300ms ease-in-out';
+const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)';
 
 export const MobileMenuContainer = styled.div`
   position: fixed;
