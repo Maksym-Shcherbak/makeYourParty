@@ -1,74 +1,112 @@
-import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import {
-  logOutThunk,
-  loginThunk,
-  refreshThunk,
-  registerThunk,
+  currentUser,
+  signIn,
+  signOut,
+  signUp,
+  subscribeUser,
+  updateUser,
 } from './authOperations';
 
 const initialState = {
+  user: { name: null, email: null, birthday: null, avatarURL: null },
+  token: null,
+  isLoggedIn: false,
   isLoading: false,
   error: null,
-  authenticated: false,
-  token: null,
-  userData: null,
+  isRefreshing: false,
 };
 
 const authSlice = createSlice({
-  // Ім'я слайсу
   name: 'auth',
-  // Початковий стан редюсера слайсу
   initialState,
-  // Об'єкт редюсерів
-  reducers: {},
   extraReducers: (builder) =>
     builder
-      .addCase(loginThunk.fulfilled, (state, { payload }) => {
+      .addCase(signUp.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(signUp.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
         state.isLoading = false;
-        state.authenticated = true;
-        state.token = payload.token;
-        state.userData = payload.user;
+        state.error = null;
       })
-      .addCase(registerThunk.fulfilled, (state, { payload }) => {
+      .addCase(signUp.rejected, (state, action) => {
         state.isLoading = false;
-        state.authenticated = true;
-        state.token = payload.token;
-        state.userData = payload.user;
+        state.error = action.payload;
       })
-      .addCase(logOutThunk.fulfilled, () => {
-        return initialState;
+      .addCase(signIn.pending, (state) => {
+        state.isLoading = true;
       })
-      .addCase(refreshThunk.fulfilled, (state, { payload }) => {
+      .addCase(signIn.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
         state.isLoading = false;
-        state.authenticated = true;
-        state.userData = payload;
+        state.error = null;
       })
-
-      .addMatcher(
-        isAnyOf(
-          loginThunk.pending,
-          registerThunk.pending,
-          refreshThunk.pending,
-          logOutThunk.pending
-        ),
-        (state) => {
-          state.isLoading = true;
-          state.error = null;
-        }
-      )
-      .addMatcher(
-        isAnyOf(
-          loginThunk.rejected,
-          registerThunk.rejected,
-          refreshThunk.rejected,
-          logOutThunk.rejected
-        ),
-        (state, { payload }) => {
-          state.isLoading = false;
-          state.error = payload;
-        }
-      ),
+      .addCase(signIn.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(signOut.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(signOut.fulfilled, (state) => {
+        state.user = { name: null, email: null, birthday: null, avatar: null };
+        state.token = null;
+        state.isLoggedIn = false;
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(signOut.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(currentUser.pending, (state) => {
+        state.isLoading = true;
+        state.isRefreshing = true;
+      })
+      .addCase(currentUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isLoading = false;
+        state.error = null;
+        state.isRefreshing = false;
+      })
+      .addCase(currentUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+        state.isRefreshing = false;
+      })
+      .addCase(updateUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        // state.user.name = action.payload.name;
+        // state.user.avatarURL = action.payload.avatarURL;
+        state.isLoggedIn = true;
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(updateUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(subscribeUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(subscribeUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(subscribeUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      }),
 });
 
-// Редюсер слайсу
 export const authReducer = authSlice.reducer;

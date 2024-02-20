@@ -17,7 +17,7 @@ export const Navigation = ({ isOpen }) => {
         </ListItem>
         <ListItem>
           <NavLink
-            className={location.pathname === "/drinks" ? "active" : ""}
+            className={location.pathname === '/drinks' ? 'active' : ''}
             to="/drinks"
           >
             Drinks
@@ -25,7 +25,7 @@ export const Navigation = ({ isOpen }) => {
         </ListItem>
         <ListItem>
           <NavLink
-            className={location.pathname === "/add" ? "active" : ""}
+            className={location.pathname === '/add' ? 'active' : ''}
             to="/add"
           >
             Add recipes
@@ -33,7 +33,7 @@ export const Navigation = ({ isOpen }) => {
         </ListItem>
         <ListItem>
           <NavLink
-            className={location.pathname === "/my" ? "active" : ""}
+            className={location.pathname === '/my' ? 'active' : ''}
             to="/my"
           >
             My recipes
@@ -41,8 +41,8 @@ export const Navigation = ({ isOpen }) => {
         </ListItem>
         <ListItem>
           <NavLink
-            className={location.pathname === "/favorite" ? "active" : ""}
-            to="/favorite"
+            className={location.pathname === '/favorite' ? 'active' : ''}
+            to="/favorites"
           >
             Favorites
           </NavLink>
