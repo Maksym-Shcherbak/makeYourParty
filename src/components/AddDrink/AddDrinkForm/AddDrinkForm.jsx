@@ -28,12 +28,18 @@ import {
 import { GoPlus } from 'react-icons/go';
 import { IoMdRadioButtonOff } from 'react-icons/io';
 import SectionTitle from '../../Drink/titleDrink/titleDrinks';
+import { useDispatch } from 'react-redux';
+import { getCategories } from '../../../redux/drinks/drinksOperations';
 // import data from '../../../data/recipes.json';
 
 const AddDrinkForm = () => {
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
   const [counter, setCounter] = useState(0);
+
+  const dispatch = useDispatch();
+  const categories = dispatch(getCategories());
+  console.log(categories);
 
   const handleOnChangeImage = (event) => {
     const file = event.target.files[0];
