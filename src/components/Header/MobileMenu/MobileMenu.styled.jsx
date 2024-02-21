@@ -11,7 +11,7 @@ export const MobileMenuContainer = styled.div`
   height: 100vh;
   opacity: ${(props) => (props.isopen === 'true' ? 1 : 0)};
   visibility: ${(props) => (props.isopen === 'true' ? 'visible' : 'hidden')};
-  z-index: 9;
+  z-index:99;
   transform: ${(props) =>
     props.isopen === 'true' ? 'translateX(0)' : 'translateX(-100%)'};
 
@@ -99,6 +99,7 @@ color: #F3F3F3;
     border-color ${transition},
     background-color ${transition},
     color ${transition};
+    z-index:99;
 
   &:hover,
   &:focus {

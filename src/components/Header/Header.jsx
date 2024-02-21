@@ -8,7 +8,7 @@ import { BurgerMenu } from './BurgerMenu/BurgerMenu'; // Проверьте пу
 import { MobileMenu} from './MobileMenu/MobileMenu';
 import { UserLogo } from './UserMenu/UserLogo/UserLogo';
 import { UserLogoPopup } from './UserLogoPopup/UserLogoPopup';
-
+import { Switcher } from './Switcher/Switcher';
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserPopupOpen, setIsUserPopupOpen] = useState(false);
@@ -36,12 +36,14 @@ export const Header = () => {
             
           </IconWrapper>
         </StyledLink>
+        
         <UserLogo 
           handleOpenPopup={handleOpenUserPopup}
           handleClosePopup={handleCloseUserPopup}
           isPopupOpen={isUserPopupOpen}/>
         <BurgerMenu handleToggleMenu={handleToggleMenu} isMenuOpen={isMenuOpen} /> {/* Проверьте передачу пропсов */}
       </HeaderContainer>
+      
       <UserLogoPopup
       isPopupOpen={isUserPopupOpen}
       handleClosePopup={handleCloseUserPopup}
