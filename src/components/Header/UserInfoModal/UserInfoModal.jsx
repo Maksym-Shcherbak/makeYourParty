@@ -27,18 +27,20 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   const {
     user: { avatarURL, name },
   } = useAuth();
-  const {width} = useResize();
+  const { width } = useResize();
+  const userAvatar = avatarURL
+    ? avatarURL
+    : 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
 
   const [username, setUsername] = useState(name);
   const [file, setFile] = useState(null);
   const [avatar, setAvatar] = useState(null);
-  
+
   const dispatch = useDispatch();
 
   const handleInputChange = (event) => {
     setUsername(event.target.value);
   };
-
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -61,24 +63,21 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
     handleClose();
   };
 
-
   useEffect(() => {
     if (avatar) {
-      setAvatar(avatarURL);
+      setAvatar(userAvatar);
     }
   }, [avatar]);
-
-    return (
-<Modal isOpen={isOpen} handleClose={handleClose} gradient={true}>
-      <Formik initialValues={{ name: username }} onSubmit={handleSubmit} >
+  return (
+    <Modal isOpen={isOpen} handleClose={handleClose} gradient={true}>
+      <Formik initialValues={{ name: username }} onSubmit={handleSubmit}>
         <Form>
           <FileInputWrapper>
-            <Image src={'https://cdn-icons-png.flaticon.com/512/149/149071.png'} />
+            <Image src={userAvatar} />
             <SelectAvatarInput
               type="file"
               name="file"
-              value={username}
-               onChange={handleFileChange}
+              onChange={handleFileChange}
             />
             <AddIconWrapper>
               <HiPlusSm size={24} />
@@ -89,7 +88,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
               type="text"
               name="name"
               value={username}
-               onChange={handleInputChange}
+              onChange={handleInputChange}
             />
             <EditIconWrapper>
               <FiEdit2 size={24} />
@@ -99,5 +98,5 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
         </Form>
       </Formik>
     </Modal>
-    )
-}
+  );
+};

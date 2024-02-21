@@ -6,7 +6,7 @@ import {
   selectUser,
   selectUserBirthDate,
   selectIsRefreshing,
-} from '../auth/auth-selectors';
+} from '../auth/authSelectors';
 
 export const useAuth = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

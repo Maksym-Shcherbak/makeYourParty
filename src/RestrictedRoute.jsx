@@ -10,11 +10,7 @@ import { useRef } from 'react';
 
 export const RestrictedRoute = ({ component: Component }) => {
   const location = useLocation();
-
-  console.log(location);
-
   const authenticated = useSelector(selectIsLoggedIn);
   const backLinkHref = useRef(location.state?.from ?? '/home');
-  console.log(backLinkHref);
   return authenticated ? <Navigate to={backLinkHref.current} /> : Component;
 };
