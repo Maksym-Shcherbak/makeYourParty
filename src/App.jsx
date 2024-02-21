@@ -16,7 +16,9 @@ import MyDrinksPage from './pages/MyDrinksPage/MyDrinksPage';
 import DrinkPage from './pages/DrinkPage/DrinkPage';
 import { useEffect, useRef } from 'react';
 import { currentUser } from './redux/auth/authOperations';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsRefreshing } from './redux/auth/authSelectors';
+import { Loader } from './components/Loader/Loader';
 
 // const WelcomePage = lazy(() => import('pages/WelcomePage'));
 // const HomePage = lazy(() => import('pages/HomePage'));
@@ -35,7 +37,11 @@ function App() {
     dispatch(currentUser());
   }, [dispatch]);
 
-  return (
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <AppWrapper>
       <Routes>
         <Route
