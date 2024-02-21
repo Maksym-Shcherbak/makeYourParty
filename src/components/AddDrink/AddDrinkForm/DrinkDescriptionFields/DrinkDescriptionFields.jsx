@@ -18,7 +18,6 @@ import {
   LabelRadio,
   OptionSelect,
   RadioWrapper,
-  SectionTitleAddDrink,
   SelectCategories,
   SelectWrapper,
 } from '../AddDrinkForm.styled';

@@ -34,6 +34,7 @@ export const IconBtn = styled.a`
   color: rgba(243, 243, 243, 0.8);
   border: 1px solid rgba(243, 243, 243, 0.2);
   border-radius: 10px;
+  transition: 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
 
   @media screen and (min-width: 768px) {
     width: 38px;

@@ -4,8 +4,6 @@ import FollowUs from '../../components/AddDrink/FollowUs/FollowUs';
 import PopularDrinks from '../../components/AddDrink/PopularDrinks/PopularDrinks';
 import { Container } from '../../styled/Container';
 import { SideBar, Wrapper } from './AddDrinkPage.styled';
-// import SectionTitle from '../../components/Drink/titleDrink/titleDrinks';
-// import { Container } from '../../styled/Container';
 
 const AddDrinkPage = () => {
   return (

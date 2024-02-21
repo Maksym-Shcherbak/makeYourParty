@@ -18,6 +18,7 @@ const DrinkIngredientsFields = () => {
   }, [dispatch]);
 
   const ingredients = useSelector((state) => state.drinks.ingredients);
+  console.log(ingredients);
 
   const increaseCounter = () => {
     setCounter((prevCount) => prevCount + 1);
@@ -29,6 +30,24 @@ const DrinkIngredientsFields = () => {
       setCounter(0);
     }
   };
+
+  // const createMarkup = () => {
+  // const data = `
+  //   <li>
+  //     <select>
+  //       {ingredients.map(({ ingredientId, title }) => {
+  //         return (
+  //           <option key={title} value={title} id={ingredientId}>
+  //             {title}
+  //           </option>
+  //         );
+  //       })}
+  //     </select>
+  //   </li>
+  // `;
+  // return data;
+  // };
+
   return (
     <>
       <IngredientsWrapper>
@@ -44,12 +63,24 @@ const DrinkIngredientsFields = () => {
         </ButtonWrapper>
       </IngredientsWrapper>
       <div>
-        <ul>
-          <li></li>
-        </ul>
+        {/* <ul dangerouslySetInnerHTML={{ __html: data }}></ul> */}
+        {/* <ul>
+          <li>
+            <select>
+              {ingredients.map(({ ingredientId, title }) => {
+                return (
+                  <option key={title} value={title} id={ingredientId}>
+                    {title}
+                  </option>
+                );
+              })}
+            </select>
+          </li>
+        </ul> */}
       </div>
     </>
   );
 };
 
+// ingredientId, title
 export default DrinkIngredientsFields;

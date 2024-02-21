@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   RecipeTexterea,
   SectionTitleAdd,
@@ -5,6 +6,11 @@ import {
 } from '../AddDrinkForm.styled';
 
 const RecipePreparation = () => {
+  const [instructions, SetInstructions] = useState('');
+
+  const onHandleTexteria = (e) => {
+    SetInstructions(e.target.value);
+  };
   return (
     <>
       <TextereaWrapper>
@@ -13,6 +19,8 @@ const RecipePreparation = () => {
           name="instructions"
           id="instructions"
           placeholder="Enter the recipe"
+          value={instructions}
+          onChange={onHandleTexteria}
         ></RecipeTexterea>
       </TextereaWrapper>
     </>
