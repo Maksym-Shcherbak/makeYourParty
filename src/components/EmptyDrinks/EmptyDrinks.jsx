@@ -2,13 +2,11 @@ import {
   EmptyFavoriteDrinksContainer,
   EmptyFavoriteDrinks,
   EmptyDescription,
-} from './FavoriteDrinks.styled';
-import PageTitle from '../PageTitle/PageTitle';
+} from './EmptyDrinks.styled';
 
-export const FavoriteDrinks = () => {
+export const EmptyDrinks = () => {
   return (
     <>
-      <PageTitle title="Favorites" />
       <EmptyFavoriteDrinksContainer>
         <EmptyFavoriteDrinks />
         <EmptyDescription>
