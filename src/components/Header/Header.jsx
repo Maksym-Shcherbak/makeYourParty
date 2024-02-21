@@ -9,6 +9,7 @@ import { MobileMenu} from './MobileMenu/MobileMenu';
 import { UserLogo } from './UserMenu/UserLogo/UserLogo';
 import { UserLogoPopup } from './UserLogoPopup/UserLogoPopup';
 import { Switcher } from './Switcher/Switcher';
+import { Container } from '../../styled/Container';
 // import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,6 +29,7 @@ export const Header = () => {
   };
   return (
     <>
+     <Container>
       <HeaderContainer isopen={isMenuOpen ? 'true' : 'false'}>
         <Logo />
         <Navigation />
@@ -56,6 +58,7 @@ export const Header = () => {
         isMenuOpen={isMenuOpen}
         handleToggleMenu={handleToggleMenu}
       />
+      </Container>
     </>
   );
 };
