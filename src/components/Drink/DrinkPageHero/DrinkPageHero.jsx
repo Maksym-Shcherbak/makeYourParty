@@ -8,7 +8,8 @@ import {
 } from './DrinkPageHero.styled';
 
 const DrinkPageHero = ({ data } = data) => {
-  const { drink, alcoholic, glass, description, drinkThumb, _id } = data;
+
+  const { drink, alcoholic, glass, description, drinkThumb, _id, favorite } = data;
 
   return (
     <DrinkWrapper>
@@ -17,7 +18,7 @@ const DrinkPageHero = ({ data } = data) => {
           {glass} / {alcoholic}
         </SupTitle>
         <Description>{description}</Description>
-        <Button id={_id} />
+        <Button id={_id} favoriteDrink={favorite} />
       </DrinkText>
       <ImagesDrink src={drinkThumb} alt={drink} title={drink} />
     </DrinkWrapper>
