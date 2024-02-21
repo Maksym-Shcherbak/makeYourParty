@@ -1534,23 +1534,18 @@ attempted value: ${s}
     padding-bottom: 86px;
   }
 `,QN={colors:{primaryWhite:"#F3F3F3",bgDark:"#0A0A11",secondDark:"#161f37",greyBlue:"#434d67",blue:"#434d67"}},JN=M.h1`
-  margin-top: 82px;
   font-weight: 600;
   font-size: 32px;
   line-height: 1.1875;
   color: ${QN.colors.primaryWhite};
   @media screen and (min-width: 768px) {
-    margin-top: 126px;
     font-size: 56px;
     line-height: 1.07143;
   }
   @media screen and (min-width: 1440px) {
-    margin-top: 200px;
     font-size: 64px;
     line-height: 1.0625;
   }
-
-
 `,I2=({title:e})=>w.jsx("div",{children:w.jsx(JN,{children:e})}),ZN=()=>w.jsxs(w.Fragment,{children:[w.jsx(I2,{title:"Favorites"}),w.jsxs(YN,{children:[w.jsx(XN,{}),w.jsx(qN,{children:"You haven't added any favorite cocktails yet"})]})]}),eI=()=>{const e=tr();$.useEffect(()=>{e(kl())},[e]);const t=Jt(i=>i.drinks.favorite),n=i=>{e(ws({drinkId:i}))},r=Array.isArray(t)?t:t.data;return w.jsx(w.Fragment,{children:w.jsx(Tc,{children:w.jsx(_c,{children:r.length===0?w.jsx(ZN,{}):w.jsx(VN,{drinks:r,text:"See more",onDelete:n})})})})},tI=()=>w.jsx(Tc,{children:w.jsx(_c,{children:w.jsx(I2,{title:"My drinks"})})}),nI=()=>w.jsx(tI,{}),rI=M.h2`
   font-weight: 600;
   font-size: 32px;
