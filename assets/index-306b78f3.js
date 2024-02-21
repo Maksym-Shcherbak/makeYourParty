@@ -226,7 +226,7 @@ Error generating stack: `+o.message+`
 	 display: none;
 	}
 	
-`,dw=({isOpen:e})=>{const t=Zn();return w.jsx(S_,{className:e?"active":"",children:w.jsxs(k_,{className:e?"active":"",children:[w.jsx(Bo,{children:w.jsx(kn,{className:t.pathname==="/home"?"active":"",to:"/drinks",children:"Home"})}),w.jsx(Bo,{children:w.jsx(kn,{className:t.pathname==="/drinks"?"active":"",to:"/drinks",children:"Drinks"})}),w.jsx(Bo,{children:w.jsx(kn,{className:t.pathname==="/add"?"active":"",to:"/add",children:"Add recipes"})}),w.jsx(Bo,{children:w.jsx(kn,{className:t.pathname==="/my"?"active":"",to:"/my",children:"My recipes"})}),w.jsx(Bo,{children:w.jsx(kn,{className:t.pathname==="/favorite"?"active":"",to:"/favorites",children:"Favorites"})})]})})};dw.displayName="Navigation";const E_="/makeYourParty/assets/icons-6cee70f1.svg",C_=M.div`
+`,dw=({isOpen:e})=>{const t=Zn();return w.jsx(S_,{className:e?"active":"",children:w.jsxs(k_,{className:e?"active":"",children:[w.jsx(Bo,{children:w.jsx(kn,{className:t.pathname==="/home"?"active":"",to:"/home",children:"Home"})}),w.jsx(Bo,{children:w.jsx(kn,{className:t.pathname==="/drinks"?"active":"",to:"/drinks",children:"Drinks"})}),w.jsx(Bo,{children:w.jsx(kn,{className:t.pathname==="/add"?"active":"",to:"/add",children:"Add recipes"})}),w.jsx(Bo,{children:w.jsx(kn,{className:t.pathname==="/my"?"active":"",to:"/my",children:"My recipes"})}),w.jsx(Bo,{children:w.jsx(kn,{className:t.pathname==="/favorite"?"active":"",to:"/favorites",children:"Favorites"})})]})})};dw.displayName="Navigation";const E_="/makeYourParty/assets/icons-6cee70f1.svg",C_=M.div`
 display: flex;
   gap: 8px;
    margin-right: auto;
