@@ -1,16 +1,16 @@
-import { NavLink, useLocation } from "react-router-dom";
-import { NavContainer, List, ListItem} from "./Navigation.styled";
+import { NavLink, useLocation } from 'react-router-dom';
+import { NavContainer, List, ListItem } from './Navigation.styled';
 import React from 'react';
 export const Navigation = ({ isOpen }) => {
   const location = useLocation();
 
   return (
-    <NavContainer className={isOpen ? "active" : ""}>
-      <List className={isOpen ? "active" : ""}>
+    <NavContainer className={isOpen ? 'active' : ''}>
+      <List className={isOpen ? 'active' : ''}>
         <ListItem>
           <NavLink
-            className={location.pathname === "/home" ? "active" : ""}
-            to="/drinks"
+            className={location.pathname === '/home' ? 'active' : ''}
+            to="/home"
           >
             Home
           </NavLink>
@@ -52,5 +52,4 @@ export const Navigation = ({ isOpen }) => {
   );
 };
 
-Navigation.displayName = "Navigation";
-
+Navigation.displayName = 'Navigation';
