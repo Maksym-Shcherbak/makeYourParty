@@ -528,7 +528,7 @@ color: #F3F3F3;
       rgba(64, 112, 205, 0.5) 0%,
       rgba(255, 255, 255, 0) 65%
     ),
-    ${({theme:e})=>e.modalBg}; */
+    ${({theme:e})=>e.modalBg}; 
   background: ${({gradient:e,theme:t})=>e==="true"?`radial-gradient(
       circle,
       rgba(188, 230, 210, 0.4) -20%,
@@ -539,7 +539,7 @@ color: #F3F3F3;
       rgba(64, 112, 205, 0.5) 0%,
       rgba(255, 255, 255, 0) 65%
     ),
-    ${t.modalBg}`:`${t.modalBg}`};
+    ${t.modalBg}`:`${t.modalBg}`};*/
   background-size:
     350px 350px,
     400px 400px;
