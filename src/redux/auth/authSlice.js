@@ -15,11 +15,17 @@ const initialState = {
   isLoading: false,
   error: null,
   isRefreshing: false,
+  theme: 'dark',
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    toggleTheme(state) {
+      state.theme = state.theme === 'light' ? 'dark' : 'light';
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(signUp.pending, (state) => {
