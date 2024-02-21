@@ -8,6 +8,15 @@ import {
   updateUser,
 } from './authOperations';
 
+const hendlePending = (state) => {
+  state.isLoading = true;
+};
+
+const hendleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
+
 const initialState = {
   user: { name: null, email: null, birthday: null, avatarURL: null },
   token: null,
@@ -28,9 +37,7 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(signUp.pending, (state) => {
-        state.isLoading = true;
-      })
+      .addCase(signUp.pending, hendlePending)
       .addCase(signUp.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
@@ -38,13 +45,8 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(signUp.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-      .addCase(signIn.pending, (state) => {
-        state.isLoading = true;
-      })
+      .addCase(signUp.rejected, hendleRejected)
+      .addCase(signIn.pending, hendlePending)
       .addCase(signIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
@@ -52,13 +54,8 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(signIn.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-      .addCase(signOut.pending, (state) => {
-        state.isLoading = true;
-      })
+      .addCase(signIn.rejected, hendleRejected)
+      .addCase(signOut.pending, hendlePending)
       .addCase(signOut.fulfilled, (state) => {
         state.user = { name: null, email: null, birthday: null, avatar: null };
         state.token = null;
@@ -66,10 +63,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(signOut.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
+      .addCase(signOut.rejected, hendleRejected)
       .addCase(currentUser.pending, (state) => {
         state.isLoading = true;
         state.isRefreshing = true;
@@ -86,33 +80,21 @@ const authSlice = createSlice({
         state.error = action.payload;
         state.isRefreshing = false;
       })
-      .addCase(updateUser.pending, (state) => {
-        state.isLoading = true;
-      })
+      .addCase(updateUser.pending, hendlePending)
       .addCase(updateUser.fulfilled, (state, action) => {
         state.user = action.payload;
-        // state.user.name = action.payload.name;
-        // state.user.avatarURL = action.payload.avatarURL;
         state.isLoggedIn = true;
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(updateUser.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-      .addCase(subscribeUser.pending, (state) => {
-        state.isLoading = true;
-      })
+      .addCase(updateUser.rejected, hendleRejected)
+      .addCase(subscribeUser.pending, hendlePending)
       .addCase(subscribeUser.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(subscribeUser.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      }),
+      .addCase(subscribeUser.rejected, hendleRejected),
 });
 
 export const authReducer = authSlice.reducer;
