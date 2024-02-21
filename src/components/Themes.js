@@ -1,3 +1,5 @@
+
+
 export const lightTheme = {
   mainText: '#0A0A11',
   headerText: '#161F37',

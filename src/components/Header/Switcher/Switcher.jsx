@@ -22,10 +22,7 @@
 
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
-
 import { DarkTheme, LightTheme, ToggleLabel } from './Switcher.styled';
-
 
 const Container = styled.div`
   /* Общие стили для контейнера */
@@ -56,7 +53,7 @@ export const Switcher = () => {
   return (
     <>
       {theme === 'light' ? <LightTheme /> : <DarkTheme />}
-       <Wrapper id={theme}> 
+      <Wrapper id={theme}> 
         <SwitchContainer >
           <p className="change-text">{theme}</p>
           <SwitchInput onChange={switchTheme} type="checkbox" id="toggle-btn" />
@@ -67,7 +64,7 @@ export const Switcher = () => {
           <Shape id="sun" className={`shape ${theme === 'dark' ? 'hidden' : ''}`}></Shape>
           <Shape id="moon" className={`shape ${theme === 'light' ? 'hidden' : ''}`}></Shape>
         </Container>
-       </Wrapper> *
+      </Wrapper> 
     </>
   );
 };

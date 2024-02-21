@@ -9,6 +9,7 @@ import { MobileMenu} from './MobileMenu/MobileMenu';
 import { UserLogo } from './UserMenu/UserLogo/UserLogo';
 import { UserLogoPopup } from './UserLogoPopup/UserLogoPopup';
 import { Switcher } from './Switcher/Switcher';
+// import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserPopupOpen, setIsUserPopupOpen] = useState(false);
@@ -31,17 +32,20 @@ export const Header = () => {
         <Logo />
         <Navigation />
         {/* <ControlledSwitches /> */}
-        <StyledLink to="/second">
-          <IconWrapper>
-            
-          </IconWrapper>
+       
+        <StyledLink >
+          {/* <IconWrapper> */}
+       
+          {/* </IconWrapper> */}
         </StyledLink>
         
+       
         <UserLogo 
           handleOpenPopup={handleOpenUserPopup}
           handleClosePopup={handleCloseUserPopup}
           isPopupOpen={isUserPopupOpen}/>
-        <BurgerMenu handleToggleMenu={handleToggleMenu} isMenuOpen={isMenuOpen} /> {/* Проверьте передачу пропсов */}
+         
+        <BurgerMenu handleToggleMenu={handleToggleMenu} isMenuOpen={isMenuOpen} /> 
       </HeaderContainer>
       
       <UserLogoPopup

@@ -7,19 +7,14 @@
 //   const theme = useSelector(selectTheme);
   // const dispatch = useDispatch();
 
-//   return (
-//     <Switch>
-//       <SwitchInput
-//         type="checkbox"
-//         role="switch"
-//         checked={theme === 'light'}
-//         onChange={() => dispatch(toggleTheme())}
-//       />
-//     </Switch>
-//   );
-// }
+  // return (
+  //   <Switch>
+  //     <SwitchInput
+  //       type="checkbox"
+  //       role="switch"
+  //       checked={theme === 'dark'}
+  //       onChange={() => dispatch(toggleTheme())}
+  //     />
+  //   </Switch>
+  // );
 
-
-
-
-// export default Switch;
