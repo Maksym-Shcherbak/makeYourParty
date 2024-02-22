@@ -1,5 +1,4 @@
-// import styled from 'styled-components';
-// Общие стили для обеих тем
+
 import styled from 'styled-components';
 
 export const Body = styled.div`

@@ -8,8 +8,8 @@ export const Backdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  // background-color: rgba(0, 0, 0, 0.5);
-   background-color: #D2D2D2 ;
+  background-color: rgba(0, 0, 0, 0.5);
+   
   opacity: ${({ ispopupopen }) => (ispopupopen === 'true' ? 1 : 0)};
   visibility: ${({ ispopupopen }) =>
     ispopupopen === 'true' ? 'visible' : 'hidden'};
