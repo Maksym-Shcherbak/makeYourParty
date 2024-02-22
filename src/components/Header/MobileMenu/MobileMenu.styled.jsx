@@ -1,6 +1,6 @@
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import styled from 'styled-components';
-
+import { themes } from '../../Themes';
 const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)';
 
 export const MobileMenuContainer = styled.div`
@@ -90,7 +90,7 @@ export const MobileMenuContainer = styled.div`
 `;
 
 export const NavLink = styled(RouterNavLink)`
-color: #F3F3F3;
+color: ${({ theme }) => theme.mainText};
   padding: 8px 16px;
   color: ${({ theme }) => theme.headerText};
   border-radius: 40px;

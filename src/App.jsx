@@ -29,7 +29,7 @@ import { useDispatch } from 'react-redux';
 // const test = import.meta.env.VITE_API_TEST;
 
 //------------
-import { ThemeProvider } from 'styled-components';
+
 // import { useSelector, useDispatch } from 'react-redux';
 // import { darkTheme, lightTheme } from './components/Themes';
 //--------------------
