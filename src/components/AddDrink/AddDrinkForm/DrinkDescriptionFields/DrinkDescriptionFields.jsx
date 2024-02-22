@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   getCategories,
   getGlasses,
-  getIngredients,
 } from '../../../../redux/drinks/drinksOperations';
 import {
   AddDrinkWrapper,
+  CustomIcon,
   DrinkImg,
   IconWrapper,
   InputDrink,
@@ -23,16 +23,25 @@ import {
 } from '../AddDrinkForm.styled';
 
 import { GoPlus } from 'react-icons/go';
-import { IoMdRadioButtonOff } from 'react-icons/io';
+import { IoMdRadioButtonOff, IoMdRadioButtonOn } from 'react-icons/io';
 
 const DrinkDescriptionFields = () => {
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
 
+  const [drink, setDrink] = useState('');
+  const [shortDescription, setShortDescription] = useState('');
+
+  const [category, setCategory] = useState('');
+  const [glass, setGlass] = useState('');
+
+  const [alcoholic, setAlcoholic] = useState('');
+
+  // console.log(alcoholic);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCategories());
-    dispatch(getIngredients());
     dispatch(getGlasses());
   }, [dispatch]);
 
@@ -44,6 +53,60 @@ const DrinkDescriptionFields = () => {
     setImage(file);
     setImageURL(URL.createObjectURL(file));
   };
+
+  const onChangeInput = (e) => {
+    const value = e.target.value;
+    const nameInput = e.target.name;
+
+    switch (nameInput) {
+      case 'drink':
+        setDrink(value);
+        return;
+
+      case 'shortDescription':
+        setShortDescription(value);
+        return;
+
+      default:
+        return;
+    }
+  };
+
+  const onChangeSelect = (e) => {
+    const value = e.target.value;
+    const nameSelect = e.target.name;
+
+    switch (nameSelect) {
+      case 'category':
+        setCategory(value);
+        return;
+
+      case 'glass':
+        setGlass(value);
+        return;
+
+      default:
+        return;
+    }
+  };
+
+  const onChangeRadio = (e) => {
+    const nameInput = e.target.name;
+
+    switch (nameInput) {
+      case 'alcoholic':
+        setAlcoholic(nameInput);
+        return;
+
+      case 'non-alcoholic':
+        setAlcoholic(nameInput);
+        return;
+
+      default:
+        return;
+    }
+  };
+
   return (
     <AddDrinkWrapper>
       <InputWrapper>
@@ -59,12 +122,7 @@ const DrinkDescriptionFields = () => {
             />
             <InputLabel htmlFor="uploadImage">
               <IconWrapper>
-                <GoPlus
-                  style={{
-                    color: '#161F37',
-                    fontSize: 28,
-                  }}
-                />
+                <GoPlus />
               </IconWrapper>
               <span>Add image</span>
             </InputLabel>
@@ -72,14 +130,14 @@ const DrinkDescriptionFields = () => {
         )}
       </InputWrapper>
 
-      {/* data drink */}
-
       <InputList>
         <InputDrink
           type="text"
           name="drink"
           id="drink"
           placeholder="Enter item title"
+          value={drink}
+          onChange={onChangeInput}
         />
 
         <InputDrink
@@ -87,6 +145,8 @@ const DrinkDescriptionFields = () => {
           name="shortDescription"
           id="shortDescription"
           placeholder="Enter about recipe"
+          value={shortDescription}
+          onChange={onChangeInput}
         />
         <SelectWrapper>
           <InputDrink
@@ -94,8 +154,13 @@ const DrinkDescriptionFields = () => {
             name="category"
             id="category"
             placeholder="Category"
+            value={category}
           />
-          <SelectCategories name="category" id="categoryDrink">
+          <SelectCategories
+            name="category"
+            id="categoryDrink"
+            onChange={onChangeSelect}
+          >
             {categories.map((item) => {
               return (
                 <OptionSelect value={item} key={item}>
@@ -106,8 +171,19 @@ const DrinkDescriptionFields = () => {
           </SelectCategories>
         </SelectWrapper>
         <SelectWrapper>
-          <InputDrink type="text" name="glass" id="glass" placeholder="Glass" />
-          <SelectCategories name="glass" id="glassDrink" htmlFor="glass">
+          <InputDrink
+            type="text"
+            name="glass"
+            id="glass"
+            placeholder="Glass"
+            value={glass}
+          />
+          <SelectCategories
+            name="glass"
+            id="glassDrink"
+            htmlFor="glass"
+            onChange={onChangeSelect}
+          >
             {glasses.map((item) => {
               return (
                 <OptionSelect value={item} key={item}>
@@ -120,27 +196,35 @@ const DrinkDescriptionFields = () => {
 
         <RadioWrapper>
           <LabelRadio htmlFor="alcoholic">
-            <span>
-              <IoMdRadioButtonOff
-                style={{
-                  color: 'rgba(243, 243, 243, 0.5)',
-                  fontSize: 20,
-                }}
-              />
-            </span>
-            <InputRadio type="radio" name="alcoholic" id="alcoholic" />
+            <CustomIcon>
+              {alcoholic == 'alcoholic' ? (
+                <IoMdRadioButtonOn />
+              ) : (
+                <IoMdRadioButtonOff />
+              )}
+            </CustomIcon>
+            <InputRadio
+              type="radio"
+              name="alcoholic"
+              id="alcoholic"
+              onChange={onChangeRadio}
+            />
             Alcoholic
           </LabelRadio>
           <LabelRadio htmlFor="non-alcoholic">
-            <span>
-              <IoMdRadioButtonOff
-                style={{
-                  color: 'rgba(243, 243, 243, 0.5)',
-                  fontSize: 20,
-                }}
-              />
-            </span>
-            <InputRadio type="radio" name="non-alcoholic" id="non-alcoholic" />
+            <CustomIcon>
+              {alcoholic == 'non-alcoholic' ? (
+                <IoMdRadioButtonOn />
+              ) : (
+                <IoMdRadioButtonOff />
+              )}
+            </CustomIcon>
+            <InputRadio
+              type="radio"
+              name="non-alcoholic"
+              id="non-alcoholic"
+              onChange={onChangeRadio}
+            />
             Non-alcoholic
           </LabelRadio>
         </RadioWrapper>

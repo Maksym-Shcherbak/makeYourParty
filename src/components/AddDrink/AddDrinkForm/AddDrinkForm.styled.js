@@ -85,6 +85,15 @@ export const IconWrapper = styled.span`
   justify-content: center;
   align-items: center;
   background: var(--main-color);
+  color: #161f37;
+  font-size: 28px;
+
+  transition: 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  &:hover {
+    color: #f3f3f3;
+    background: #4070cd;
+  }
 `;
 
 export const InputLabel = styled.label`
@@ -184,6 +193,21 @@ export const RadioWrapper = styled.div`
   // }
 `;
 
+export const CustomIcon = styled.span`
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgba(243, 243, 243, 0.5);
+
+  // &:hover {
+  //   color: #f3f3f3;
+  // }
+`;
+
 export const InputRadio = styled.input`
   opacity: 0;
   visibility: hidden;
@@ -198,6 +222,11 @@ export const LabelRadio = styled.label`
   display: flex;
   column-gap: 4px;
   align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    color: #f3f3f3;
+  }
 `;
 
 // ingredients

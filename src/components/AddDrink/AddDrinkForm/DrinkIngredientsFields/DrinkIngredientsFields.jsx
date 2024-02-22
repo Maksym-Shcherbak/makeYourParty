@@ -18,7 +18,6 @@ const DrinkIngredientsFields = () => {
   }, [dispatch]);
 
   const ingredients = useSelector((state) => state.drinks.ingredients);
-  console.log(ingredients);
 
   const increaseCounter = () => {
     setCounter((prevCount) => prevCount + 1);
