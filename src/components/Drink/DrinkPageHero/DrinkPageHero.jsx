@@ -1,14 +1,15 @@
+import Button from '../Button/Button';
 import {
   DrinkWrapper,
   DrinkText,
-  Button,
   Description,
   ImagesDrink,
   SupTitle,
 } from './DrinkPageHero.styled';
 
 const DrinkPageHero = ({ data } = data) => {
-  const { drink, alcoholic, glass, description, drinkThumb } = data;
+
+  const { drink, alcoholic, glass, description, drinkThumb, _id, favorite } = data;
 
   return (
     <DrinkWrapper>
@@ -17,7 +18,7 @@ const DrinkPageHero = ({ data } = data) => {
           {glass} / {alcoholic}
         </SupTitle>
         <Description>{description}</Description>
-        <Button>Add to favorite drinks</Button>
+        <Button id={_id} favoriteDrink={favorite} />
       </DrinkText>
       <ImagesDrink src={drinkThumb} alt={drink} title={drink} />
     </DrinkWrapper>

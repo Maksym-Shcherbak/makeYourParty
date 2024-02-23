@@ -133,7 +133,9 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
     user: { avatarURL, name },
   } = useAuth();
   const { width } = useResize();
-
+  const userAvatar = avatarURL
+    ? avatarURL
+    : 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
   const [username, setUsername] = useState(name);
   const [file, setFile] = useState(null);
   const [avatar, setAvatar] = useState(null);
@@ -202,6 +204,38 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
             <SubmitBtn type="submit">Save changes</SubmitBtn>
           </Form>
         )}
+    if (avatar) {
+      setAvatar(userAvatar);
+    }
+  }, [avatar]);
+  return (
+    <Modal isOpen={isOpen} handleClose={handleClose} gradient={true}>
+      <Formik initialValues={{ name: username }} onSubmit={handleSubmit}>
+        <Form>
+          <FileInputWrapper>
+            <Image src={userAvatar} />
+            <SelectAvatarInput
+              type="file"
+              name="file"
+              onChange={handleFileChange}
+            />
+            <AddIconWrapper>
+              <HiPlusSm size={24} />
+            </AddIconWrapper>
+          </FileInputWrapper>
+          <NameInputWrapper>
+            <ChangeNameInput
+              type="text"
+              name="name"
+              value={username}
+              onChange={handleInputChange}
+            />
+            <EditIconWrapper>
+              <FiEdit2 size={24} />
+            </EditIconWrapper>
+          </NameInputWrapper>
+          <SubmitBtn type="submit">Save changes</SubmitBtn>
+        </Form>
       </Formik>
     </Modal>
   );

@@ -135,7 +135,8 @@ const drinksSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(removeDrinkOwn.fulfilled, (state, action) => {
-        state.own = action.payload;
+        const removedId = action.meta.arg.drinkId;
+        state.own = state.own.filter((drink) => drink._id !== removedId);
         state.isLoading = false;
         state.error = null;
       })
@@ -171,13 +172,15 @@ const drinksSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(removeFavoriteDrink.fulfilled, (state, action) => {
-        const index = state.favorite.findIndex(
-          (favorite) => favorite.id === action.payload.id
+        const removedId = action.payload.drinkId;
+        const updatedFavorite = state.favorite.data.filter(
+          (favorite) => favorite._id !== removedId
         );
-        state.contacts.splice(index, 1);
+        state.favorite.data = updatedFavorite;
         state.isLoading = false;
         state.error = null;
       })
+
       .addCase(removeFavoriteDrink.rejected, (state, action) => {
         state.error = action.payload;
         state.isLoading = false;

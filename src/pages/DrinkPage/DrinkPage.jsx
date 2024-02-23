@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-
-import getDetails from '../../data/recipes.json';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 import SectionTitle from '../../components/Drink/titleDrink/titleDrinks';
 import DrinkPageHero from '../../components/Drink/DrinkPageHero/DrinkPageHero';
@@ -10,25 +10,39 @@ import RecipePreparation from '../../components/Drink/RecipePreparation/RecipePr
 import { Section } from '../../styled/Section';
 import { Container } from '../../styled/Container';
 
-const getById = (id) => {
-  for (const item of getDetails) {
-    if (item._id.$oid === id) {
-      return item;
-    }
-  }
-};
+import {
+  selectDrinkById,
+  selectError,
+  selectIsLoading,
+} from '../../redux/drinks/drinksSelectors';
+
+import { getById } from '../../redux/drinks/drinksOperations';
+import { Loader } from '../../components/Loader/Loader';
 
 const DrinkPage = () => {
+  const dispatch = useDispatch();
   const { drinkId } = useParams();
-  const drink = getById(drinkId);
+  const drink = useSelector(selectDrinkById);
+  const isLoading = useSelector(selectIsLoading);
+  const isError = useSelector(selectError);
+
+  useEffect(() => {
+    dispatch(getById(drinkId));
+  }, [dispatch, drinkId]);
 
   return (
     <Section>
       <Container>
-        <SectionTitle title={drink.drink} />
-        <DrinkPageHero data={drink} />
-        <DrinkIngredientsList data={drink.ingredients} />
-        <RecipePreparation description={drink.description} />
+        {isLoading && <Loader />}
+        {isError && <h1>{isError}</h1>}
+        {drink && (
+          <>
+            <SectionTitle title={drink.recipe.drink} />
+            <DrinkPageHero data={drink.recipe} />
+            <DrinkIngredientsList data={drink.recipe.ingredients} />
+            <RecipePreparation description={drink.recipe.description} />
+          </>
+        )}
       </Container>
     </Section>
   );

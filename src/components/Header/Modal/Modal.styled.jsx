@@ -21,7 +21,7 @@ export const StyledBox = styled(Box)`
       rgba(64, 112, 205, 0.5) 0%,
       rgba(255, 255, 255, 0) 65%
     ),
-    ${({ theme }) => theme.modalBg}; */
+    ${({ theme }) => theme.modalBg}; 
   background: ${({ gradient, theme }) =>
     gradient === 'true'
       ? `radial-gradient(
@@ -35,7 +35,7 @@ export const StyledBox = styled(Box)`
       rgba(255, 255, 255, 0) 65%
     ),
     ${theme.modalBg}`
-      : `${theme.modalBg}`};
+      : `${theme.modalBg}`};*/
   background-size:
     350px 350px,
     400px 400px;
@@ -83,4 +83,3 @@ export const Backdrop = styled.div`
     height: 100%;
    
 `;
-

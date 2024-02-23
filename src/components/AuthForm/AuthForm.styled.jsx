@@ -40,23 +40,6 @@ export const Input = styled(Field)`
       border ${transition},
       background-color ${transition};
   }
-  /* &::placeholder {
-    color: rgba(243, 243, 243, 0.5);
-  } */
-  /* &::selection {
-    color: rgba(243, 243, 243, 0.5);
-  } */
-
-  /* ${({ error }) =>
-    error === 'true' &&
-    styled`
-      border: 1px solid red;
-    `}
-  ${({ success }) =>
-    success === 'true' &&
-    styled`
-      border: 1px solid green;
-    `} */
 
   @media screen and (min-width: 768px) {
     font-size: 17px;
@@ -107,7 +90,7 @@ export const EyePasswordBtn = styled.button`
   right: 24px;
   padding: 0;
 `;
-export const ImputFild = styled.div`
+export const InputFild = styled.div`
   position: relative;
 `;
 export const HidePasswordIconEye = styled(AiOutlineEye)`

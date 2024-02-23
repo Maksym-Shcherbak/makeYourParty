@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3001/api';
+axios.defaults.baseURL = 'https://project-backend-0pzg.onrender.com/api';
 
 export const getCategories = createAsyncThunk(
   'filters/categories',
@@ -79,17 +79,14 @@ export const getSearch = createAsyncThunk(
   }
 );
 
-export const getById = createAsyncThunk(
-  'drinks/id',
-  async ({ id }, thunkAPI) => {
-    try {
-      const { data } = await axios.get(`/drinks/${id}`);
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
+export const getById = createAsyncThunk('drinks/id', async (id, thunkAPI) => {
+  try {
+    const { data } = await axios.get(`/drinks/${id}`);
+    return data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
   }
-);
+});
 
 export const addDrinkOwn = createAsyncThunk(
   'drinks/own/add',
@@ -110,10 +107,10 @@ export const addDrinkOwn = createAsyncThunk(
 
 export const removeDrinkOwn = createAsyncThunk(
   'drinks/own/remove',
-  async ({ id }, thunkAPI) => {
-    console.log(id);
+  async ({ drinkId }, thunkAPI) => {
     try {
-      const { data } = await axios.delete(`/drinks/own/remove/${id}`);
+      const { data } = await axios.delete(`/drinks/own/remove/${drinkId}`);
+      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -126,7 +123,8 @@ export const fetchDrinkOwn = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get('/drinks/own');
-      return data.results || [];
+
+      return data.result || [];
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -148,10 +146,8 @@ export const addFavoriteDrink = createAsyncThunk(
 export const removeFavoriteDrink = createAsyncThunk(
   'drinks/favorite/remove',
   async ({ drinkId }, thunkAPI) => {
-    console.log(drinkId);
     try {
       const { data } = await axios.delete(`/drinks/favorite/remove/${drinkId}`);
-      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

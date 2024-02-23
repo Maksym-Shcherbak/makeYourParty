@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
-import {Modal} from '../Modal/Modal';
+import { Modal } from '../Modal/Modal';
 import { BtnWrapper, CancelBtn, LogoutBtn, Text } from './LogoutModal.styled';
-//  import { signOut } from '../../../redux/auth/auth-operation';
+import { signOut } from '../../../redux/auth/authOperations';
 
 export const LogoutModal = ({ ...props }) => {
   const dispatch = useDispatch();
@@ -15,6 +15,4 @@ export const LogoutModal = ({ ...props }) => {
       </BtnWrapper>
     </Modal>
   );
-}
-
-
+};

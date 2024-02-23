@@ -3,27 +3,54 @@ import {
   DrinkItemImg,
   DrinkItemTitle,
   DrinkItemDescription,
-  DrinkBtnSee,
-  DrinkBtnDel,
+  StyledLink,
+  DeleteBtn,
   DrinkStatus,
   DrinkWrapperBtn,
 } from './DrinkItemStyle';
-import deleteBtn from '../../images/deleteBtn.svg';
 
-const DrinkItem = ({ url, title, alcoholic, description, text }) => {
+import { DeleteIcon } from '../../components/DeleteIcon/DeleteIcon';
+import { useState } from 'react';
+
+const DrinkItem = ({
+  id,
+  url,
+  title,
+  alcoholic,
+  description,
+  text,
+  handleDelete,
+}) => {
+  const [imgError, setImgError] = useState(false);
+  const defaultImgMobile = '/images/default@1x.webp';
+  const defaultImgDesktop = '/images/default@2x.webp';
+
+  const handleImageError = () => {
+    setImgError(true);
+  };
   return (
     <DrinkItemWrapper>
-      <DrinkItemImg src={url} alt="Photo Coctail" />
+      {imgError ? (
+        <DrinkItemImg
+          srcSet={`${defaultImgMobile} 1x, ${defaultImgDesktop} 2x`}
+          alt={'Default Cocktail'}
+        />
+      ) : (
+        <DrinkItemImg
+          src={url}
+          alt={'Photo Cocktail'}
+          onError={handleImageError}
+        />
+      )}
+
       <DrinkItemTitle>{title}</DrinkItemTitle>
       <DrinkStatus>{alcoholic}</DrinkStatus>
       <DrinkItemDescription>{description}</DrinkItemDescription>
       <DrinkWrapperBtn>
-        <DrinkBtnSee type="button" onClick={null}>
-          {text}
-        </DrinkBtnSee>
-        <DrinkBtnDel type="button" onClick={null}>
-          <img src={deleteBtn} alt="React Logo" />
-        </DrinkBtnDel>
+        <StyledLink to={`/drinks/${id}`}>{text}</StyledLink>
+        <DeleteBtn onClick={handleDelete}>
+          <DeleteIcon />
+        </DeleteBtn>
       </DrinkWrapperBtn>
     </DrinkItemWrapper>
   );
