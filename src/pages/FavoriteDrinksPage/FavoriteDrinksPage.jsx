@@ -7,16 +7,25 @@ import {
   removeFavoriteDrink,
 } from '../../redux/drinks/drinksOperations';
 import DrinkList from '../../components/DrinkList/DrinkList';
-import { FavoriteDrinks } from '../../components/FavoriteDrinks/FavoriteDrinks';
+import { EmptyDrinks } from '../../components/EmptyDrinks/EmptyDrinks';
+import PageTitle from '../../components/PageTitle/PageTitle';
+import {
+  selectError,
+  selectFavoriteDrinks,
+  selectIsLoading,
+} from '../../redux/drinks/drinksSelectors';
+import { Loader } from '../../components/Loader/Loader';
 
 const FavoriteDrinksPage = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+  const isError = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchFavoriteDrink());
   }, [dispatch]);
 
-  const favoriteDrinks = useSelector((state) => state.drinks.favorite);
+  const favoriteDrinks = useSelector(selectFavoriteDrinks);
 
   const handleDelete = (drinkId) => {
     dispatch(removeFavoriteDrink({ drinkId }));
@@ -30,8 +39,10 @@ const FavoriteDrinksPage = () => {
     <>
       <Section>
         <Container>
+          {isLoading && !isError && <Loader />}
+          <PageTitle title="Favorites" />
           {drinksData.length === 0 ? (
-            <FavoriteDrinks />
+            <EmptyDrinks />
           ) : (
             <DrinkList
               drinks={drinksData}

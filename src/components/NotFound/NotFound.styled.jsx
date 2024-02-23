@@ -18,7 +18,7 @@ export const P = styled.p`
     line-height: 0.82;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1044px) {
     font-size: 200px;
     line-height: 1;
   }
