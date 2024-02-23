@@ -47,7 +47,7 @@ import { useSelector } from 'react-redux';
 
 function App() {
 
-  const theme = useSelector(selectTheme);
+  // const theme = useSelector(selectTheme);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -55,7 +55,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+    // <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
     <AppWrapper>
       <Routes>
         <Route path="/welcome" element={<WelcomePage />} />
@@ -74,7 +74,7 @@ function App() {
         {/* </Route> */}
       </Routes>
     </AppWrapper>
-    </ThemeProvider>
+    // </ThemeProvider>
   );
 }
 export default App;
