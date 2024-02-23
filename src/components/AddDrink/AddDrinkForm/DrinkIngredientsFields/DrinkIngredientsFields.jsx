@@ -5,7 +5,7 @@ import {
   CounterValue,
   IngredientsWrapper,
   SectionTitleIngredients,
-} from '../AddDrinkForm.styled';
+} from '../DrinkIngredientsFields/DrinkIngredientsFields.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIngredients } from '../../../../redux/drinks/drinksOperations';
 
