@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import baseColors from '../../BaseColors/baseColors';
 
 export const Title = styled.h1`
+  margin-top: 82px;
+  margin-bottom: 0;
   font-weight: 600;
   font-size: 32px;
   line-height: 1.1875;
