@@ -159,7 +159,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   const handleSubmit = (values, { setSubmitting }) => {
     const formData = new FormData();
     formData.append('avatar', file);
-    formData.append('name', values.name); // Use values from Formik instead of local state
+    formData.append('name', values.name); 
 
     dispatch(updateUser(formData));
     handleClose();

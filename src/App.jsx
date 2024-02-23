@@ -17,6 +17,16 @@ import { useEffect } from 'react';
 import { currentUser } from './redux/auth/authOperations';
 import { useDispatch } from 'react-redux';
 
+//----------------------
+import { darkTheme, lightTheme } from './components/Themes';
+import { ThemeProvider } from 'styled-components';
+
+import { selectTheme } from './redux/auth/auth-selectors'
+import { useSelector } from 'react-redux';
+
+
+
+
 // const WelcomePage = lazy(() => import('pages/WelcomePage'));
 // const HomePage = lazy(() => import('pages/HomePage'));
 // const SignupPage = lazy(() => import('pages/SignupPage'));
@@ -37,12 +47,15 @@ import { useDispatch } from 'react-redux';
 
 function App() {
 
+  const theme = useSelector(selectTheme);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(currentUser());
   }, [dispatch]);
 
   return (
+    <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
     <AppWrapper>
       <Routes>
         <Route path="/welcome" element={<WelcomePage />} />
@@ -61,6 +74,7 @@ function App() {
         {/* </Route> */}
       </Routes>
     </AppWrapper>
+    </ThemeProvider>
   );
 }
 export default App;

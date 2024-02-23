@@ -7,7 +7,7 @@ import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { MobileMenu } from './MobileMenu/MobileMenu';
 import { UserLogo } from './UserMenu/UserLogo/UserLogo';
 import { UserLogoPopup } from './UserLogoPopup/UserLogoPopup';
-// import { Switcher } from './Switcher/Switcher';
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 import { darkTheme, lightTheme } from '../Themes';
 import { ThemeProvider } from 'styled-components';
 
@@ -35,6 +35,7 @@ export const Header = () => {
           <Navigation />
           <StyledLink />
           <UserWrap>
+          <ThemeSwitcher />
             <UserLogo
               handleOpenPopup={handleOpenUserPopup}
               handleClosePopup={handleCloseUserPopup}

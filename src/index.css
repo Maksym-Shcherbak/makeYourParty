@@ -7,7 +7,8 @@
 }
 
 body {
-  background-color: #0A0A11;
+   background-color: #0A0A11; 
+  
    /* background-image: url('./assets/background.png');  */
   background-size: auto 100%;
   background-position: center center;

@@ -1,10 +1,8 @@
  import React from 'react';
 import MuiModal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-//  import { IoClose } from 'react-icons/io5';
+// import { IoClose } from 'react-icons/io5';
 import {  Backdrop, StyledBox, CloseBtn } from './Modal.styled'; 
-
-
 import { IoCloseSharp } from 'react-icons/io5';
 
 export const Modal = ({ children, isOpen, handleClose, gradient }) => {

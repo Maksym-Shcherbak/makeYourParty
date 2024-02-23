@@ -21,50 +21,70 @@
 
 
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import { DarkTheme, LightTheme, ToggleLabel } from './Switcher.styled';
+// import styled from 'styled-components';
+// import { DarkTheme, LightTheme, ToggleLabel } from './Switcher.styled';
 
-const Container = styled.div`
-  /* Общие стили для контейнера */
-`;
+// const Container = styled.div`
+//   /* Общие стили для контейнера */
+// `;
 
-const Shape = styled.div`
-  /* Стили для формы */
-`;
+// const Shape = styled.div`
+//   /* Стили для формы */
+// `;
 
-const SwitchContainer = styled.div`
-  margin: auto;
-  position: relative;
-`;
+// const SwitchContainer = styled.div`
+//   margin: auto;
+//   position: relative;
+// `;
 
-const SwitchInput = styled.input`
-  display: block;
-  background-color: ${({ theme }) => theme.mainAccent};
-  /* Другие стили для входа */
-`;
+// const SwitchInput = styled.input`
+//   display: block;
+//   background-color: ${({ theme }) => theme.mainAccent};
+//   /* Другие стили для входа */
+// `;
 
-export const Switcher = () => {
-  const [theme, setTheme] = useState('light');
+// export const Switcher = () => {
+//   const [theme, setTheme] = useState('light');
 
-  const switchTheme = () => {
-    setTheme((current) => (current === 'light' ? 'dark' : 'light'));
+//   const switchTheme = () => {
+//     setTheme((current) => (current === 'light' ? 'dark' : 'light'));
+//   };
+
+//   return (
+//     <>
+//       {theme === 'light' ? <LightTheme /> : <DarkTheme />}
+//       <Wrapper id={theme}> 
+//         <SwitchContainer >
+//           <p className="change-text">{theme}</p>
+//           <SwitchInput onChange={switchTheme} type="checkbox" id="toggle-btn" />
+//           <ToggleLabel htmlFor="toggle-btn" className="toggle-label"></ToggleLabel>
+//         </SwitchContainer>
+
+//         <Container>
+//           <Shape id="sun" className={`shape ${theme === 'dark' ? 'hidden' : ''}`}></Shape>
+//           <Shape id="moon" className={`shape ${theme === 'light' ? 'hidden' : ''}`}></Shape>
+//         </Container>
+//       </Wrapper> 
+//     </>
+//   );
+// };
+
+
+import React, { useState } from 'react';
+import ThemeCheckbox from './ThemeCheckbox';
+
+const App = () => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleChange = () => {
+    setIsChecked(!isChecked);
   };
 
   return (
-    <>
-      {theme === 'light' ? <LightTheme /> : <DarkTheme />}
-      <Wrapper id={theme}> 
-        <SwitchContainer >
-          <p className="change-text">{theme}</p>
-          <SwitchInput onChange={switchTheme} type="checkbox" id="toggle-btn" />
-          <ToggleLabel htmlFor="toggle-btn" className="toggle-label"></ToggleLabel>
-        </SwitchContainer>
-
-        <Container>
-          <Shape id="sun" className={`shape ${theme === 'dark' ? 'hidden' : ''}`}></Shape>
-          <Shape id="moon" className={`shape ${theme === 'light' ? 'hidden' : ''}`}></Shape>
-        </Container>
-      </Wrapper> 
-    </>
+    <div>
+      <ThemeCheckbox checked={isChecked} onChange={handleChange} />
+    </div>
   );
 };
+
+export default App;
