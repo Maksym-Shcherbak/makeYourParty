@@ -1,28 +1,29 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { ButtonFavorite } from './Button.styled';
+
 import {
   addFavoriteDrink,
   removeFavoriteDrink,
 } from '../../../redux/drinks/drinksOperations';
-import { selectFavoriteDrinks } from '../../../redux/drinks/drinksSelectors';
 
-const Button = ({ id }) => {
+const Button = ({ id, favoriteDrink }) => {
+
   const [favorite, setfavorite] = useState(null);
   const dispatch = useDispatch();
 
-  const favoriteList = useSelector(selectFavoriteDrinks);
-  // const userId = useSelector((state) => state.auth.user.id);
+  const userId = useSelector((state) => state.auth.user.id);
 
   useEffect(() => {
-    if (favoriteList.data.length) {
-      favoriteList.data.find((item) => {
-        if (item._id === id) {
-          return setfavorite(item._id === id);
+    if (favoriteDrink.length) {
+      favoriteDrink.find((item) => {
+        if (item === userId) {
+          return setfavorite(true);
         }
       });
     }
-  }, [favoriteList, id, setfavorite]);
+  }, [favoriteDrink, userId]);
 
   const handleAddFavorite = () => {
     dispatch(

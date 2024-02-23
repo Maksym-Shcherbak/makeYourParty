@@ -12,18 +12,19 @@ import { Container } from '../../styled/Container';
 
 import {
   selectDrinkById,
-  // selectIsLoading,
+  selectError,
+  selectIsLoading,
 } from '../../redux/drinks/drinksSelectors';
 
 import { getById } from '../../redux/drinks/drinksOperations';
-// import { selectIsRefreshing } from '../../redux/auth/authSelectors';
+import { Loader } from '../../components/Loader/Loader';
 
 const DrinkPage = () => {
   const dispatch = useDispatch();
   const { drinkId } = useParams();
-  // const isLoading = useSelector(selectIsLoading);
-  // const isRefreshing = useSelector(selectIsRefreshing);
   const drink = useSelector(selectDrinkById);
+  const isLoading = useSelector(selectIsLoading);
+  const isError = useSelector(selectError);
 
   useEffect(() => {
     dispatch(getById(drinkId));
@@ -32,9 +33,9 @@ const DrinkPage = () => {
   return (
     <Section>
       <Container>
-        {!drink ? (
-          <h1>Loading...</h1>
-        ) : (
+        {isLoading && <Loader />}
+        {isError && <h1>{isError}</h1>}
+        {drink && (
           <>
             <SectionTitle title={drink.recipe.drink} />
             <DrinkPageHero data={drink.recipe} />
