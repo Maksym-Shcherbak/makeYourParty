@@ -7,12 +7,12 @@ import {
 
 import images from '../../../assets/DrinkImages/image.jpg';
 
-const RecipePreparation = ({ description }) => {
+const RecipePreparation = ({ instructions }) => {
   return (
     <>
       <TitleRecipe>Recipe Preparation</TitleRecipe>
       <Wraper>
-        <Recipe>{description}</Recipe>
+        <Recipe>{instructions}</Recipe>
         <Images src={images} alt="Cocktails" />
       </Wraper>
     </>
