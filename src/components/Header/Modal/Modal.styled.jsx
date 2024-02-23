@@ -11,7 +11,7 @@ export const StyledBox = styled(Box)`
   border-radius: 16px;
   box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
   padding: 50px 25px;
-  /* background: radial-gradient(
+   background: radial-gradient(
       circle,
       rgba(188, 230, 210, 0.4) -20%,
       rgba(255, 255, 255, 0) 70%

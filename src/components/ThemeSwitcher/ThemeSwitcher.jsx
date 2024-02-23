@@ -1,11 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch, SwitchInput } from './ThemeSwitcher.styled';
-import { selectTheme } from '../../redux/auth/authSelectors';
+import { selectTheme } from '../../redux/auth/auth-selectors';
 import { toggleTheme } from '../../redux/auth/auth-slice';
 
-export const ThemeSwitcher=() => {
+export default function ThemeSwitcher() {
   const theme = useSelector(selectTheme);
   const dispatch = useDispatch();
+
+
+
+  const handleToggleTheme = () => {
+    console.log('Toggle theme clicked'); // Отладочное сообщение
+    dispatch(toggleTheme());
+  };
 
   return (
     <Switch>
@@ -13,8 +20,9 @@ export const ThemeSwitcher=() => {
         type="checkbox"
         role="switch"
         checked={theme === 'light'}
-        onChange={() => dispatch(toggleTheme())}
+        onChange={handleToggleTheme}
       />
     </Switch>
   );
 }
+

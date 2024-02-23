@@ -1,10 +1,13 @@
 import styled from 'styled-components';
-
-const transition = '250ms cubic-bezier(0.4, 0, 0.2, 1)';
+import transition from '../../transition/transition';
 
 export const Switch = styled.label`
   margin: auto;
   position: relative;
+  @media screen and (max-width: 768px) {
+    top: 1.8px;
+    display: none;
+  }
 `;
 
 export const SwitchInput = styled.input`
@@ -53,6 +56,7 @@ export const SwitchInput = styled.input`
 
     @media screen and (min-width: 768px) {
       top: 1.8px;
+     
     }
 
     @media screen and (min-width: 1440px) {
