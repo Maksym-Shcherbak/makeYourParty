@@ -1,15 +1,19 @@
 
-import { MainDrinkImg, MainDrinkTitle, MainDrinkLinkText, MainDrTitlelinkWrap, MainDrinksItem } from "./MainDrinkItemStyle";
+import { MainDrinksItem,StiledLinkMain } from "./MainDrinkItemStyle";
+import { UtilsStyleImgCard,UtilsStyleLink,UtilsTitleLinkWrap,UtilsStyleTitleCard } from "../UtilsMainDrinks/UtilsMainDrinks";
 
 
-const MainDrinkItem = ({ title, url, text }) => {
+const MainDrinkItem = ({ title, url, text,id }) => {
   return (
     <MainDrinksItem>
-        <MainDrinkImg src={url} alt="Photo drinks" />
-      <MainDrTitlelinkWrap>
-        <MainDrinkTitle>{title}</MainDrinkTitle>    
-              <MainDrinkLinkText>{text}</MainDrinkLinkText>   
-      </MainDrTitlelinkWrap>
+      <StiledLinkMain to={`/drinks/${id}`}>
+         <UtilsStyleImgCard src={url} alt="Photo drinks" />
+      <UtilsTitleLinkWrap>
+        <UtilsStyleTitleCard>{title}</UtilsStyleTitleCard>    
+              <UtilsStyleLink>{text}</UtilsStyleLink>   
+      </UtilsTitleLinkWrap>
+      </StiledLinkMain>
+       
       
   </MainDrinksItem>)
 }

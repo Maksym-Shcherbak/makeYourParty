@@ -1,19 +1,24 @@
 import MainDrinkItem from "./MainDrinkItem";
-import { MainDrinksList } from "./MainDrinkListStyle";
+import { MainDrinksList,MainListCategory} from "./MainDrinkListStyle";
 
-const MainDrinkList = ({ drinks,text }) => {
-  return (<MainDrinksList>
-    {drinks?.map(({ drink, drinkThumb,id}) => (
+
+const MainDrinkList = ({ header, data}) => {
+  return (<>
+    <MainListCategory>{header}</MainListCategory>
+    <MainDrinksList>
+      {data?.map(({ drink, drinkThumb, _id }) => (
         <MainDrinkItem
-          key={id}
-          title={drink}
-          text={text}
-          url={drinkThumb}
-          id={id}
+             key={_id}
+             title={drink}
+             text="see more"
+             url={drinkThumb}
+             id={_id}
           
         />
     ))}
-  </MainDrinksList>
+      
+  
+  </MainDrinksList></>
   )
   
 }

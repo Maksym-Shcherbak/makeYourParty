@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeDescription = styled.p`
   margin-top: 40px;
-  margin-bottom: 0;
+  margin-bottom: 40px;
   font-size: 14px;
   line-height: 1.42857;
   
@@ -43,16 +43,6 @@ export const HomeTitlDescWrap = styled.div`
   }
   
 `
-
-
-export const HomeHeroBtn = styled.button`
-  margin-top: 40px;
-  border-radius: 42px;
-  padding: 18px 44px;
-  font-weight: 600;
-  background-color: --main-color;
-  color: --secondary-color;
-`;
 
 
 export const HomeHeroImg = styled.img`
