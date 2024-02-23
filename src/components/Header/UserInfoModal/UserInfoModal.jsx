@@ -32,13 +32,12 @@
 //   const [username, setUsername] = useState(name);
 //   const [file, setFile] = useState(null);
 //   const [avatar, setAvatar] = useState(null);
-  
+
 //   const dispatch = useDispatch();
 
 //   const handleInputChange = (event) => {
 //     setUsername(event.target.value);
 //   };
-
 
 //   const handleFileChange = (event) => {
 //     const file = event.target.files[0];
@@ -60,7 +59,6 @@
 //     dispatch(updateUser(formData));
 //     handleClose();
 //   };
-
 
 //   useEffect(() => {
 //     if (avatar) {
@@ -101,7 +99,6 @@
 //     </Modal>
 //     )
 // }
-
 
 import { Formik } from 'formik';
 import { HiPlusSm } from 'react-icons/hi';
@@ -144,6 +141,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
 
   const handleInputChange = (event) => {
     setUsername(event.target.value);
+    console.log(event.target.value);
   };
 
   const handleFileChange = (event) => {
@@ -161,53 +159,19 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   const handleSubmit = (values, { setSubmitting }) => {
     const formData = new FormData();
     formData.append('avatar', file);
-    formData.append('name', values.name); 
-
+    formData.append('name', username);
+    console.log(formData);
     dispatch(updateUser(formData));
     handleClose();
     setSubmitting(false);
   };
 
   useEffect(() => {
-    if (avatar === null) {
-      setAvatar(avatarURL);
-    }
-  }, [avatar, avatarURL]);
-
-  return (
-    <Modal isOpen={isOpen} handleClose={handleClose} gradient={true}>
-      <Formik initialValues={{ name: username }} onSubmit={handleSubmit}>
-        {(formikProps) => (
-          <Form onSubmit={formikProps.handleSubmit}>
-            <FileInputWrapper>
-              <Image src={avatar || 'https://cdn-icons-png.flaticon.com/512/149/149071.png'} />
-              <SelectAvatarInput
-                type="file"
-                name="file"
-                onChange={handleFileChange}
-              />
-              <AddIconWrapper>
-                <HiPlusSm size={24} />
-              </AddIconWrapper>
-            </FileInputWrapper>
-            <NameInputWrapper>
-              <ChangeNameInput
-                type="text"
-                name="name"
-                value={formikProps.values.name}
-                onChange={formikProps.handleChange}
-              />
-              <EditIconWrapper>
-                <FiEdit2 size={24} />
-              </EditIconWrapper>
-            </NameInputWrapper>
-            <SubmitBtn type="submit">Save changes</SubmitBtn>
-          </Form>
-        )}
     if (avatar) {
       setAvatar(userAvatar);
     }
-  }, [avatar]);
+  }, [avatar, avatarURL]);
+
   return (
     <Modal isOpen={isOpen} handleClose={handleClose} gradient={true}>
       <Formik initialValues={{ name: username }} onSubmit={handleSubmit}>

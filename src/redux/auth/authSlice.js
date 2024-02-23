@@ -97,4 +97,5 @@ const authSlice = createSlice({
       .addCase(subscribeUser.rejected, hendleRejected),
 });
 
+export const { toggleTheme } = authSlice.actions;
 export const authReducer = authSlice.reducer;

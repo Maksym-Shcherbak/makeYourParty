@@ -23,12 +23,7 @@ import { Loader } from './components/Loader/Loader';
 //----------------------
 import { darkTheme, lightTheme } from './components/Themes';
 import { ThemeProvider } from 'styled-components';
-
-import { selectTheme } from './redux/auth/auth-selectors'
-import { useSelector } from 'react-redux';
-
-
-
+import { selectTheme } from './redux/auth/authSelectors';
 
 // const WelcomePage = lazy(() => import('pages/WelcomePage'));
 // const HomePage = lazy(() => import('pages/HomePage'));
@@ -47,10 +42,9 @@ import { useSelector } from 'react-redux';
 // import { darkTheme, lightTheme } from './components/Themes';
 //--------------------
 
-
 function App() {
-
   const theme = useSelector(selectTheme);
+  const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(currentUser());
@@ -58,38 +52,37 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-  const isRefreshing = useSelector(selectIsRefreshing);
-
-  return isRefreshing ? (
-    <Loader />
-  ) : (
-    <AppWrapper>
-      <Routes>
-        <Route
-          path="/welcome"
-          element={<RestrictedRoute component={<WelcomePage />} />}
-        />
-        <Route
-          path="/signup"
-          element={<RestrictedRoute component={<SignupPage />} />}
-        />
-        <Route
-          path="/signin"
-          element={<RestrictedRoute component={<SigninPage />} />}
-        />
-        <Route element={<PrivateRoute />}>
-          <Route path="/" element={<SharedLayout />}>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/drinks" element={<DrinksPage />} />
-            <Route path="/drinks/:drinkId" element={<DrinkPage />} />
-            <Route path="/add" element={<AddDrinkPage />} />
-            <Route path="/favorites" element={<FavoriteDrinksPage />} />
-            <Route path="/my" element={<MyDrinksPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Route>
-        </Route>
-      </Routes>
-    </AppWrapper>
+      {isRefreshing ? (
+        <Loader />
+      ) : (
+        <AppWrapper>
+          <Routes>
+            <Route
+              path="/welcome"
+              element={<RestrictedRoute component={<WelcomePage />} />}
+            />
+            <Route
+              path="/signup"
+              element={<RestrictedRoute component={<SignupPage />} />}
+            />
+            <Route
+              path="/signin"
+              element={<RestrictedRoute component={<SigninPage />} />}
+            />
+            <Route element={<PrivateRoute />}>
+              <Route path="/" element={<SharedLayout />}>
+                <Route path="/home" element={<HomePage />} />
+                <Route path="/drinks" element={<DrinksPage />} />
+                <Route path="/drinks/:drinkId" element={<DrinkPage />} />
+                <Route path="/add" element={<AddDrinkPage />} />
+                <Route path="/favorites" element={<FavoriteDrinksPage />} />
+                <Route path="/my" element={<MyDrinksPage />} />
+                <Route path="*" element={<ErrorPage />} />
+              </Route>
+            </Route>
+          </Routes>
+        </AppWrapper>
+      )}
     </ThemeProvider>
   );
 }
