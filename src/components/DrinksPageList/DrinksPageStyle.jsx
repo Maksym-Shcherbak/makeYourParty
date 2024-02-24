@@ -23,6 +23,7 @@ export const DrinksPgItem = styled.li`
     &:nth-last-child(-n + 1) {
       display: none;
     }
-  }
+    
+     }
   
 `;

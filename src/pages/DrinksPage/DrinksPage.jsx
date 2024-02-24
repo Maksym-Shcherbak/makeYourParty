@@ -20,7 +20,7 @@ const DrinksPage = () => {
       <Section>
         <PageTitle title={"Drinks"} />
         <DrinksPageCategories/>
-        <DrinksPageList/>
+        <DrinksPageList />
       </Section>
       
       {/* <FaceBookBtn>
