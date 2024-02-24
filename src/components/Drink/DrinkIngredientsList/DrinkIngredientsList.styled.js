@@ -26,7 +26,6 @@ export const ListIngredients = styled.ul`
     column-gap: 22px;
   }
   @media screen and (min-width: 1440px) {
-    justify-content: space-between;
     margin-bottom: 100px;
   }
 `;
