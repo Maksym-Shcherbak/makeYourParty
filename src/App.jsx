@@ -17,7 +17,7 @@ import DrinkPage from './pages/DrinkPage/DrinkPage';
 import { useEffect, useRef } from 'react';
 import { currentUser } from './redux/auth/authOperations';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsRefreshing } from './redux/auth/authSelectors';
+import { selectIsRefreshing } from './redux/auth/auth-selectors';
 import { Loader } from './components/Loader/Loader';
 
 //----------------------
@@ -46,6 +46,7 @@ function App() {
   const theme = useSelector(selectTheme);
   const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(currentUser());
   }, [dispatch]);
@@ -86,4 +87,5 @@ function App() {
     </ThemeProvider>
   );
 }
+
 export default App;

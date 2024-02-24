@@ -100,15 +100,15 @@
 //     )
 // }
 
-import { Formik } from 'formik';
+
+import React, { useEffect, useState } from 'react';
+import { Formik, Form } from 'formik'; // Добавляем импорт компонента Formik
 import { HiPlusSm } from 'react-icons/hi';
 import { FiEdit2 } from 'react-icons/fi';
 import { updateUser } from '../../../redux/auth/authOperations';
-
 import Modal from '../Modal/Modal';
 import {
   ChangeNameInput,
-  Form,
   AddIconWrapper,
   Image,
   FileInputWrapper,
@@ -117,11 +117,8 @@ import {
   NameInputWrapper,
   EditIconWrapper,
 } from './UserInfoModal.styled';
-
 import { useAuth } from '../../../redux/hooks/useAuth';
-import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { useResize } from '../../../redux/hooks/useResize';
 import { toast } from 'react-toastify';
 
@@ -136,7 +133,6 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   const [username, setUsername] = useState(name);
   const [file, setFile] = useState(null);
   const [avatar, setAvatar] = useState(null);
-
   const dispatch = useDispatch();
 
   const handleInputChange = (event) => {
