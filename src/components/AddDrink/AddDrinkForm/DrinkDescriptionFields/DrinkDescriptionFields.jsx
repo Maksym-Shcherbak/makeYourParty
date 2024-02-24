@@ -37,8 +37,7 @@ const DrinkDescriptionFields = ({
   onChangeSelect,
   alcoholic,
   onChangeRadio,
-  checkedAlc,
-  checkedNon,
+
 }) => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -139,9 +138,9 @@ const DrinkDescriptionFields = ({
         <RadioWrapper>
           <LabelRadio
             htmlFor="alcoholic"
-            style={{ color: checkedAlc ? '#f3f3f3' : '' }}
+            
           >
-            <CustomIcon style={{ color: checkedAlc ? '#f3f3f3' : '' }}>
+            <CustomIcon >
               {alcoholic === 'alcoholic' ? (
                 <IoMdRadioButtonOn />
               ) : (
@@ -160,9 +159,9 @@ const DrinkDescriptionFields = ({
 
           <LabelRadio
             htmlFor="non-alcoholic"
-            style={{ color: checkedNon ? '#f3f3f3' : '' }}
+            
           >
-            <CustomIcon style={{ color: checkedNon ? '#f3f3f3' : '' }}>
+            <CustomIcon >
               {alcoholic === 'non-alcoholic' ? (
                 <IoMdRadioButtonOn />
               ) : (

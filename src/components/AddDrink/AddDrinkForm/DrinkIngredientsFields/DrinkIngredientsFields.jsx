@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import {
   ButtonAction,
   ButtonWrapper,
@@ -8,9 +9,12 @@ import {
 } from '../DrinkIngredientsFields/DrinkIngredientsFields.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIngredients } from '../../../../redux/drinks/drinksOperations';
+import IngredientSelect from './IngredientSelect/IngredientSelect';
 
 const DrinkIngredientsFields = () => {
   const [counter, setCounter] = useState(0);
+  const [data, setData] = useState([]);
+  const [arrayIngredient, setArrayIngredient] = useState([]);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,8 +23,12 @@ const DrinkIngredientsFields = () => {
 
   const ingredients = useSelector((state) => state.drinks.ingredients);
 
+  // console.log(data);
+
   const increaseCounter = () => {
     setCounter((prevCount) => prevCount + 1);
+    const id = 'a,s.dfa?' + Math.random() * 1024.333 + 'adftghjftjfgjfgj';
+    setData((prevData) => [...prevData, id]);
   };
 
   const decreaseCounter = () => {
@@ -28,24 +36,13 @@ const DrinkIngredientsFields = () => {
     if (counter <= 0) {
       setCounter(0);
     }
+    data.pop();
   };
 
-  // const createMarkup = () => {
-  // const data = `
-  //   <li>
-  //     <select>
-  //       {ingredients.map(({ ingredientId, title }) => {
-  //         return (
-  //           <option key={title} value={title} id={ingredientId}>
-  //             {title}
-  //           </option>
-  //         );
-  //       })}
-  //     </select>
-  //   </li>
-  // `;
-  // return data;
-  // };
+  const onHandleDeleteIngredient = (id) => {
+    setData(data.filter((item) => item !== id));
+    setCounter(data.length - 1);
+  };
 
   return (
     <>
@@ -62,20 +59,19 @@ const DrinkIngredientsFields = () => {
         </ButtonWrapper>
       </IngredientsWrapper>
       <div>
-        {/* <ul dangerouslySetInnerHTML={{ __html: data }}></ul> */}
-        {/* <ul>
-          <li>
-            <select>
-              {ingredients.map(({ ingredientId, title }) => {
-                return (
-                  <option key={title} value={title} id={ingredientId}>
-                    {title}
-                  </option>
-                );
-              })}
-            </select>
-          </li>
-        </ul> */}
+        <ul>
+          {data.length > 0 &&
+            data.map((id) => {
+              return (
+                <IngredientSelect
+                  key={id}
+                  ingredients={ingredients}
+                  id={id}
+                  onHandleDeleteIngredient={onHandleDeleteIngredient}
+                />
+              );
+            })}
+        </ul>
       </div>
     </>
   );

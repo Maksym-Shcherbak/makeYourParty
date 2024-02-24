@@ -17,8 +17,6 @@ const AddDrinkForm = () => {
   const [glass, setGlass] = useState('');
 
   const [alcoholic, setAlcoholic] = useState('');
-  const [checkedAlc, setCheckedAlc] = useState(false);
-  const [checkedNon, setCheckedNon] = useState(false);
 
   const [instructions, SetInstructions] = useState('');
 
@@ -71,12 +69,12 @@ const AddDrinkForm = () => {
     switch (valueInput) {
       case 'alcoholic':
         setAlcoholic(valueInput);
-        setCheckedAlc(true);
+
         return;
 
       case 'non-alcoholic':
         setAlcoholic(valueInput);
-        setCheckedNon(true);
+
         return;
 
       default:
@@ -118,8 +116,6 @@ const AddDrinkForm = () => {
           onChangeSelect={onChangeSelect}
           alcoholic={alcoholic}
           onChangeRadio={onChangeRadio}
-          checkedAlc={checkedAlc}
-          checkedNon={checkedNon}
         />
         <DrinkIngredientsFields />
         <RecipePreparation
