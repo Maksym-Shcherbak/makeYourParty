@@ -67,10 +67,16 @@ export const getPopulars = createAsyncThunk(
 export const getSearch = createAsyncThunk(
   'drinks/search',
   async (credentials, thunkAPI) => {
-    const { drink, category, ingredient, limit, page } = credentials;
+    const {
+      searchQuery: drink,
+      category,
+      ingredient: ingredients,
+      limit,
+      page,
+    } = credentials;
     try {
       const { data } = await axios.get('/drinks/search', {
-        params: { drink, category, ingredient, limit, page },
+        params: { drink, category, ingredients, limit, page },
       });
       return data;
     } catch (error) {
