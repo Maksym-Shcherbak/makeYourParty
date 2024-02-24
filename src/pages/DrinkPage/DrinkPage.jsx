@@ -22,7 +22,6 @@ const DrinkPage = () => {
   const dispatch = useDispatch();
   const { drinkId } = useParams();
   const drink = useSelector(selectDrinkById);
-  console.log(drink);
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
 
