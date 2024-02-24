@@ -17,9 +17,9 @@ const DrinksPage = () => {
 
   return (
     <Container>
-      <PageTitle title={"Drinks"} />
-      <DrinksPageCategories/>
       <Section>
+        <PageTitle title={"Drinks"} />
+        <DrinksPageCategories/>
         <DrinksPageList/>
       </Section>
       

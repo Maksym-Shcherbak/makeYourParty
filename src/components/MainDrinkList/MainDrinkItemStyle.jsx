@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+
 
 
 export const MainDrinksItem = styled.li`
@@ -26,9 +26,6 @@ export const MainDrinksItem = styled.li`
 `;
 
 
-export const StiledLinkMain = styled(Link)`
-  color: inherit;
-  
-`
+
 
 
