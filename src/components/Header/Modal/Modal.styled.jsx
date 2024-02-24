@@ -75,7 +75,6 @@ export const CloseBtn = styled.button`
   }
 `;
 export const Backdrop = styled.div`
-  /* стили для фона модального окна */
   position: fixed;
   top: 0;
   img {
