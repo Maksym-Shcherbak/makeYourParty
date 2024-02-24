@@ -8,12 +8,12 @@ import {
 import defaultPreparation from '../../../images/DrinkImages/defaultPreparation.jpg';
 import defaultPreparation2x from '../../../images/DrinkImages/defaultPreparation@2x.jpg';
 
-const RecipePreparation = ({ description }) => {
+const RecipePreparation = ({ instructions }) => {
   return (
     <>
       <TitleRecipe>Recipe Preparation</TitleRecipe>
       <Wraper>
-        <Recipe>{description}</Recipe>
+        <Recipe>{instructions}</Recipe>
         <picture>
           <source
             srcSet={`${defaultPreparation} 1x, ${defaultPreparation2x} 2x`}

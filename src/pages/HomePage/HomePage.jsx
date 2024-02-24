@@ -1,34 +1,33 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { getMainPage } from '../../redux/drinks/drinksOperations';
-import { signIn } from '../../redux/auth/authOperations';
+import PageTitle from '../../components/PageTitle/PageTitle';
+import { Container } from '../../styled/Container.js';
+import {Section} from '../../styled/Section.js'
+
+import { UtilsMainLink } from '../../components/HomeDrinks/HomeDrinksStyled.jsx';
+import { HomeDescription,HomeSection,HomeHeroImg,HomeTitlDescWrap} from './HomePageStyled.jsx';
+import image from '../../images/main_blue_coctail.png';
+
+import HomeDrinks from '../../components/HomeDrinks/HomeDrinks.jsx';
+
+
 
 const HomePage = () => {
-  const dispatch = useDispatch();
 
-  const come = useSelector((state) => state.drinks.main);
-  console.log(come);
-
-  const handleclick = () => {
-    dispatch(getMainPage());
-  };
-
-  const click = () => {
-    {
-      dispatch(
-        signIn({
-          email: 'user05@gmail.com',
-          password: 'qwerty',
-        })
-      );
-    }
-  };
 
   return (
-    <div>
-      <h1>You are in</h1>
-      <button onClick={handleclick}></button>
-      <button onClick={click}></button>
-    </div>
+    <Container>
+      <HomeSection>
+        <HomeTitlDescWrap>
+        <PageTitle title={'Craft Your Perfect Drink with Drink Master'} />
+        <HomeDescription>Unlock your inner mixologist with Drink Master, your one-stop destination for exploring, crafting, and mastering the world`s finest beverages.</HomeDescription>
+        <UtilsMainLink to="/add">Add drink</UtilsMainLink>
+      </HomeTitlDescWrap>
+        <HomeHeroImg src={image}/>
+      </HomeSection>
+      <Section>
+        <HomeDrinks />
+      </Section>
+      
+      </Container>
   );
 };
 

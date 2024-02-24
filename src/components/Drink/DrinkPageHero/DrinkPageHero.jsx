@@ -12,8 +12,15 @@ import Button from '../Button/Button';
 import defaultCoctail from '../../../images/DrinkImages/default400.png';
 
 const DrinkPageHero = ({ data } = data) => {
-  const { drink, alcoholic, glass, description, drinkThumb, _id, favorite } =
-    data;
+  const {
+    drink,
+    alcoholic,
+    glass,
+    shortDescription,
+    drinkThumb,
+    _id,
+    favorite,
+  } = data;
 
   return (
     <DrinkWrapper>
@@ -22,7 +29,7 @@ const DrinkPageHero = ({ data } = data) => {
         <SupTitle>
           {glass} / {alcoholic}
         </SupTitle>
-        <Description>{description}</Description>
+        <Description>{shortDescription}</Description>
         <Button id={_id} favoriteDrink={favorite} />
       </DrinkText>
       <ImagesDrink
