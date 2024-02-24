@@ -103,3 +103,11 @@ export const subscribeEmail = createAsyncThunk(
     }
   },
 );
+
+// auth-operation.js
+
+export const toggleTheme = () => {
+  return {
+    type: 'TOGGLE_THEME',
+  };
+};
