@@ -11,4 +11,3 @@ export const selectToken = (state) => state.auth.token;
 export const selectIsLoading = (state) => state.auth.isLoading;
 export const selectIsError = (state) => state.auth.error;
 export const selectSubscribe = (state) => state.auth.isSubscribed;
-

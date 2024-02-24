@@ -23,6 +23,7 @@ const DrinkPage = () => {
   const dispatch = useDispatch();
   const { drinkId } = useParams();
   const drink = useSelector(selectDrinkById);
+  console.log(drink);
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
 
@@ -40,7 +41,7 @@ const DrinkPage = () => {
             <SectionTitle title={drink.recipe.drink} />
             <DrinkPageHero data={drink.recipe} />
             <DrinkIngredientsList data={drink.recipe.ingredients} />
-            <RecipePreparation description={drink.recipe.description} />
+            <RecipePreparation instructions={drink.recipe.instructions} />
           </>
         )}
       </Container>

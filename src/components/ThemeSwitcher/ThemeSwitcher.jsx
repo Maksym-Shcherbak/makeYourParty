@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Switch, SwitchInput } from './ThemeSwitcher.styled';
 
