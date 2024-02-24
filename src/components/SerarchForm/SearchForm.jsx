@@ -17,7 +17,7 @@ export const SearchForm = ({ query, saveName, onSubmit }) => {
         type="text"
         autoComplete="off"
         autoFocus
-        placeholder="Search drink"
+        placeholder="Enter the text"
         name="searchQuery"
         value={query}
         onChange={saveName}

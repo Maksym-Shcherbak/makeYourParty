@@ -64,10 +64,12 @@ const DrinksPageSearch = ({ categories, ingredients }) => {
       <CustomSelect
         options={categoriesOptions}
         onChange={handleChangeCategory}
+        placeholder={'All categories'}
       />
       <CustomSelect
         options={ingredientsOptions}
         onChange={handleChangeIngredient}
+        placeholder={'Ingredients'}
       />
     </SearchContainer>
   );
