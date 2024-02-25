@@ -1,4 +1,3 @@
-
 // import React, { useState, useEffect } from 'react';
 // import { HeaderContainer, StyledLink, IconWrapper, UserWrap } from './Header.styled';
 // import { Navigation } from './Navigation/Navigation';
@@ -24,12 +23,11 @@
 //   const [isMenuOpen, setIsMenuOpen] = useState(false);
 //   const [isUserPopupOpen, setIsUserPopupOpen] = useState(false);
 
-
 //   const toggleTheme = () => {
 //     setIsChecked((prev) => !prev);
 //     handleToggleTheme(); // Вызываем обработчик для изменения темы
 //   };
- 
+
 //   const handleToggleMenu = () => {
 //     setIsMenuOpen((state) => !state);
 //   };
@@ -71,9 +69,8 @@
 
 // export default Header;
 
-
-import React, { useState, useEffect } from 'react';
-import { HeaderContainer, StyledLink, IconWrapper, UserWrap } from './Header.styled';
+import { useState, useEffect } from 'react';
+import { HeaderContainer, StyledLink, UserWrap } from './Header.styled';
 import { Navigation } from './Navigation/Navigation';
 import Logo from './Logo/Logo';
 import { BurgerMenu } from './BurgerMenu/BurgerMenu';
@@ -117,21 +114,27 @@ export const Header = () => {
           <Navigation />
           <StyledLink />
           <UserWrap>
-          <ThemeSwitcher handleToggleTheme={toggleTheme} />
+            <ThemeSwitcher handleToggleTheme={toggleTheme} />
 
             <UserLogo
               handleOpenPopup={handleOpenUserPopup}
               handleClosePopup={handleCloseUserPopup}
               isPopupOpen={isUserPopupOpen}
             />
-            <BurgerMenu handleToggleMenu={handleToggleMenu} isMenuOpen={isMenuOpen} />
+            <BurgerMenu
+              handleToggleMenu={handleToggleMenu}
+              isMenuOpen={isMenuOpen}
+            />
           </UserWrap>
         </HeaderContainer>
         <UserLogoPopup
           isPopupOpen={isUserPopupOpen}
           handleClosePopup={handleCloseUserPopup}
         />
-        <MobileMenu isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
+        <MobileMenu
+          isMenuOpen={isMenuOpen}
+          handleToggleMenu={handleToggleMenu}
+        />
       </ThemeProvider>
     </>
   );

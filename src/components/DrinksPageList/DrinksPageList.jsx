@@ -4,6 +4,7 @@ import DrinksPageItem from './DrinksPageItem';
 
 const DrinksPageList = () => {
   const search = useSelector((state) => state.drinks.search);
+  console.log(search);
   return (
     <DrinksPgList>
       {search.map((item) => (

@@ -4,21 +4,21 @@ const Form = styled.form`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 600px;
-  background-color: #fff;
-  border-radius: 3px;
+  padding: 14px 24px;
+  border: 1px solid rgba(243, 243, 243, 0.2);
+  border-radius: 200px;
   overflow: hidden;
+  @media screen and (min-width: 768px) {
+    max-width: 264px;
+  }
 `;
 
 const FormButton = styled.button`
   display: inline-block;
-  width: 48px;
-  height: 48px;
+  width: 20px;
+  height: 20px;
   border: 0;
-  background-image: url("https://image.flaticon.com/icons/svg/149/149852.svg");
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
+   background-color: transparent;
   opacity: 0.6;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -45,14 +45,18 @@ const FormInput = styled.input`
   width: 100%;
   font: inherit;
   font-size: 20px;
+  color: #f3f3f3;
   border: none;
   outline: none;
   padding-left: 4px;
   padding-right: 4px;
+  background-color: transparent;
 
   &::placeholder {
-  font: inherit;
-  font-size: 18px;
+  font-weight: 400;
+font-size: 17px;
+line-height: 1.56;
+color: #f3f3f3;
 `;
 
 export { Form, FormButton, FormButtonLabel, FormInput };

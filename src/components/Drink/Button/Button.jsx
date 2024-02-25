@@ -15,6 +15,7 @@ import { reset } from '../../../redux/drinks/drinksSlice';
 const Button = ({ id, favoriteDrink }) => {
   const [favorite, setFavorite] = useState(null);
   const dispatch = useDispatch();
+  console.log(favorite);
 
   const userId = useSelector((state) => state.auth.user.id);
 
