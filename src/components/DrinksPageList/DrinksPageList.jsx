@@ -7,30 +7,30 @@ import { Loader } from '../Loader/Loader';
 import Pagination from '../Pagination/Pagination.jsx';
 
 const DrinksPageList = () => {
-  const dispatch = useDispatch();
-  const search = useSelector((state) => state.drinks.search);
+  // const dispatch = useDispatch();
+  const drinks = useSelector((state) => state.drinks.search);
+  // const totalHits = useSelector((state) => state.drinks.totalDrinks);
   // const lengSearch = search.length;
-  console.log(search.totalHits, 'всі');
-  const [page, setPage] = useState(1);
+  // console.log(totalHits, 'всі');
+  // const [page, setPage] = useState(1);
 
-  const handlePaginPageClick = (e) => {
-    setPage(e.selected);
-  };
+  // const handlePaginPageClick = (e) => {
+  //   setPage(e.selected + 1);
+  // };
 
-  useEffect(() => {
-    dispatch(
-      getSearch({
-        drink: '',
-        category: '',
-        ingredient: '',
-        limit: '10',
-        page: `${page}`,
-      })
-    );
-  }, [dispatch, page]);
+  // useEffect(() => {
+  //   dispatch(
+  //     getSearch({
+  //       drink: '',
+  //       category: '',
+  //       ingredient: '',
+  //       limit: '10',
+  //       page: `${page}`,
+  //     })
+  //   );
+  // }, [dispatch, page]);
 
-
-   let allDrinksIsArray = Array.isArray(search.data) ? search.data : search;
+  let allDrinksIsArray = Array.isArray(drinks) ? drinks : drinks;
 
   return (
     <>
@@ -38,7 +38,7 @@ const DrinksPageList = () => {
         {allDrinksIsArray.length === 0 ? (
           <Loader />
         ) : (
-          search.data.map((item) => (
+          drinks.map((item) => (
             <DrinksPageItem
               key={item._id}
               text={'see more'}
@@ -49,11 +49,7 @@ const DrinksPageList = () => {
           ))
         )}
       </DrinksPgList>
-      <Pagination
-        pageCount={search.totalHits}
-        onPageChange={handlePaginPageClick}
-       
-      />
+      {/* <Pagination pageCount={totalHits} onPageChange={handlePaginPageClick} /> */}
     </>
   );
 };
