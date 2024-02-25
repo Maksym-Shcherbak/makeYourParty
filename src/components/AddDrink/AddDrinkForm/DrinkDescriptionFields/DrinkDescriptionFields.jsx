@@ -37,7 +37,6 @@ const DrinkDescriptionFields = ({
   onChangeSelect,
   alcoholic,
   onChangeRadio,
-
 }) => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -77,6 +76,7 @@ const DrinkDescriptionFields = ({
           name="drink"
           id="drink"
           placeholder="Enter item title"
+          autoComplete="off"
           value={drink}
           onChange={onChangeInput}
         />
@@ -86,6 +86,7 @@ const DrinkDescriptionFields = ({
           name="shortDescription"
           id="shortDescription"
           placeholder="Enter about recipe"
+          autoComplete="off"
           value={shortDescription}
           onChange={onChangeInput}
         />
@@ -95,6 +96,7 @@ const DrinkDescriptionFields = ({
             name="category"
             id="category"
             placeholder="Category"
+            autoComplete="off"
             value={category}
           />
           <SelectCategories
@@ -117,6 +119,7 @@ const DrinkDescriptionFields = ({
             name="glass"
             id="glass"
             placeholder="Glass"
+            autoComplete="off"
             value={glass}
           />
           <SelectCategories
@@ -136,11 +139,8 @@ const DrinkDescriptionFields = ({
         </SelectWrapper>
 
         <RadioWrapper>
-          <LabelRadio
-            htmlFor="alcoholic"
-            
-          >
-            <CustomIcon >
+          <LabelRadio htmlFor="alcoholic">
+            <CustomIcon>
               {alcoholic === 'alcoholic' ? (
                 <IoMdRadioButtonOn />
               ) : (
@@ -157,11 +157,8 @@ const DrinkDescriptionFields = ({
             />
           </LabelRadio>
 
-          <LabelRadio
-            htmlFor="non-alcoholic"
-            
-          >
-            <CustomIcon >
+          <LabelRadio htmlFor="non-alcoholic">
+            <CustomIcon>
               {alcoholic === 'non-alcoholic' ? (
                 <IoMdRadioButtonOn />
               ) : (

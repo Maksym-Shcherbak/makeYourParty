@@ -15,6 +15,8 @@ export const RecipeTexterea = styled.textarea`
 
   padding: 16px 18px;
 
+  resize: none;
+
   @media screen and (min-width: 375px) {
     width: 335px;
     height: 184px;

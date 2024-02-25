@@ -137,7 +137,9 @@ export const SelectCategories = styled.select`
   top: 0;
   right: 0;
 
-  max-width: 131px;
+  width: 131px;
+  // text-align: right;
+  // padding-right: 28px;
 
   border-radius: 12px;
   color: #f3f3f3;
@@ -146,11 +148,9 @@ export const SelectCategories = styled.select`
   border: none;
   background-color: transparent;
 
-  &:after {
-    content: '';
-
-    background-color: transparent;
-  }
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 `;
 
 export const OptionSelect = styled.option`
@@ -160,6 +160,13 @@ export const OptionSelect = styled.option`
   line-height: 1.33333;
   background-color: #161f37;
   border: none;
+
+  // text-align: left;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.28571;
+  }
 `;
 
 export const RadioWrapper = styled.div`

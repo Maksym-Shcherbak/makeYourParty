@@ -1,23 +1,53 @@
-const IngredientSelect = ({ ingredients, id, onHandleDeleteIngredient }) => {
+// import { useState } from 'react';
+import {
+  ItemSelect,
+  SelectDeleteBtn,
+  SelectIng,
+  SelectInput,
+  SelectOption,
+  SelectWrapperIng,
+} from './IngredientSelect.styled';
+import { MdClose } from 'react-icons/md';
+
+const IngredientSelect = ({
+  ingredients,
+  id,
+  onHandleDeleteIngredient,
+  data,
+  onSelectHandleIng,
+  onChangeInputCl,
+}) => {
+  console.log(data);
+
   return (
     <>
-      <li id={id}>
-        <div>
-          <select>
+      <ItemSelect id={id}>
+        <SelectWrapperIng>
+          <SelectIng onChange={onSelectHandleIng}>
             {ingredients.map(({ ingredientId, title }) => {
               return (
-                <option key={title} value={ingredientId}>
+                <SelectOption key={title} value={ingredientId}>
                   {title}
-                </option>
+                </SelectOption>
               );
             })}
-          </select>
-          <input type="text" name="" id="" />
-        </div>
-        <button type="button" onClick={() => onHandleDeleteIngredient(id)}>
-          x
-        </button>
-      </li>
+          </SelectIng>
+          <SelectInput
+            type="text"
+            name="measure"
+            placeholder="1 cl"
+            min={1}
+            autoComplete="off"
+            onChange={onChangeInputCl}
+          />
+        </SelectWrapperIng>
+        <SelectDeleteBtn
+          type="button"
+          onClick={() => onHandleDeleteIngredient(id)}
+        >
+          <MdClose />
+        </SelectDeleteBtn>
+      </ItemSelect>
     </>
   );
 };

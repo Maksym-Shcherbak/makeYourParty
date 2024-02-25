@@ -73,3 +73,28 @@ export const CounterValue = styled.span`
     line-height: 1.56;
   }
 `;
+
+export const ListSelectIng = styled.ul`
+  width: 280px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+
+  @media screen and (min-width: 375px) {
+    width: 335px;
+  }
+
+  @media screen and (min-width: 768px) {
+    row-gap: 24px;
+    width: 704px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 540px;
+  }
+`;
+
+export const SectionWrapperList = styled.div`
+  margin-bottom: 80px;
+`;

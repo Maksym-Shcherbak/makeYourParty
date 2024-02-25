@@ -7,8 +7,8 @@ import RecipePreparation from './RecipePreparation/RecipePreparation';
 
 const AddDrinkForm = () => {
   // const dispatch = useDispatch();
-  const [image, setImage] = useState();
-  const [imageURL, setImageURL] = useState();
+  const [image, setImage] = useState(null);
+  const [imageURL, setImageURL] = useState('');
 
   const [drink, setDrink] = useState('');
   const [shortDescription, setShortDescription] = useState('');
@@ -64,7 +64,6 @@ const AddDrinkForm = () => {
 
   const onChangeRadio = (e) => {
     const valueInput = e.target.value;
-    console.log(e.target.checked);
 
     switch (valueInput) {
       case 'alcoholic':
