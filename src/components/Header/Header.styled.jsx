@@ -3,14 +3,15 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
   width: 375px;
-  padding: 20px 32px;
+  padding: 20px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
   border-bottom: 1px solid rgba(243, 243, 243, 0.2);
 
-  /* Медиа-запрос для экранов с шириной от 768px до 1439px */
+  // padding-left: clamp(32px, ((100vw - 1440px) / 2) + 100px, 100px);
+  // padding-right: clamp(32px, ((100vw - 1440px) / 2) + 100px, 100px);
   @media (min-width: 768px) and (max-width: 1439px) {
     width: 768px;
     padding-right: 100px;
@@ -22,26 +23,6 @@ export const HeaderContainer = styled.div`
     padding-right: 100px;
     padding-left: 100px;
   }
-
-  // @media screen and (min-width: 1440px) {
-  //   width: 1440px;
-  //   padding-right: 100px;
-  //   padding-left: 100px;
-  // }
-
-  // @media screen and (min-width: 375px) {
-  //   width: 375px;
-  // }
-  // @media screen and (min-width: 768px) {
-  //   width: 768px;
-  //   padding-right: 32px;
-  //   padding-left: 32px;
-  // }
-  // @media screen and (min-width: 1440px) {
-  //   width: 1440px;
-  //   padding-right: 100px;
-  //   padding-left: 100px;
-  // }
 `;
 
 export const Navigation = styled.nav`

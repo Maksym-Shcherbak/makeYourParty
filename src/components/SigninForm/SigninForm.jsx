@@ -1,7 +1,9 @@
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { toast } from 'react-toastify';
+import { Notify } from 'notiflix';
+import { useNavigate } from 'react-router-dom';
+// import { toast } from 'react-toastify';
 import FormErr from '../FormErr/FormErr';
 import * as Yup from 'yup';
 import {
@@ -33,19 +35,29 @@ const schema = Yup.object().shape({
     .matches(/[0-9]/, 'Password must contain at least one number'),
 });
 
-export default function SigninForm() {
+const SigninForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
-  const dispatch = useDispatch();
-  const handleSubmit = (values, { resetForm }) => {
-    const { email, password } = values;
-    dispatch(signIn({ email, password }))
-      .unwrap()
-      .then(() => toast.success('Login  succesfully'))
-      .catch(() => toast.error('Something went wrong. Try again'));
-    resetForm();
+
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      const response = await dispatch(signIn(values));
+
+      if (response.payload.token) {
+        resetForm();
+        navigate('/', { replace: true });
+      } else {
+        Notify.failure('Password or email is invalide');
+      }
+    } catch (error) {
+      resetForm();
+    }
   };
 
   return (
@@ -98,4 +110,5 @@ export default function SigninForm() {
       )}
     </Formik>
   );
-}
+};
+export default SigninForm;

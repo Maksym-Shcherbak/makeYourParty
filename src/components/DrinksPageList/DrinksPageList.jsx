@@ -15,14 +15,12 @@ const DrinksPageList = () => {
   const search = useSelector((state) => state.drinks.search);
   const isDesctop = useMediaQuery({ query: '(min-width: 1440px)' })
   const countCards = isDesctop ? 9 : 10;
-  
-  console.log(search, "array");
-  console.log(isDesctop, 'isDesctop');
+
   const [page, setPage] = useState(0);
   
 
   const handlePaginPageClick = (e) => {
-    setPage(e.selected);
+    setPage(e.selected + 1);
   };
 
   useEffect(() => {
