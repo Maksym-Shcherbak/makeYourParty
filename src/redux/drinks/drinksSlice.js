@@ -99,7 +99,7 @@ const drinksSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getSearch.fulfilled, (state, action) => {
-        state.search = action.payload;
+        state.search = action.payload.data;
         state.isLoading = false;
         state.error = null;
       })
@@ -159,8 +159,12 @@ const drinksSlice = createSlice({
       .addCase(addFavoriteDrink.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(addFavoriteDrink.fulfilled, (state) => {
-        // state.favorite = action.payload;
+      .addCase(addFavoriteDrink.fulfilled, (state, action) => {
+        state.favorite = {
+          userId: action.payload.userId,
+          data: [action.payload.drinkId],
+          notification: action.payload.notification,
+        };
         state.isLoading = false;
         state.error = null;
       })
@@ -173,10 +177,14 @@ const drinksSlice = createSlice({
       })
       .addCase(removeFavoriteDrink.fulfilled, (state, action) => {
         const removedId = action.payload.drinkId;
-        const updatedFavorite = state.favorite.data.filter(
-          (favorite) => favorite._id !== removedId
-        );
-        state.favorite.data = updatedFavorite;
+        if (state.favorite.length !== 0) {
+          const updatedFavorite = state.favorite.data.filter(
+            (favorite) => favorite._id !== removedId
+          );
+          state.favorite.data = updatedFavorite;
+          state.isLoading = false;
+          state.error = null;
+        }
         state.isLoading = false;
         state.error = null;
       })

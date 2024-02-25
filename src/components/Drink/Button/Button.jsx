@@ -9,9 +9,9 @@ import {
 } from '../../../redux/drinks/drinksOperations';
 
 const Button = ({ id, favoriteDrink }) => {
-
   const [favorite, setfavorite] = useState(null);
   const dispatch = useDispatch();
+  console.log(favorite);
 
   const userId = useSelector((state) => state.auth.user.id);
 

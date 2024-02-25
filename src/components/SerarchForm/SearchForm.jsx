@@ -9,10 +9,6 @@ import { FiSearch } from 'react-icons/fi';
 export const SearchForm = ({ query, saveName, onSubmit }) => {
   return (
     <Form onSubmit={onSubmit}>
-      <FormButton type="submit">
-        <FiSearch />
-        <FormButtonLabel>Search</FormButtonLabel>
-      </FormButton>
       <FormInput
         type="text"
         autoComplete="off"
@@ -22,6 +18,10 @@ export const SearchForm = ({ query, saveName, onSubmit }) => {
         value={query}
         onChange={saveName}
       />
+      <FormButton type="submit">
+        <FiSearch size={20} color="rgba(243, 243, 243, 1)" />
+        <FormButtonLabel>Search</FormButtonLabel>
+      </FormButton>
     </Form>
   );
 };

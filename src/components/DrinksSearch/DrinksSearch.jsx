@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { SearchContainer } from './DrinksPageSearch.styled';
+import { useDispatch } from 'react-redux';
+import { SearchContainer } from './DrinksSearch.styled';
 import { CustomSelect } from '../Select/Select';
 import { SearchForm } from '../SerarchForm/SearchForm';
 import { useEffect, useState } from 'react';
 import { getSearch } from '../../redux/drinks/drinksOperations';
 
-const DrinksPageSearch = ({ categories, ingredients }) => {
+const DrinksSearch = ({ categories, ingredients }) => {
   const [category, setCategory] = useState(null);
   const [ingredient, setIngredient] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -75,4 +75,4 @@ const DrinksPageSearch = ({ categories, ingredients }) => {
   );
 };
 
-export default DrinksPageSearch;
+export default DrinksSearch;
