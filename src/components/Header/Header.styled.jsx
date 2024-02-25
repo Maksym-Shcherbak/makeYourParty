@@ -1,23 +1,29 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-
-
 export const HeaderContainer = styled.div`
-  min-width: 375px;
-  padding: 20px 20px;
+  width: 375px;
+  padding: 20px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
   border-bottom: 1px solid rgba(243, 243, 243, 0.2);
 
-  padding-left: clamp(32px, ((100vw - 1440px) / 2) + 100px, 100px);
-padding-right: clamp(32px, ((100vw - 1440px) / 2) + 100px, 100px);
+  // padding-left: clamp(32px, ((100vw - 1440px) / 2) + 100px, 100px);
+  // padding-right: clamp(32px, ((100vw - 1440px) / 2) + 100px, 100px);
+  @media (min-width: 768px) and (max-width: 1439px) {
+    width: 768px;
+    padding-right: 100px;
+    padding-left: 100px;
+  }
 
- `;
-
-  
-
+  @media (min-width: 1440px) {
+    width: 1440px;
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+`;
 
 export const Navigation = styled.nav`
   display: flex;
