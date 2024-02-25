@@ -1266,7 +1266,7 @@ transition: opacity;
     url('/src/images/img-welcome-mob.jpg');
   background-color: #0a0a11;
   background-size: contain;
-  background-position: right;
+  background-position: right center;
   background-repeat: no-repeat;
 
   &:before {
@@ -1283,21 +1283,21 @@ transition: opacity;
     z-index: 1;
     pointer-events: none;
     @media screen and (min-width: 768px) {
-      width: 387px;
-      height: 372.442px;
-      border-radius: 387px;
-      background: rgba(188, 230, 210, 0.3);
       top: 50%;
       left: 50%;
       transform: translate(-90%, -120%);
+      width: 387px;
+      height: 372px;
+      border-radius: 387px;
+      background: rgba(188, 230, 210, 0.3);
     }
     @media screen and (min-width: 1440px) {
-      width: 387px;
-      height: 381px;
-      background: rgba(188, 230, 210, 0.4);
       top: 50%;
       left: 50%;
       transform: translate(-129%, -160%);
+      width: 387px;
+      height: 381px;
+      background: rgba(188, 230, 210, 0.4);
     }
   }
 
@@ -1340,15 +1340,11 @@ transition: opacity;
     background-image: url('/src/images/img-welcome-tablet.jpg');
     justify-content: left;
     padding-left: 64px;
-    width: 733pv;
-    height: 1024px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       background-image: url('/src/images/img-welcome-tablet@2x.jpg');
-      width: 703pv;
-      height: 983px;
     }
   }
   @media screen and (min-width: 1440px) {
