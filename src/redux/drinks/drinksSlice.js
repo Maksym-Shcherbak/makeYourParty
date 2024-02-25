@@ -30,7 +30,13 @@ const drinksSlice = createSlice({
     search: [],
     id: null,
     own: [],
-    favorite: [],
+    favorite: { data: [] },
+    motivation: '',
+  },
+  reducers: {
+    reset(state) {
+      state.motivation = '';
+    },
   },
 
   extraReducers: (builder) => {
@@ -165,6 +171,7 @@ const drinksSlice = createSlice({
           data: [action.payload.drinkId],
           notification: action.payload.notification,
         };
+        state.motivation = action.payload?.notification;
         state.isLoading = false;
         state.error = null;
       })
@@ -211,3 +218,5 @@ const drinksSlice = createSlice({
 });
 
 export const drinksReducer = drinksSlice.reducer;
+
+export const { reset } = drinksSlice.actions;
