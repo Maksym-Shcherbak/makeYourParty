@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { ButtonAdd } from './AddDrinkForm.styled';
-// import { useDispatch,  } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import DrinkDescriptionFields from './DrinkDescriptionFields/DrinkDescriptionFields';
 import DrinkIngredientsFields from './DrinkIngredientsFields/DrinkIngredientsFields';
 import RecipePreparation from './RecipePreparation/RecipePreparation';
+import { addDrinkOwn } from '../../../redux/drinks/drinksOperations';
 
 const AddDrinkForm = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [image, setImage] = useState(null);
   const [imageURL, setImageURL] = useState('');
 
@@ -19,6 +20,12 @@ const AddDrinkForm = () => {
   const [alcoholic, setAlcoholic] = useState('');
 
   const [instructions, SetInstructions] = useState('');
+
+  const [dataFromChild, setDataFromChild] = useState(null);
+
+  const handleChildData = (childData) => {
+    setDataFromChild(childData);
+  };
 
   const handleOnChangeImage = (event) => {
     const file = event.target.files[0];
@@ -64,14 +71,15 @@ const AddDrinkForm = () => {
 
   const onChangeRadio = (e) => {
     const valueInput = e.target.value;
+    console.log(valueInput);
 
     switch (valueInput) {
-      case 'alcoholic':
+      case 'Alcoholic':
         setAlcoholic(valueInput);
 
         return;
 
-      case 'non-alcoholic':
+      case 'Non alcoholic':
         setAlcoholic(valueInput);
 
         return;
@@ -95,9 +103,11 @@ const AddDrinkForm = () => {
       glass,
       alcoholic,
       instructions,
+      dataFromChild,
     };
 
     console.log(newDrink);
+    dispatch(addDrinkOwn(newDrink));
   };
 
   return (
@@ -116,7 +126,7 @@ const AddDrinkForm = () => {
           alcoholic={alcoholic}
           onChangeRadio={onChangeRadio}
         />
-        <DrinkIngredientsFields />
+        <DrinkIngredientsFields onChildData={handleChildData} />
         <RecipePreparation
           instructions={instructions}
           onHandleTexteria={onHandleTexteria}

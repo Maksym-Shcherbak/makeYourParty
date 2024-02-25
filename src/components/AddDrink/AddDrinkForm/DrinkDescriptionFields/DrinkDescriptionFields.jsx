@@ -152,7 +152,7 @@ const DrinkDescriptionFields = ({
               type="radio"
               name="alcoholic"
               id="alcoholic"
-              value="alcoholic"
+              value="Alcoholic"
               onChange={onChangeRadio}
             />
           </LabelRadio>
@@ -170,7 +170,7 @@ const DrinkDescriptionFields = ({
               type="radio"
               name="alcoholic"
               id="non-alcoholic"
-              value="non-alcoholic"
+              value="Non alcoholic"
               onChange={onChangeRadio}
             />
           </LabelRadio>

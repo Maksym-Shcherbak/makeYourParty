@@ -21,9 +21,9 @@ const IngredientSelect = ({
 
   return (
     <>
-      <ItemSelect id={id}>
+      <ItemSelect>
         <SelectWrapperIng>
-          <SelectIng onChange={onSelectHandleIng}>
+          <SelectIng data-id={id} onChange={onSelectHandleIng}>
             {ingredients.map(({ ingredientId, title }) => {
               return (
                 <SelectOption key={title} value={ingredientId}>
@@ -33,6 +33,7 @@ const IngredientSelect = ({
             })}
           </SelectIng>
           <SelectInput
+            data-id={id}
             type="text"
             name="measure"
             placeholder="1 cl"

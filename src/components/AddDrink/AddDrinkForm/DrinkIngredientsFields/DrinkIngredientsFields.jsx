@@ -13,11 +13,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getIngredients } from '../../../../redux/drinks/drinksOperations';
 import IngredientSelect from './IngredientSelect/IngredientSelect';
 
-const DrinkIngredientsFields = () => {
+const DrinkIngredientsFields = ({ onChildData }) => {
   const [counter, setCounter] = useState(0);
   const [data, setData] = useState([]);
 
-  // console.log(data);
+  console.log(data);
+
+  useEffect(() => {
+    const sendDataToParent = () => {
+      onChildData(data);
+    };
+
+    sendDataToParent();
+  }, [onChildData, data]);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -43,7 +51,16 @@ const DrinkIngredientsFields = () => {
   };
 
   const onSelectHandleIng = (e) => {
-    console.dir(e.currentTarget);
+    const id = e.currentTarget.dataset.id;
+    const searchObject = data.find((el) => el.id === id);
+    console.log(searchObject);
+    const updatedIngredients = data.map((item) => {
+      if (item.id !== searchObject.id) {
+        return item;
+      }
+      return { ...searchObject, ingredientId: e.target.value };
+    });
+    setData(updatedIngredients);
 
     // setData((prev) => [{ ...prev, ingredientId: e.target.value }]);
 
@@ -58,19 +75,16 @@ const DrinkIngredientsFields = () => {
   };
 
   const onChangeInputCl = (e) => {
-    console.dir(e.currentTarget);
-
-    data.map(({ id }) => {
-      const searchId = data.find((el) => el.id === id);
-      if (searchId) {
-        setData((prev) => {
-          console.log(prev);
-          // const abc = { prev.id, measure: e.target.value };
-          // console.log(abc);
-          // return [{ ...prev, measure: e.target.value }];
-        });
+    const id = e.currentTarget.dataset.id;
+    const searchObject = data.find((el) => el.id === id);
+    console.log(searchObject);
+    const updatedIngredients = data.map((item) => {
+      if (item.id !== searchObject.id) {
+        return item;
       }
+      return { ...searchObject, measure: e.target.value };
     });
+    setData(updatedIngredients);
   };
 
   return (
