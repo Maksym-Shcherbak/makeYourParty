@@ -108,7 +108,7 @@ export const Header = () => {
 
   return (
     <>
-      <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+      {/* <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}> */}
         <HeaderContainer isopen={isMenuOpen ? 'true' : 'false'}>
           <Logo />
           <Navigation />
@@ -135,7 +135,7 @@ export const Header = () => {
           isMenuOpen={isMenuOpen}
           handleToggleMenu={handleToggleMenu}
         />
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </>
   );
 };

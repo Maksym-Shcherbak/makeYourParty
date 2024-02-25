@@ -6,7 +6,7 @@ import { NavLink as StyledNavLink, MobileMenuContainer as StyledMobileMenuContai
 
 export const MobileMenu = ({ isMenuOpen, handleToggleMenu }) => {
   return (
-    <StyledMobileMenuContainer isopen={isMenuOpen.toString()} onClick={handleToggleMenu}>
+    <StyledMobileMenuContainer isopen={isMenuOpen.toString()}>
       <StyledNavLink as={RouterNavLink} to="/home" onClick={handleToggleMenu}>
         Home
       </StyledNavLink>
