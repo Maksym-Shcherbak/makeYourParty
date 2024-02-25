@@ -114,7 +114,7 @@ export const Header = () => {
           <Navigation />
           <StyledLink />
           <UserWrap>
-            <ThemeSwitcher handleToggleTheme={toggleTheme} />
+            {/* <ThemeSwitcher handleToggleTheme={toggleTheme} /> */}
 
             <UserLogo
               handleOpenPopup={handleOpenUserPopup}

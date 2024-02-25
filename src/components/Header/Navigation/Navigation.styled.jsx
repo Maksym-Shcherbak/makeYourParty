@@ -18,6 +18,7 @@ export const NavContainer = styled.nav`
 	@media screen and (min-width:768px) {
 		position: static;
 		 display: block;
+		 
 		
 		
 	}
@@ -56,20 +57,6 @@ export const NavContainer = styled.nav`
 			
 		}
 		
-		// @media(max-width:768px) {
-			
-		// 	position: fixed;
-		// 	left: -100%;
-		// 	right: 0;
-		// 	top: 0;			
-		// 	width: 100%;
-		// 	height: 100vh;
-		// 	transition: left 1s;
-		
-		// }
-		// .nav {
-		// 	left: 0;
-		// }
 		
 `;
 
@@ -80,14 +67,13 @@ export const List = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 16px;
-	margin: 20 auto 0 auto;
-	@media screen and (min-width: 1024px) {
-		
-	}
+	margin: 0 auto;
+	
 	
 	@media screen and (min-width: 768px) {
 		display: flex;
 		flex-direction: row;
+		align-items: center;
         justify-content: center;
 		align-self: flex-start;
 	
@@ -99,7 +85,7 @@ export const List = styled.div`
 .burger_close{
 	cursor: pointer;
 }
-}
+
 	
 `;
 
