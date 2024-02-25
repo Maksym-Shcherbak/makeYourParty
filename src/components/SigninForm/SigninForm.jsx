@@ -53,7 +53,7 @@ const SigninForm = () => {
         resetForm();
         navigate('/', { replace: true });
       } else {
-        Notify.failure('Rassword or email is invalide');
+        Notify.failure('Password or email is invalide');
       }
     } catch (error) {
       resetForm();
