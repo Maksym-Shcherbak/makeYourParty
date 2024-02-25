@@ -99,7 +99,16 @@ export const addDrinkOwn = createAsyncThunk(
   async (credentials, thunkAPI) => {
     console.log(credentials);
     try {
-      const { data } = await axios.post('/drinks/own/add', credentials, {
+      const formData = new FormData();
+      formData.append('drinkpicture', credentials.image);
+      formData.append('drink', credentials.drink);
+      formData.append('shortDescription', credentials.shortDescription);
+      formData.append('category', credentials.category);
+      formData.append('glass', credentials.glass);
+      formData.append('alcoholic', credentials.alcoholic);
+      formData.append('instructions', credentials.instructions);
+      formData.append('ingredients', credentials.ingredients);
+      const { data } = await axios.post('/drinks/own/add', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

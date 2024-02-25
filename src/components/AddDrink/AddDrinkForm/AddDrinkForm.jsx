@@ -21,10 +21,10 @@ const AddDrinkForm = () => {
 
   const [instructions, SetInstructions] = useState('');
 
-  const [dataFromChild, setDataFromChild] = useState(null);
+  const [ingredients, setIngredients] = useState(null);
 
   const handleChildData = (childData) => {
-    setDataFromChild(childData);
+    setIngredients(childData);
   };
 
   const handleOnChangeImage = (event) => {
@@ -97,17 +97,18 @@ const AddDrinkForm = () => {
     e.preventDefault();
 
     const newDrink = {
+      image,
       drink,
       shortDescription,
       category,
       glass,
       alcoholic,
       instructions,
-      dataFromChild,
+      ingredients,
     };
 
     console.log(newDrink);
-    dispatch(addDrinkOwn(newDrink));
+    dispatch(addDrinkOwn(JSON.stringify(newDrink)));
   };
 
   return (
