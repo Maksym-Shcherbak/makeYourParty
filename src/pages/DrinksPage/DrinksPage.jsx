@@ -7,60 +7,35 @@ import PageTitle from '../../components/PageTitle/PageTitle.jsx';
 import { Container } from '../../styled/Container.js';
 import { Section } from '../../styled/Section.js';
 import DrinksPageList from '../../components/DrinksPageList/DrinksPageList';
-import DrinksPageCategories from '../../components/DrinksPageCtegories/DrinksPageCategories.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import {
+  getCategories,
+  getIngredients,
+} from '../../redux/drinks/drinksOperations.js';
+import DrinksSearch from '../../components/DrinksSearch/DrinksSearch.jsx';
 
 const DrinksPage = () => {
+  const dispatch = useDispatch();
+  const categories = useSelector((state) => state.drinks.categories);
+  const ingredients = useSelector((state) => state.drinks.ingredients);
 
-
-
-
+  useEffect(() => {
+    dispatch(getCategories());
+    dispatch(getIngredients());
+  }, [dispatch]);
 
   return (
-    <Container>
-      <Section>
-        <PageTitle title={"Drinks"} />
-        <DrinksPageCategories/>
-        <DrinksPageList />
-      </Section>
-      
-      {/* <FaceBookBtn>
-        <BiLogoFacebook
-          style={{ color: '#F3F3F3', opacity: 0.8, fontSize: 28 }}
-        />
-      </FaceBookBtn>
-      <InstBtn>
-        <AiFillInstagram
-          style={{ color: '#F3F3F3', opacity: 0.8, fontSize: 28 }}
-        />
-      </InstBtn> */}
-    </Container>
+    <Section>
+      <Container>
+        <PageTitle title={'Drinks'} />
+        <DrinksSearch categories={categories} ingredients={ingredients} />
+        <Section>
+          <DrinksPageList />
+        </Section>
+      </Container>
+    </Section>
   );
 };
 
 export default DrinksPage;
-
-// const FaceBookBtn = styled.button`
-//   border: 1px solid rgba(243, 243, 243, 0.2);
-//   border-radius: 10px;
-//   padding: 8px;
-//   width: 44px;
-//   height: 44px;
-//   background: #0a0a11;
-//   padding: 8px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
-
-// const InstBtn = styled.button`
-//   border: 1px solid rgba(243, 243, 243, 0.2);
-//   border-radius: 10px;
-//   padding: 8px;
-//   width: 44px;
-//   height: 44px;
-//   background: #0a0a11;
-//   padding: 8px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;

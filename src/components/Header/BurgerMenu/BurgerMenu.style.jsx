@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export const BurgerButton = styled.div`
 gap: 24px;
 cursor: pointer;
-	@media(min-width: 769px) {	 
+	@media(min-width: 1440px) {	 
 	display:none ;	
 }
 

@@ -2,13 +2,13 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-import SectionTitle from '../../components/Drink/titleDrink/titleDrinks';
 import DrinkPageHero from '../../components/Drink/DrinkPageHero/DrinkPageHero';
 import DrinkIngredientsList from '../../components/Drink/DrinkIngredientsList/DrinkIngredientsList';
 import RecipePreparation from '../../components/Drink/RecipePreparation/RecipePreparation';
 
 import { Section } from '../../styled/Section';
 import { Container } from '../../styled/Container';
+import { Loader } from '../../components/Loader/Loader';
 
 import {
   selectDrinkById,
@@ -17,7 +17,6 @@ import {
 } from '../../redux/drinks/drinksSelectors';
 
 import { getById } from '../../redux/drinks/drinksOperations';
-import { Loader } from '../../components/Loader/Loader';
 
 const DrinkPage = () => {
   const dispatch = useDispatch();
@@ -37,10 +36,9 @@ const DrinkPage = () => {
         {isError && <h1>{isError}</h1>}
         {drink && (
           <>
-            <SectionTitle title={drink.recipe.drink} />
             <DrinkPageHero data={drink.recipe} />
             <DrinkIngredientsList data={drink.recipe.ingredients} />
-            <RecipePreparation description={drink.recipe.description} />
+            <RecipePreparation instructions={drink.recipe.instructions} />
           </>
         )}
       </Container>

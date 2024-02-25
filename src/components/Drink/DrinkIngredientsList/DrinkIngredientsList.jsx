@@ -8,6 +8,8 @@ import {
   MeasureIngredient,
 } from './DrinkIngredientsList.styled';
 
+import defaultCoctail from '../../../images/DrinkImages/default200.png';
+
 const RecipeIngredientsItems = ({ data }) => {
   return (
     <>
@@ -19,6 +21,9 @@ const RecipeIngredientsItems = ({ data }) => {
               <ImagesIngredient
                 src={item.ingredientId.ingredientThumb}
                 alt={item.title}
+                onError={({ currentTarget }) => {
+                  currentTarget.src = defaultCoctail;
+                }}
               />
               <InfoIngredient>
                 <NameIngredient>{item.title}</NameIngredient>

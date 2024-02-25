@@ -8,18 +8,38 @@ import {
   removeFavoriteDrink,
 } from '../../../redux/drinks/drinksOperations';
 
-const Button = ({ id, favoriteDrink }) => {
+import { selectMotivation } from '../../../redux/drinks/drinksSelectors';
+import MotivatingModal from '../../MotivatingModal/MotivatingModal';
+import { reset } from '../../../redux/drinks/drinksSlice';
 
-  const [favorite, setfavorite] = useState(null);
+const Button = ({ id, favoriteDrink }) => {
+  const [favorite, setFavorite] = useState(null);
   const dispatch = useDispatch();
+  console.log(favorite);
 
   const userId = useSelector((state) => state.auth.user.id);
+
+  //Modal-----------------------------------------
+  const [modal, setModal] = useState(false);
+  const motivation = useSelector(selectMotivation);
+
+  const modalClose = () => {
+    dispatch(reset());
+    setModal(false);
+  };
+
+  useEffect(() => {
+    if (motivation) {
+      setModal(true);
+    }
+  }, [motivation]);
+  //Modal-----------------------------------------
 
   useEffect(() => {
     if (favoriteDrink.length) {
       favoriteDrink.find((item) => {
         if (item === userId) {
-          return setfavorite(true);
+          return setFavorite(true);
         }
       });
     }
@@ -31,7 +51,8 @@ const Button = ({ id, favoriteDrink }) => {
         drinkId: id,
       })
     );
-    setfavorite(true);
+
+    setFavorite(true);
   };
 
   const handleRemoveFavorite = () => {
@@ -40,7 +61,8 @@ const Button = ({ id, favoriteDrink }) => {
         drinkId: id,
       })
     );
-    setfavorite(false);
+
+    setFavorite(false);
   };
 
   return (
@@ -54,6 +76,8 @@ const Button = ({ id, favoriteDrink }) => {
           Remove from favorite drinks
         </ButtonFavorite>
       )}
+
+      {modal && <MotivatingModal text={motivation} modalClose={modalClose} />}
     </>
   );
 };
