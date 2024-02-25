@@ -1,8 +1,13 @@
 import Select from 'react-select';
 
+const isMobile = window.innerWidth < 768;
+
 const customStyles = {
   container: (provided) => ({
     ...provided,
+
+    width: isMobile ? '100%' : '199px',
+
     // width: '199px', // Set the width of the container
   }),
   control: (provided) => ({
