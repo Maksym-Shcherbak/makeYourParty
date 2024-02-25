@@ -6,7 +6,7 @@ export const transition = '300ms ease-in-out';
 export const Form = styled(FormikForm)`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
 `;
 
 export const SelectAvatarInput = styled(Field)`

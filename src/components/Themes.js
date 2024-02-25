@@ -1,3 +1,7 @@
+
+import { ThemeProvider } from 'styled-components';
+
+
 export const lightTheme = {
   mainText: '#0A0A11',
   headerText: '#161F37',
@@ -124,3 +128,9 @@ export const darkTheme = {
   socialIcon: '#F3F3F3',
   socialIconBorder: '#F3F3F333',
 };
+export const themes = {
+  light: lightTheme,
+  dark: darkTheme,
+};
+
+export { ThemeProvider };

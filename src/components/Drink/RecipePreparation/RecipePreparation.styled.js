@@ -21,7 +21,7 @@ export const TitleRecipe = styled.h4`
     font-size: 40px;
   }
 
-  @media screen and (min-width: 1140px) {
+  @media screen and (min-width: 1440px) {
     margin-bottom: 60px;
   }
 `;
@@ -36,7 +36,7 @@ export const Recipe = styled.p`
     line-height: 137.5%;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     width: 549px;
   }
 `;
@@ -53,7 +53,7 @@ export const Images = styled.img`
     height: 430px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     width: 631px;
     height: 480px;
   }

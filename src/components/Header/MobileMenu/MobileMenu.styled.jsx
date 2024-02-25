@@ -1,6 +1,6 @@
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import styled from 'styled-components';
-
+import { themes } from '../../Themes';
 const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)';
 
 export const MobileMenuContainer = styled.div`
@@ -11,7 +11,7 @@ export const MobileMenuContainer = styled.div`
   height: 100vh;
   opacity: ${(props) => (props.isopen === 'true' ? 1 : 0)};
   visibility: ${(props) => (props.isopen === 'true' ? 'visible' : 'hidden')};
-  z-index: 9;
+  z-index:99;
   transform: ${(props) =>
     props.isopen === 'true' ? 'translateX(0)' : 'translateX(-100%)'};
 
@@ -90,7 +90,7 @@ export const MobileMenuContainer = styled.div`
 `;
 
 export const NavLink = styled(RouterNavLink)`
-color: #F3F3F3;
+color: ${({ theme }) => theme.mainText};
   padding: 8px 16px;
   color: ${({ theme }) => theme.headerText};
   border-radius: 40px;
@@ -99,6 +99,7 @@ color: #F3F3F3;
     border-color ${transition},
     background-color ${transition},
     color ${transition};
+    z-index:99;
 
   &:hover,
   &:focus {

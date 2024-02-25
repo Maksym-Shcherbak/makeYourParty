@@ -10,6 +10,7 @@ import {
 } from './DrinkItemStyle';
 
 import { DeleteIcon } from '../../components/DeleteIcon/DeleteIcon';
+import { useState } from 'react';
 
 const DrinkItem = ({
   id,
@@ -20,9 +21,28 @@ const DrinkItem = ({
   text,
   handleDelete,
 }) => {
+  const [imgError, setImgError] = useState(false);
+  const defaultImgMobile = '/images/default@1x.webp';
+  const defaultImgDesktop = '/images/default@2x.webp';
+
+  const handleImageError = () => {
+    setImgError(true);
+  };
   return (
     <DrinkItemWrapper>
-      <DrinkItemImg src={url} alt="Photo Coctail" />
+      {imgError ? (
+        <DrinkItemImg
+          srcSet={`${defaultImgMobile} 1x, ${defaultImgDesktop} 2x`}
+          alt={'Default Cocktail'}
+        />
+      ) : (
+        <DrinkItemImg
+          src={url}
+          alt={'Photo Cocktail'}
+          onError={handleImageError}
+        />
+      )}
+
       <DrinkItemTitle>{title}</DrinkItemTitle>
       <DrinkStatus>{alcoholic}</DrinkStatus>
       <DrinkItemDescription>{description}</DrinkItemDescription>

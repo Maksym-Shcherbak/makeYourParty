@@ -15,7 +15,7 @@ export const Title = styled.h1`
     line-height: 1.07143;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1044px) {
     font-size: 64px;
     line-height: 1.0625;
   }
@@ -32,7 +32,7 @@ export const EmptyFavoriteDrinksContainer = styled.div`
     margin: 100px auto;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1044px) {
     gap: 86px;
     margin: 67px auto;
   }
@@ -72,7 +72,7 @@ export const EmptyDescription = styled.p`
     padding-bottom: 140px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1044px) {
     padding-bottom: 86px;
   }
 `;

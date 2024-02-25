@@ -59,6 +59,6 @@ export const ImagesDrink = styled.img`
     height: 400px;
     position: absolute;
     right: 0;
-    top: -92px;
+    top: -26px;
   }
 `;

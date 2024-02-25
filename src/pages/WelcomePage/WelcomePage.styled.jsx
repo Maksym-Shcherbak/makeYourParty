@@ -1,90 +1,23 @@
 import styled from 'styled-components';
-import bgImageMobile from '../../images/img-welcome-mob.jpg';
-// import bgImageMobile2x from '../../images/img-welcome-mob@2x.jpg';
-import bgImageTablet from '../../images/img-welcome-tablet.jpg';
-// import bgImageTablet2x from '../../images/img-welcome-tablet@2x.jpg';
-// import bgImageDesc from '../../images/img-welcome-descctop.jpg';
-import bgImageDesc2x from '../../images/img-welcome-desctop@2x.jpg';
-
-// export const Container = styled.div`
-//   height: 100%;
-//   padding: 0 20px;
-//   margin: 0 auto;
-// background-image: linear-gradient(85deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
-//   linear-gradient(2deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
-//     url('../../src/images/Welcome.png');
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   background-position: center;
-// `;
-
-// export const Container = styled.div`
-//   background-image: linear-gradient(85deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
-//     linear-gradient(2deg, #0a0a11 0%, rgba(10, 10, 17, 0) 100%),
-//     url('../../src/images/Welcome.png');
-
-//   background-position: center;
-//   background-size: contain;
-//   background-position: right center;
-//   background-repeat: no-repeat;
-//   width: 100vw;
-//   height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   &:before {
-//     content: '';
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     width: 257px;
-//     height: 247px;
-//     transform: translate(-80%, -140%);
-//     background: rgba(188, 230, 210, 0.4);
-//     border-radius: 257px;
-//     filter: blur(104.8543701171875px);
-//     z-index: 1;
-//     pointer-events: none;
-//     @media screen and (min-width: 768px) {
-//       width: 387px;
-//       height: 372.442px;
-//       border-radius: 387px;
-//       background: rgba(188, 230, 210, 0.3);
-//       top: 50%;
-//       left: 50%;
-//       transform: translate(-90%, -120%);
-//     }
-
-//     &:after {
-//       content: '';
-//       position: absolute;
-//       top: -20%;
-//       right: 90%;
-//       width: 520px;
-//       height: 550px;
-//       transform: translateY(-50%, 50%);
-//       border-radius: 550px;
-//       background: rgba(64, 112, 205, 0.5);
-//       filter: blur(104.8543701171875px);
-//       z-index: 1;
-//       pointer-events: none;
-//     }
-//   }
-// `;
 
 export const Container = styled.section`
-  background-image: url(${bgImageMobile});
-
-  background-size: contain;
-  background-position: right center;
-  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(
+      0deg,
+      rgba(10, 10, 17, 0.2),
+      rgba(10, 10, 17, 0.2)
+    ),
+    linear-gradient(0.95deg, #0a0a11 -0.56%, rgba(10, 10, 17, 0) 21.93%),
+    linear-gradient(85.07deg, #060609 5.92%, rgba(10, 10, 17, 0) 51.07%),
+    url('/src/images/img-welcome-mob.jpg');
+  background-color: #0a0a11;
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
 
   &:before {
     content: '';
@@ -100,21 +33,21 @@ export const Container = styled.section`
     z-index: 1;
     pointer-events: none;
     @media screen and (min-width: 768px) {
-      width: 387px;
-      height: 372.442px;
-      border-radius: 387px;
-      background: rgba(188, 230, 210, 0.3);
       top: 50%;
       left: 50%;
       transform: translate(-90%, -120%);
+      width: 387px;
+      height: 372px;
+      border-radius: 387px;
+      background: rgba(188, 230, 210, 0.3);
     }
     @media screen and (min-width: 1440px) {
-      width: 387px;
-      height: 381px;
-      background: rgba(188, 230, 210, 0.4);
       top: 50%;
       left: 50%;
       transform: translate(-129%, -160%);
+      width: 387px;
+      height: 381px;
+      background: rgba(188, 230, 210, 0.4);
     }
   }
 
@@ -147,44 +80,86 @@ export const Container = styled.section`
     }
   }
 
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('/src/images/img-welcome-mob@2x.jpg');
+  }
+
   @media screen and (min-width: 768px) {
-    background-image: url(${bgImageTablet});
+    background-image: url('/src/images/img-welcome-tablet.jpg');
     justify-content: left;
-    padding-left: 62px;
+    padding-left: 64px;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('/src/images/img-welcome-tablet@2x.jpg');
+    }
   }
   @media screen and (min-width: 1440px) {
-    background-image: url(${bgImageDesc2x});
-    background-size: contain;
-    background-color: rgb(97, 97, 176);
-    padding-left: 497px;
+    background-image: url('/src/images/img-welcome-descctop.jpg');
+    background-color: rgb(7, 7, 11);
+    padding-left: 97px;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('/src/images/img-welcome-desctop@2x.jpg');
+    }
   }
 `;
 
 export const TextAndControls = styled.div`
-  width: 335px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 37px;
+  padding-right: 37px;
+  @media screen and (max-width: 374.98px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
-export const Block = styled.div`
-  text-align: center;
+  @media screen and (min-width: 768px) {
+    width: 470px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 485px;
+  }
 `;
 export const Title = styled.h1`
-  font-family: var(--font - family);
-  font-weight: 600;
+  color: #fafafa;
   font-size: 28px;
-  line-height: 1.14286;
-  letter-spacing: -0.02em;
-  color: #fafafa;
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.8px;
+  margin-bottom: 14px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.9px;
+  }
 `;
+
 export const WelcomeText = styled.p`
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.28571;
-  letter-spacing: -0.02em;
   text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: -0.28px;
   color: #fafafa;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.36px;
+    text-align: left;
+  }
 `;

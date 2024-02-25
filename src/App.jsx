@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
@@ -14,11 +14,16 @@ import AddDrinkPage from './pages/AddDrinkPage/AddDrinkPage';
 import FavoriteDrinksPage from './pages/FavoriteDrinksPage/FavoriteDrinksPage';
 import MyDrinksPage from './pages/MyDrinksPage/MyDrinksPage';
 import DrinkPage from './pages/DrinkPage/DrinkPage';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { currentUser } from './redux/auth/authOperations';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsRefreshing } from './redux/auth/authSelectors';
+import { selectIsRefreshing } from './redux/auth/auth-selectors';
 import { Loader } from './components/Loader/Loader';
+
+//----------------------
+import { darkTheme, lightTheme } from './components/Themes';
+import { ThemeProvider } from 'styled-components';
+import { selectTheme } from './redux/auth/authSelectors';
 
 // const WelcomePage = lazy(() => import('pages/WelcomePage'));
 // const HomePage = lazy(() => import('pages/HomePage'));
@@ -31,44 +36,56 @@ import { Loader } from './components/Loader/Loader';
 
 // const test = import.meta.env.VITE_API_TEST;
 
+//------------
+
+// import { useSelector, useDispatch } from 'react-redux';
+// import { darkTheme, lightTheme } from './components/Themes';
+//--------------------
+
 function App() {
+  const theme = useSelector(selectTheme);
+  const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(currentUser());
   }, [dispatch]);
 
-  const isRefreshing = useSelector(selectIsRefreshing);
-
-  return isRefreshing ? (
-    <Loader />
-  ) : (
-    <AppWrapper>
-      <Routes>
-        <Route
-          path="/welcome"
-          element={<RestrictedRoute component={<WelcomePage />} />}
-        />
-        <Route
-          path="/signup"
-          element={<RestrictedRoute component={<SignupPage />} />}
-        />
-        <Route
-          path="/signin"
-          element={<RestrictedRoute component={<SigninPage />} />}
-        />
-        <Route element={<PrivateRoute />}>
-          <Route path="/" element={<SharedLayout />}>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/drinks" element={<DrinksPage />} />
-            <Route path="/drinks/:drinkId" element={<DrinkPage />} />
-            <Route path="/add" element={<AddDrinkPage />} />
-            <Route path="/favorites" element={<FavoriteDrinksPage />} />
-            <Route path="/my" element={<MyDrinksPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Route>
-        </Route>
-      </Routes>
-    </AppWrapper>
+  return (
+    <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+      {isRefreshing ? (
+        <Loader />
+      ) : (
+        <AppWrapper>
+          <Routes>
+            <Route
+              path="/welcome"
+              element={<RestrictedRoute component={<WelcomePage />} />}
+            />
+            <Route
+              path="/signup"
+              element={<RestrictedRoute component={<SignupPage />} />}
+            />
+            <Route
+              path="/signin"
+              element={<RestrictedRoute component={<SigninPage />} />}
+            />
+            <Route element={<PrivateRoute />}>
+              <Route path="/" element={<SharedLayout />}>
+                <Route path="/home" element={<HomePage />} />
+                <Route path="/drinks" element={<DrinksPage />} />
+                <Route path="/drinks/:drinkId" element={<DrinkPage />} />
+                <Route path="/add" element={<AddDrinkPage />} />
+                <Route path="/favorites" element={<FavoriteDrinksPage />} />
+                <Route path="/my" element={<MyDrinksPage />} />
+                <Route path="*" element={<ErrorPage />} />
+              </Route>
+            </Route>
+          </Routes>
+        </AppWrapper>
+      )}
+    </ThemeProvider>
   );
 }
+
 export default App;

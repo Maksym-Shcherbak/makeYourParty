@@ -1,26 +1,27 @@
+
+
 import React from 'react';
-import { NavLink } from './MobileMenu.styled';
-import { MobileMenuContainer } from './MobileMenu.styled';
+import { NavLink as RouterNavLink } from 'react-router-dom';
+import { NavLink as StyledNavLink, MobileMenuContainer as StyledMobileMenuContainer } from './MobileMenu.styled';
 
 export const MobileMenu = ({ isMenuOpen, handleToggleMenu }) => {
   return (
-    <MobileMenuContainer isopen={isMenuOpen.toString()} onClick={handleToggleMenu}>
-      <NavLink to="/home" onClick={handleToggleMenu}>
+    <StyledMobileMenuContainer isopen={isMenuOpen.toString()} onClick={handleToggleMenu}>
+      <StyledNavLink as={RouterNavLink} to="/home" onClick={handleToggleMenu}>
         Home
-      </NavLink>
-      <NavLink to="/drinks" onClick={handleToggleMenu}>
+      </StyledNavLink>
+      <StyledNavLink as={RouterNavLink} to="/drinks" onClick={handleToggleMenu}>
         Drinks
-      </NavLink>
-      <NavLink to="/add" onClick={handleToggleMenu}>
-        Add drink
-      </NavLink>
-      <NavLink to="/my" onClick={handleToggleMenu}>
-        My drinks
-      </NavLink>
-      <NavLink to="/favorites" onClick={handleToggleMenu}>
+      </StyledNavLink>
+      <StyledNavLink as={RouterNavLink} to="/add" onClick={handleToggleMenu}>
+        Add recipes
+      </StyledNavLink>
+      <StyledNavLink as={RouterNavLink} to="/my" onClick={handleToggleMenu}>
+        My recipes
+      </StyledNavLink>
+      <StyledNavLink as={RouterNavLink} to="/favorites" onClick={handleToggleMenu}>
         Favorites
-      </NavLink>
-    </MobileMenuContainer>
+      </StyledNavLink>
+    </StyledMobileMenuContainer>
   );
 };
-

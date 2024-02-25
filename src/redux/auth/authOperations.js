@@ -95,3 +95,7 @@ export const subscribeUser = createAsyncThunk(
     }
   }
 );
+
+export const registerThunk = (userData) => {
+  // ваша реализация функции registerThunk
+};

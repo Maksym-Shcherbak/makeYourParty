@@ -67,10 +67,16 @@ export const getPopulars = createAsyncThunk(
 export const getSearch = createAsyncThunk(
   'drinks/search',
   async (credentials, thunkAPI) => {
-    const { drink, category, ingredient, limit, page } = credentials;
+    const {
+      searchQuery: drink,
+      category,
+      ingredient: ingredients,
+      limit,
+      page,
+    } = credentials;
     try {
       const { data } = await axios.get('/drinks/search', {
-        params: { drink, category, ingredient, limit, page },
+        params: { drink, category, ingredients, limit, page },
       });
       return data;
     } catch (error) {
@@ -107,10 +113,10 @@ export const addDrinkOwn = createAsyncThunk(
 
 export const removeDrinkOwn = createAsyncThunk(
   'drinks/own/remove',
-  async ({ id }, thunkAPI) => {
-    console.log(id);
+  async ({ drinkId }, thunkAPI) => {
     try {
-      const { data } = await axios.delete(`/drinks/own/remove/${id}`);
+      const { data } = await axios.delete(`/drinks/own/remove/${drinkId}`);
+      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -123,7 +129,8 @@ export const fetchDrinkOwn = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get('/drinks/own');
-      return data.results || [];
+
+      return data.result || [];
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
