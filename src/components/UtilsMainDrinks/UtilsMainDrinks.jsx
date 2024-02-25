@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 
 export const UtilsStyleImgCard = styled.img`
   border-radius: 8px;
   display: block;
   width: 100%;
+
 
 
  
@@ -43,4 +46,9 @@ export const UtilsTitleLinkWrap = styled.div`
   margin-top: 14px;
   display: flex;
   justify-content: space-between;
+`;
+
+export const UtilsStiledLinkMain = styled(Link)`
+  color: inherit;
+  
 `

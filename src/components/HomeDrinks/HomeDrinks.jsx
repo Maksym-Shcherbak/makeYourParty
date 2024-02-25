@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
-// import { selectMainDrinks } from '../../redux/drinks/drinksSelectors';
 import { getMainPage } from '../../redux/drinks/drinksOperations';
 import { useEffect } from 'react';
 import MainDrinkList from '../MainDrinkList/MainDrinkList';
-import { UtilsMainLink,HomeLinkWrap } from './HomeDrinksStyled';
+import { HomeMainLink, HomeLinkWrap } from './HomeDrinksStyled';
+import { Loader } from '../Loader/Loader';
 
 const HomeDrinks = () => {
   const dispatch = useDispatch();
+  
 
   useEffect(() => {
     
@@ -23,7 +24,7 @@ const HomeDrinks = () => {
   return (
     <>
           {allDrinksNamesList.length === 0 ? (
-            false
+            <Loader/>
           ) : (
           <ul>
             {
@@ -35,7 +36,7 @@ const HomeDrinks = () => {
                ) 
             }
             <HomeLinkWrap>
-              <UtilsMainLink to="/drinks">Other drinks</UtilsMainLink>
+              <HomeMainLink to="/drinks">Other drinks</HomeMainLink>
             </HomeLinkWrap>
             
            </ul>

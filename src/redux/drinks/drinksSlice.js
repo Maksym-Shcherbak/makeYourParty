@@ -28,6 +28,7 @@ const drinksSlice = createSlice({
     main: [],
     populars: [],
     search: [],
+    totalDrinks: null,
     id: null,
     own: [],
     favorite: { data: [] },
@@ -106,6 +107,7 @@ const drinksSlice = createSlice({
       })
       .addCase(getSearch.fulfilled, (state, action) => {
         state.search = action.payload.data;
+        state.totalDrinks = action.payload.totalHits;
         state.isLoading = false;
         state.error = null;
       })

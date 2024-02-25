@@ -1,18 +1,20 @@
 
-import { MainDrinksItem,StiledLinkMain } from "./MainDrinkItemStyle";
-import { UtilsStyleImgCard,UtilsStyleLink,UtilsTitleLinkWrap,UtilsStyleTitleCard } from "../UtilsMainDrinks/UtilsMainDrinks";
+import { MainDrinksItem} from "./MainDrinkItemStyle";
+import { UtilsStyleImgCard,UtilsStyleLink,UtilsTitleLinkWrap,UtilsStyleTitleCard ,UtilsStiledLinkMain} from "../UtilsMainDrinks/UtilsMainDrinks";
+import imgDef from "../../images/default@2x.webp";
 
 
-const MainDrinkItem = ({ title, url, text,id }) => {
+const MainDrinkItem = ({ title, url, text, id}) => {
+
   return (
     <MainDrinksItem>
-      <StiledLinkMain to={`/drinks/${id}`}>
-         <UtilsStyleImgCard src={url} alt="Photo drinks" />
+      <UtilsStiledLinkMain to={`/drinks/${id}`}>
+        <UtilsStyleImgCard src={url || imgDef} alt="Photo drinks" />
       <UtilsTitleLinkWrap>
         <UtilsStyleTitleCard>{title}</UtilsStyleTitleCard>    
               <UtilsStyleLink>{text}</UtilsStyleLink>   
       </UtilsTitleLinkWrap>
-      </StiledLinkMain>
+      </UtilsStiledLinkMain>
        
       
   </MainDrinksItem>)

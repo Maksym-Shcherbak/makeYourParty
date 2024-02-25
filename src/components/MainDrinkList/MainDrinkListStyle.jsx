@@ -15,7 +15,7 @@ export const MainDrinksList = styled.ul`
 `;
 
 
-export const MainListCategory=styled.h2`
+export const MainListCategory = styled.h2`
   margin-bottom: 40px;
   font-weight: 600;
   font-size: 28px;
@@ -28,4 +28,4 @@ export const MainListCategory=styled.h2`
   }
 
 
-`
+`;
