@@ -24,3 +24,11 @@ export const HomeLinkWrap = styled.li`
   display: flex;
   justify-content: center;
 `;
+
+export const HomePgList = styled.ul`
+  margin-top: 115px;
+  @media screen and (min-width: 768px) {
+    margin-top: 160px;
+   
+  }
+`;

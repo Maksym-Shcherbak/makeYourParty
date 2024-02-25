@@ -1,17 +1,25 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getSearch } from '../../redux/drinks/drinksOperations';
 import { DrinksPgList } from './DrinksPageStyle';
 import DrinksPageItem from './DrinksPageItem';
 import { Loader } from '../Loader/Loader';
 import Pagination from '../Pagination/Pagination.jsx';
+import { useMediaQuery } from 'react-responsive';
+
 
 const DrinksPageList = () => {
   const dispatch = useDispatch();
+  const totalHits = useSelector((state) => state.drinks.totalHits);
   const search = useSelector((state) => state.drinks.search);
-  // const lengSearch = search.length;
-  console.log(search.totalHits, 'всі');
-  const [page, setPage] = useState(1);
+  const isDesctop = useMediaQuery({ query: '(min-width: 1440px)' })
+  const countCards = isDesctop ? 9 : 10;
+  
+  console.log(search, "array");
+  console.log(isDesctop, 'isDesctop');
+  const [page, setPage] = useState(0);
+  
 
   const handlePaginPageClick = (e) => {
     setPage(e.selected);
@@ -23,14 +31,14 @@ const DrinksPageList = () => {
         drink: '',
         category: '',
         ingredient: '',
-        limit: '10',
+        limit: `${countCards}`,
         page: `${page}`,
       })
     );
-  }, [dispatch, page]);
+  }, [dispatch, page,countCards]);
 
-
-   let allDrinksIsArray = Array.isArray(search.data) ? search.data : search;
+  let allDrinksIsArray = Array.isArray(search) ? search : search;
+  console.log(search, 'всі');
 
   return (
     <>
@@ -38,7 +46,7 @@ const DrinksPageList = () => {
         {allDrinksIsArray.length === 0 ? (
           <Loader />
         ) : (
-          search.data.map((item) => (
+          allDrinksIsArray.map((item) => (
             <DrinksPageItem
               key={item._id}
               text={'see more'}
@@ -49,11 +57,12 @@ const DrinksPageList = () => {
           ))
         )}
       </DrinksPgList>
-      <Pagination
-        pageCount={search.totalHits}
+      { allDrinksIsArray.length < 9 ? (false) :
+        (<Pagination
+        pageCount={totalHits ? totalHits.totalHits : 0}
         onPageChange={handlePaginPageClick}
-       
-      />
+         />)}
+      
     </>
   );
 };

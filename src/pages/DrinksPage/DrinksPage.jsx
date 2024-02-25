@@ -3,6 +3,7 @@
 // import { BiLogoFacebook } from 'react-icons/bi';
 // import { IconContext } from 'react-icons';
 // import { AiFillInstagram } from 'react-icons/ai';
+
 import PageTitle from '../../components/PageTitle/PageTitle.jsx';
 import { Container } from '../../styled/Container.js';
 import { Section } from '../../styled/Section.js';
@@ -30,9 +31,7 @@ const DrinksPage = () => {
       <Container>
         <PageTitle title={'Drinks'} />
         <DrinksSearch categories={categories} ingredients={ingredients} />
-        <Section>
           <DrinksPageList />
-        </Section>
       </Container>
     </Section>
   );

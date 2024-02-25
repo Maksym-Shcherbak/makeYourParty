@@ -6,9 +6,6 @@ export const UtilsStyleImgCard = styled.img`
   border-radius: 8px;
   display: block;
   width: 100%;
-
-
-
  
   @media screen and (min-width: 375px) {
     width: 335px;

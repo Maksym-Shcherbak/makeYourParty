@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getMainPage } from '../../redux/drinks/drinksOperations';
 import { useEffect } from 'react';
+
 import MainDrinkList from '../MainDrinkList/MainDrinkList';
-import { HomeMainLink, HomeLinkWrap } from './HomeDrinksStyled';
+import { HomeMainLink, HomeLinkWrap,HomePgList } from './HomeDrinksStyled';
 import { Loader } from '../Loader/Loader';
 
 const HomeDrinks = () => {
@@ -26,7 +27,7 @@ const HomeDrinks = () => {
           {allDrinksNamesList.length === 0 ? (
             <Loader/>
           ) : (
-          <ul>
+          <HomePgList>
             {
               allDrinksNamesList.map((drinkName) => <MainDrinkList
                 key={drinkName}
@@ -38,8 +39,7 @@ const HomeDrinks = () => {
             <HomeLinkWrap>
               <HomeMainLink to="/drinks">Other drinks</HomeMainLink>
             </HomeLinkWrap>
-            
-           </ul>
+           </HomePgList>
           )}
     </>
   );};

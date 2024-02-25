@@ -1,4 +1,3 @@
-// import ReactPaginate from "react-paginate";
 import { PaginationList } from "./PaginationStyle";
 
 const Pagination = ({ pageCount, onPageChange })=>{
@@ -8,15 +7,10 @@ const Pagination = ({ pageCount, onPageChange })=>{
       <PaginationList
         breakLabel="..."
         onPageChange={onPageChange}
-        pageCount={pageCount}
+        pageCount={ Math.ceil(pageCount / 10)}
         renderOnZeroPageCount={null}
         pageClassName="page-item"
-        pageLinkClassName="page-link"
-        previousClassName="page-item"
-        previousLinkClassName="page-link"
-        nextClassName="page-item"
         nextLinkClassName="page-link"
-        breakClassName="page-item"
         breakLinkClassName="page-link"
         containerClassName="pagination"
         activeClassName="active"
