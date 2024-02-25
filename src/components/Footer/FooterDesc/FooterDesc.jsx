@@ -61,7 +61,7 @@ const FooterDesc = () => {
               to="/favorites"
               onClick={handleLinkClick}
             >
-              <span>Favorites drinks</span>
+              <span>Favorites</span>
             </StyledNavLink>
           </nav>
           <SubscribeForm />
