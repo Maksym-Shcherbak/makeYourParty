@@ -2,11 +2,8 @@ import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { signUp } from '../../redux/auth/authOperations.js';
-// import { selectAuthIsLoading } from '../../redux/auth/authSelectors.js';
-// import { Styledselector } from './AuthForm.style.js';
-import { format } from 'date-fns';
-import { toast } from 'react-toastify';
-// import Loader from 'components/LoaderPhone/LoaderPhone';
+import { Notify } from 'notiflix';
+import { useNavigate } from 'react-router-dom';
 import DatePicker from '../../components/DatePicker/DatePicker.jsx';
 import FormErr from '../../components/FormErr/FormErr.jsx';
 import * as Yup from 'yup';
@@ -48,15 +45,20 @@ const AuthForm = () => {
   };
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
     const { name, dateOfBirth, email, password } = values;
-    // const birthDate = format(new Date(dateOfBirth), 'yyyy-MM-dd');
-    dispatch(signUp({ name, dateOfBirth, email, password }))
-      .unwrap()
-      .then(() => toast.success('Registration successfully'))
-      .catch(() => toast.error('Something went wrong. Try later'));
-    resetForm();
+    try {
+      const response = dispatch(signUp({ name, dateOfBirth, email, password }));
+      if (response.payload.token) {
+        navigate('/', { replace: true });
+        resetForm();
+      } else {
+        Notify.failure('Registration error');
+      }
+    } catch (error) {
+      resetForm();
+    }
   };
   return (
     <Formik
