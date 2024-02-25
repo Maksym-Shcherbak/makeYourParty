@@ -30,7 +30,13 @@ const drinksSlice = createSlice({
     search: [],
     id: null,
     own: [],
-    favorite: [],
+    favorite: { data: [] },
+    motivation: '',
+  },
+  reducers: {
+    reset(state) {
+      state.motivation = '';
+    },
   },
 
   extraReducers: (builder) => {
@@ -159,8 +165,8 @@ const drinksSlice = createSlice({
       .addCase(addFavoriteDrink.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(addFavoriteDrink.fulfilled, (state) => {
-        // state.favorite = action.payload;
+      .addCase(addFavoriteDrink.fulfilled, (state, action) => {
+        state.motivation = action.payload?.notification;
         state.isLoading = false;
         state.error = null;
       })
@@ -203,3 +209,5 @@ const drinksSlice = createSlice({
 });
 
 export const drinksReducer = drinksSlice.reducer;
+
+export const { reset } = drinksSlice.actions;
