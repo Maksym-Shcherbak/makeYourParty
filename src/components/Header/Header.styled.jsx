@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
   width: 375px;
-  padding: 20px;
+  padding: 20px 0px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -12,10 +12,11 @@ export const HeaderContainer = styled.div`
 
   // padding-left: clamp(32px, ((100vw - 1440px) / 2) + 100px, 100px);
   // padding-right: clamp(32px, ((100vw - 1440px) / 2) + 100px, 100px);
+
   @media (min-width: 768px) and (max-width: 1439px) {
     width: 768px;
-    padding-right: 100px;
-    padding-left: 100px;
+    padding-right: 32px;
+    padding-left: 32px;
   }
 
   @media (min-width: 1440px) {
@@ -29,7 +30,7 @@ export const Navigation = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 100px;
+  // padding: 0 100px;
 `;
 
 export const StyledLink = styled(Link)`
@@ -76,8 +77,9 @@ export const IconWrapper = styled.svg`
 export const UserWrap = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 14px;
+  gap: 24px;
   justify-content: flex-end;
+  
 
   @media screen and (max-width: 374.98px) {
     column-gap: 3.5vw;
