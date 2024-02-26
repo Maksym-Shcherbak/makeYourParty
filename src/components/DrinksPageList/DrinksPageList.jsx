@@ -1,36 +1,42 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getSearch } from '../../redux/drinks/drinksOperations';
 import { DrinksPgList } from './DrinksPageStyle';
 import DrinksPageItem from './DrinksPageItem';
 import { Loader } from '../Loader/Loader';
 import Pagination from '../Pagination/Pagination.jsx';
+import { useMediaQuery } from 'react-responsive';
+
 
 const DrinksPageList = () => {
-  // const dispatch = useDispatch();
-  const drinks = useSelector((state) => state.drinks.search);
-  // const totalHits = useSelector((state) => state.drinks.totalDrinks);
-  // const lengSearch = search.length;
-  // console.log(totalHits, 'всі');
-  // const [page, setPage] = useState(1);
+  const dispatch = useDispatch();
+  const totalHits = useSelector((state) => state.drinks.totalHits);
+  const search = useSelector((state) => state.drinks.search);
+  const isDesctop = useMediaQuery({ query: '(min-width: 1440px)' })
+  const countCards = isDesctop ? 9 : 10;
 
-  // const handlePaginPageClick = (e) => {
-  //   setPage(e.selected + 1);
-  // };
+  const [page, setPage] = useState(0);
+  
 
-  // useEffect(() => {
-  //   dispatch(
-  //     getSearch({
-  //       drink: '',
-  //       category: '',
-  //       ingredient: '',
-  //       limit: '10',
-  //       page: `${page}`,
-  //     })
-  //   );
-  // }, [dispatch, page]);
+  const handlePaginPageClick = (e) => {
+    setPage(e.selected + 1);
+  };
 
-  let allDrinksIsArray = Array.isArray(drinks) ? drinks : drinks;
+  useEffect(() => {
+    dispatch(
+      getSearch({
+        drink: '',
+        category: '',
+        ingredient: '',
+        limit: `${countCards}`,
+        page: `${page}`,
+      })
+    );
+  }, [dispatch, page,countCards]);
+
+  let allDrinksIsArray = Array.isArray(search) ? search : search;
+  console.log(search, 'всі');
 
   return (
     <>
@@ -38,7 +44,7 @@ const DrinksPageList = () => {
         {allDrinksIsArray.length === 0 ? (
           <Loader />
         ) : (
-          drinks.map((item) => (
+          allDrinksIsArray.map((item) => (
             <DrinksPageItem
               key={item._id}
               text={'see more'}
@@ -49,7 +55,12 @@ const DrinksPageList = () => {
           ))
         )}
       </DrinksPgList>
-      {/* <Pagination pageCount={totalHits} onPageChange={handlePaginPageClick} /> */}
+      { allDrinksIsArray.length < 9 ? (false) :
+        (<Pagination
+        pageCount={totalHits ? totalHits.totalHits : 0}
+        onPageChange={handlePaginPageClick}
+         />)}
+      
     </>
   );
 };
