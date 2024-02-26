@@ -135,6 +135,12 @@ export const StyledLink = styled(Link)`
   line-height: 1.28571;
   color: #f3f3f3;
 
+  &:hover,
+  &:focus {
+    background: #f3f3f3;
+    color: #161f37;
+  }
+
   @media (min-width: 768px) {
     padding: 18px 44px;
     width: 160px;
@@ -155,6 +161,17 @@ export const DeleteBtn = styled.button`
   width: 46px;
   height: 46px;
   background: #161f37;
+  color: #f3f3f3;
+
+  &:hover,
+  &:focus {
+    background: #f3f3f3;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    color: #161f37;
+  }
 
   @media (min-width: 768px) {
     padding: 15px;

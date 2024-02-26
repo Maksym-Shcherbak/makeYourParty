@@ -22,8 +22,8 @@ const DrinkItem = ({
   handleDelete,
 }) => {
   const [imgError, setImgError] = useState(false);
-  const defaultImgMobile = '/images/default@1x.webp';
-  const defaultImgDesktop = '/images/default@2x.webp';
+  const defaultImgMobile = '/src/images/block@1x.webp';
+  const defaultImgDesktop = '/src/images/block@2x.webp';
 
   const handleImageError = () => {
     setImgError(true);
