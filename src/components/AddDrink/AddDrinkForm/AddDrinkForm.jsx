@@ -5,23 +5,27 @@ import DrinkDescriptionFields from './DrinkDescriptionFields/DrinkDescriptionFie
 import DrinkIngredientsFields from './DrinkIngredientsFields/DrinkIngredientsFields';
 import RecipePreparation from './RecipePreparation/RecipePreparation';
 import { addDrinkOwn } from '../../../redux/drinks/drinksOperations';
+import { useNavigate } from 'react-router-dom';
+
+import Notiflix from 'notiflix';
 
 const AddDrinkForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [image, setImage] = useState(null);
   const [imageURL, setImageURL] = useState('');
 
   const [drink, setDrink] = useState('');
   const [shortDescription, setShortDescription] = useState('');
 
-  const [category, setCategory] = useState('');
-  const [glass, setGlass] = useState('');
+  const [category, setCategory] = useState('Beer');
+  const [glass, setGlass] = useState('Balloon Glass');
 
   const [alcoholic, setAlcoholic] = useState('');
 
   const [instructions, SetInstructions] = useState('');
 
-  const [ingredients, setIngredients] = useState(null);
+  const [ingredients, setIngredients] = useState([]);
 
   const handleChildData = (childData) => {
     setIngredients(childData);
@@ -71,7 +75,6 @@ const AddDrinkForm = () => {
 
   const onChangeRadio = (e) => {
     const valueInput = e.target.value;
-    console.log(valueInput);
 
     switch (valueInput) {
       case 'Alcoholic':
@@ -93,8 +96,48 @@ const AddDrinkForm = () => {
     SetInstructions(e.target.value);
   };
 
+  const validateBody = () => {
+    const value = '';
+
+    switch (value) {
+      case imageURL:
+        Notiflix.Notify.warning(`Upload a photo of the drink`);
+        return;
+
+      case drink:
+        Notiflix.Notify.warning(`Fill in required fields - title`);
+        return;
+
+      case shortDescription:
+        Notiflix.Notify.warning(`Fill in required fields - recipe`);
+        return;
+
+      case category:
+        Notiflix.Notify.warning(`Fill in required fields - category`);
+        return;
+
+      case glass:
+        Notiflix.Notify.warning(`Fill in required fields - glass`);
+        return;
+
+      case alcoholic:
+        Notiflix.Notify.warning(
+          `Select the type of drink - alcoholic or non-alcoholic`
+        );
+        return;
+
+      case instructions:
+        Notiflix.Notify.warning(`Fill in required fields - recipe preparation`);
+        return;
+
+      default:
+        return;
+    }
+  };
+
   const onSubmitForm = (e) => {
     e.preventDefault();
+    validateBody();
 
     const newDrink = {
       image,
@@ -107,7 +150,8 @@ const AddDrinkForm = () => {
       ingredients,
     };
 
-    console.log(newDrink);
+    navigate('/my');
+
     dispatch(addDrinkOwn(newDrink));
   };
 

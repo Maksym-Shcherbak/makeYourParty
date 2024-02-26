@@ -13,11 +13,11 @@ const IngredientSelect = ({
   ingredients,
   id,
   onHandleDeleteIngredient,
-  data,
+
   onSelectHandleIng,
   onChangeInputCl,
 }) => {
-  console.log(data);
+  // console.log(data);
 
   return (
     <>

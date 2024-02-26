@@ -17,11 +17,10 @@ export const ListDrink = styled.ul`
   display: flex;
   flex-wrap: wrap;
   row-gap: 24px;
-  padding-bottom: 80px;
+
   @media screen and (min-width: 768px) {
     column-gap: 32px;
     row-gap: 32px;
-    padding-bottom: 140px;
   }
 
   @media screen and (min-width: 1440px) {
