@@ -1,16 +1,10 @@
-import { useState } from 'react';
 import {
   RecipeTexterea,
   SectionTitleAdd,
   TextereaWrapper,
-} from '../AddDrinkForm.styled';
+} from '../RecipePreparation/RecipePreparation.styled';
 
-const RecipePreparation = () => {
-  const [instructions, SetInstructions] = useState('');
-
-  const onHandleTexteria = (e) => {
-    SetInstructions(e.target.value);
-  };
+const RecipePreparation = ({ instructions, onHandleTexteria }) => {
   return (
     <>
       <TextereaWrapper>

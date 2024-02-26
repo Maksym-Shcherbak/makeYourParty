@@ -26,7 +26,7 @@ const PopularDrinks = () => {
       <ListDrink>
         {popularDrinks.map(({ _id, drink, drinkThumb, description }) => {
           return (
-            <Link key={_id}>
+            <Link key={_id} to={`/drinks/${_id}`}>
               <ItemListDrink>
                 <ImageDrink src={drinkThumb} alt={drink} />
                 <DescriptionWrapper>
