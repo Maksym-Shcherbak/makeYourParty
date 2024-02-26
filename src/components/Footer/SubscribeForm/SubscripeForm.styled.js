@@ -5,29 +5,55 @@ export const FormWrap = styled.div`
   position: relative;
   max-width: 335px;
   margin-bottom: 80px;
-  &::after {
+  
+  &::after{
     content: '';
     display: block;
     position: absolute;
-    bottom: -775px;
-    left: -410px;
+    bottom: -825px;
+    left: -380px;
     width: 774px;
     height: 762px;
     border-radius: 774px;
     background: rgba(188, 230, 210, 0.4);
-    filter: blur(104.8543701171875px);
+    filter: blur(100.8543701171875px);
+  }
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -900px;
+    left: 120px;
+    width: 774px;
+    height: 762px;
+    border-radius: 774px;
+    background: rgba(64, 112, 205, 0.5);
+    filter: blur(100.8543701171875px);
+    
   }
   @media ${device.tablet} {
     max-width: 309px;
     &::after {
-      bottom: -790px;
-      left: -525px;
+      bottom: -750px;
+      left: -520px;
+    }
+    &::before {
+      bottom: -800px;
+      left: -350px;
     }
   }
   @media ${device.desktop} {
     &::after {
-      left: -810px;
+      width: 700px;
+      left: -820px;
+      bottom: -800px;
     }
+    &::before{
+      width: 700px;
+      left: -570px;
+      bottom: -820px;
+    }
+    
   }
 `;
 export const SubscribeDesc = styled.div`
