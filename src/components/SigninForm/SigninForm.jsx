@@ -51,7 +51,7 @@ const SigninForm = () => {
 
       if (response.payload.token) {
         resetForm();
-        navigate('/', { replace: true });
+        navigate('/home', { replace: true });
       } else {
         Notify.failure('Password or email is invalide');
       }
