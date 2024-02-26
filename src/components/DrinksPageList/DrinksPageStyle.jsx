@@ -8,7 +8,7 @@ export const DrinksPgList = styled.ul`
   row-gap: 25px;
 
   position: relative;
-
+/* 
   &::before {
     content: '';
     display: inline-block;
@@ -34,7 +34,7 @@ export const DrinksPgList = styled.ul`
     right: -372px;
     width: 550px;
     height: 550px;
-  }
+  } */
 
   margin: 38px 0 55px 0;
   @media screen and (min-width: 768px) {

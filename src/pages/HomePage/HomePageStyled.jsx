@@ -24,13 +24,13 @@ export const HomeDescription = styled.p`
 
 export const HomeSection = styled.section`
   flex-wrap: wrap;
-  position: relative;
+  /* position: relative; */
 
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;
   }
-  
+/*   
   &::before {
     content: '';
     display:block;
@@ -44,14 +44,14 @@ export const HomeSection = styled.section`
     width: 550px;
     height: 550px;
    
-  }
+  } */
 `;
 
 export const HomeTitlDescWrap = styled.div`
   margin-bottom: 45px;
-  position: relative;
+  /* position: relative; */
   
-  &::before {
+  /* &::before {
     content: '';
     display: inline-block;
     position: absolute;
@@ -63,7 +63,7 @@ export const HomeTitlDescWrap = styled.div`
     width: 750px;
     height: 850px;
  
-  }
+  } */
   @media screen and (min-width: 1440px) {
     width: 715px;
     padding-top: 42px;
@@ -88,6 +88,7 @@ export const HeroImgWrap = styled.div`
       filter: blur(104.8543701171875px);
     
     }
+    
   }
 `;
 

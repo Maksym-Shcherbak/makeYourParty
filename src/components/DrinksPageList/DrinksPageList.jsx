@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
 
 import { getSearch } from '../../redux/drinks/drinksOperations';
 import { DrinksPgList } from './DrinksPageStyle';
 import DrinksPageItem from './DrinksPageItem';
 import { Loader } from '../Loader/Loader';
 import Pagination from '../Pagination/Pagination.jsx';
-import { useMediaQuery } from 'react-responsive';
+import DrinksMessage from '../DrinksMessage/DrinksMessage.jsx';
+
 
 
 
@@ -42,9 +44,9 @@ const DrinksPageList = () => {
   return (
     <>
       <DrinksPgList>
-        {allDrinksIsArray.length === 0 ? (
-           <Loader/>
-        ) : (
+        {allDrinksIsArray.length === 0 ? 
+          (totalHits.totalHits !== 0 ? <Loader /> : <DrinksMessage text={"Not matches "} />)
+         : (
           allDrinksIsArray.map((item) => (
             <DrinksPageItem
               key={item._id}

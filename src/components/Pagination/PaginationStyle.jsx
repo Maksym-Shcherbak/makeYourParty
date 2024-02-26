@@ -15,11 +15,10 @@ export const PaginationList = styled(ReactPaginate)`
     gap: 40px;
   }
   >.active{
-    
     background-color: #4070CD;
     width:27px;
     height:27px;
-border-radius: 50%;
+    border-radius: 50%;
 
   }
   >.disabled{

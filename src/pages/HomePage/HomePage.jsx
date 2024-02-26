@@ -19,7 +19,7 @@ const HomePage = () => {
   const isError = useSelector(selectError);
   return (
     <Section>
-    <Container>
+     <Container>
       
       {isLoading && !isError && <Loader />}
         <HomeSection>
@@ -34,7 +34,7 @@ const HomePage = () => {
         </HomeSection>
           <HomeDrinks />
         </Container>
-         </Section>
+      </Section>
   );
 };
 
