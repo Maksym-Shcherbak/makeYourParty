@@ -37,7 +37,6 @@ const DrinksPageList = () => {
           <Loader />
         ) : (
           drinks.map((item) => {
-            console.log(item.drink);
             return (
               <DrinksPageItem
                 key={item._id}

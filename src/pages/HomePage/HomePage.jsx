@@ -1,6 +1,7 @@
-import { useSelector } from 'react-redux';
-
-import PageTitle from '../../components/PageTitle/PageTitle';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getMainPage } from '../../redux/drinks/drinksOperations';
+import PageTitle from '../../components/PageTitle/PageTitle.jsx';
 import { Container } from '../../styled/Container.js';
 import { Section } from '../../styled/Section.js';
 import { HomeMainLink } from '../../components/HomeDrinks/HomeDrinksStyled.jsx';
@@ -22,6 +23,15 @@ import { Loader } from '../../components/Loader/Loader.jsx';
 const HomePage = () => {
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMainPage());
+  }, [dispatch]);
+
+  const main = useSelector((state) => state.drinks.main);
+  console.log(main);
+
   return (
     <Container>
       <HomeSection>
@@ -39,13 +49,9 @@ const HomePage = () => {
         </HeroImgWrap>
       </HomeSection>
       {isLoading && !isError && <Loader />}
-      {!isLoading && !isError && (
-        <>
-          <Section>
-            <HomeDrinks />
-          </Section>
-        </>
-      )}
+      <Section>
+        <HomeDrinks drinks={main} />
+      </Section>
     </Container>
   );
 };
