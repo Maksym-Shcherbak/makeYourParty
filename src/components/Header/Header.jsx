@@ -7,12 +7,9 @@ import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { MobileMenu } from './MobileMenu/MobileMenu';
 import { UserLogo } from './UserMenu/UserLogo/UserLogo';
 import { UserLogoPopup } from './UserLogoPopup/UserLogoPopup';
-import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
-import { darkTheme, lightTheme } from '../Themes';
-import { ThemeProvider } from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectTheme } from '../../redux/auth/authSelectors';
-import { currentUser, toggleTheme } from '../../redux/auth/auth-operation'; // Импортируем toggleTheme
+import { currentUser, toggleTheme } from '../../redux/auth/auth-operation'; 
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -38,7 +35,7 @@ export const Header = () => {
 
   return (
     <>
-      {/* <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}> */}
+      
         <HeaderContainer isopen={isMenuOpen ? 'true' : 'false'}>
           <Logo />
           <Navigation />

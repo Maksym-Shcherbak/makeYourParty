@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const Button = styled.div`
-  width:32px;
   height:32px;
   cursor: pointer;
   display: flex;
   align-items: center;
   cursor: pointer;
-  justify-content: center;
-  grid-gap: 8px;
-  padding-right: 14px;
+  gap: 10px;
+  // justify-content: center;
+  // grid-gap: 8px;
+  // padding-right: 14px;
 
   @media screen and (min-width: 768px) {
     width:38px;

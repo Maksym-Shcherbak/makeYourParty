@@ -26,8 +26,8 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   const {
     user: { avatarURL, name },
   } = useAuth();
-  const {  } = useResize();
-  const width = avatarURL
+  const { width } = useResize();
+  const userAvatar = avatarURL
     ? avatarURL
     : 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
   const [username, setUsername] = useState(name);
