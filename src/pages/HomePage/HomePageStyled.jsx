@@ -41,14 +41,16 @@ export const HomeSection = styled.section`
     z-index: -2;
     bottom: -384px;
     right: -415px;
-    min-width: 550px;
-    min-height: 550px;
+    width: 550px;
+    height: 550px;
+   
   }
 `;
 
 export const HomeTitlDescWrap = styled.div`
   margin-bottom: 45px;
   position: relative;
+  
   &::before {
     content: '';
     display: inline-block;
@@ -56,10 +58,11 @@ export const HomeTitlDescWrap = styled.div`
     border-radius: 100%;
     background: rgba(64, 112, 205, 0.5);
     filter: blur(209.708740234375px);
-    z-index: -1;
+    z-index: -3;
     left: -680px;
-    min-width: 750px;
-    min-height: 850px;
+    width: 750px;
+    height: 850px;
+ 
   }
   @media screen and (min-width: 1440px) {
     width: 715px;
@@ -77,11 +80,13 @@ export const HeroImgWrap = styled.div`
       left: -115px;
       top: 214px;
       content: '';
+      z-index: -2;
       position: absolute;
-      min-width: 381px;
-      min-height: 381px;
+      width: 381px;
+      height: 381px;
       background: rgba(188, 230, 210, 0.4);
       filter: blur(104.8543701171875px);
+    
     }
   }
 `;

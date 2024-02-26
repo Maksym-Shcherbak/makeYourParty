@@ -21,7 +21,7 @@ export const DrinksPgList = styled.ul`
     top: -525px;
     width: 750px;
     height: 850px;
-  }
+  } 
   &::after {
     content: '';
     display: block;

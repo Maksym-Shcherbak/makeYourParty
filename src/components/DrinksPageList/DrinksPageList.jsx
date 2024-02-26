@@ -9,6 +9,7 @@ import Pagination from '../Pagination/Pagination.jsx';
 import { useMediaQuery } from 'react-responsive';
 
 
+
 const DrinksPageList = () => {
   const dispatch = useDispatch();
   const totalHits = useSelector((state) => state.drinks.totalHits);
@@ -42,7 +43,7 @@ const DrinksPageList = () => {
     <>
       <DrinksPgList>
         {allDrinksIsArray.length === 0 ? (
-          <Loader />
+           <Loader/>
         ) : (
           allDrinksIsArray.map((item) => (
             <DrinksPageItem

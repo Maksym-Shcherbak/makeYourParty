@@ -8,9 +8,12 @@ export const PaginationList = styled(ReactPaginate)`
   justify-content: center;
   align-items: center;
   height:60px;
-  gap: 40px;
+  gap: 20px;
   font-size: 20px;
   font-weight:500;
+  @media screen and (min-width: 768px) {
+    gap: 40px;
+  }
   >.active{
     
     background-color: #4070CD;
