@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  PaginatorContainer,
-  StyledIoIosArrowBack,
-  StyledIoIosArrowForward,
-  StyledPaginator,
-} from './Paginator.styled';
+import Pagination from '../Pagination/Pagination';
 
 export const Paginator = ({ totalHits, itemsPerPage, onPageChange }) => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -25,28 +20,5 @@ export const Paginator = ({ totalHits, itemsPerPage, onPageChange }) => {
     return null;
   }
 
-  return (
-    <PaginatorContainer>
-      <StyledPaginator
-        forcePage={currentPage}
-        nextLabel={
-          <StyledIoIosArrowForward
-            className={currentPage >= pageCount - 1 ? 'disabled' : ''}
-          />
-        }
-        onPageChange={handlePageChange}
-        pageCount={pageCount}
-        previousLabel={
-          <StyledIoIosArrowBack
-            className={currentPage <= 0 ? 'disabled' : ''}
-          />
-        }
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={5}
-        containerClassName="pagination"
-        subContainerClassName="pages pagination"
-        activeClassName="active"
-      />
-    </PaginatorContainer>
-  );
+  return <Pagination pageCount={pageCount} onPageChange={handlePageChange} />;
 };
