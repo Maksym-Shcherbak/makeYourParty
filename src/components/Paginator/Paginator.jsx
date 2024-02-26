@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactPaginate from 'react-paginate';
-import { IoIosArrowForward } from 'react-icons/io';
-import { IoIosArrowBack } from 'react-icons/io';
 import {
   PaginatorContainer,
   StyledIoIosArrowBack,
@@ -23,6 +20,10 @@ export const Paginator = ({ totalHits, itemsPerPage, onPageChange }) => {
   }, [currentPage, onPageChange]);
 
   const pageCount = Math.ceil(totalHits / itemsPerPage);
+
+  if (totalHits <= itemsPerPage) {
+    return null;
+  }
 
   return (
     <PaginatorContainer>
