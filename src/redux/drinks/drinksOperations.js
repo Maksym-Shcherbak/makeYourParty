@@ -96,7 +96,6 @@ export const getById = createAsyncThunk('drinks/id', async (id, thunkAPI) => {
 export const addDrinkOwn = createAsyncThunk(
   'drinks/own/add',
   async (credentials, thunkAPI) => {
-    console.log(credentials);
     try {
       const formData = new FormData();
       formData.append('drinkpicture', credentials.image);
@@ -106,7 +105,7 @@ export const addDrinkOwn = createAsyncThunk(
       formData.append('glass', credentials.glass);
       formData.append('alcoholic', credentials.alcoholic);
       formData.append('instructions', credentials.instructions);
-      formData.append('ingredients', credentials.ingredients);
+      formData.append('ingredients', JSON.stringify(credentials.ingredients));
       const { data } = await axios.post('/drinks/own/add', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',

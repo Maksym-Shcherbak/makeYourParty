@@ -56,7 +56,7 @@ const DrinkDescriptionFields = ({
           <>
             <InputFile
               type="file"
-              name="image"
+              name="file"
               id="uploadImage"
               onChange={handleOnChangeImage}
             />

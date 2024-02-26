@@ -108,7 +108,7 @@ const AddDrinkForm = () => {
     };
 
     console.log(newDrink);
-    dispatch(addDrinkOwn(JSON.stringify(newDrink)));
+    dispatch(addDrinkOwn(newDrink));
   };
 
   return (

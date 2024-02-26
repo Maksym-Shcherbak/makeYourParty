@@ -1,6 +1,5 @@
-
 import React, { useEffect, useState } from 'react';
-import { Formik} from 'formik'; // Добавляем импорт компонента Formik
+import { Formik } from 'formik'; // Добавляем импорт компонента Formik
 import { HiPlusSm } from 'react-icons/hi';
 import { FiEdit2 } from 'react-icons/fi';
 import { updateUser } from '../../../redux/auth/authOperations';
@@ -15,7 +14,6 @@ import {
   SubmitBtn,
   NameInputWrapper,
   EditIconWrapper,
-  
 } from './UserInfoModal.styled';
 import { useAuth } from '../../../redux/hooks/useAuth';
 import { useDispatch } from 'react-redux';
@@ -37,7 +35,6 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
 
   const handleInputChange = (event) => {
     setUsername(event.target.value);
-    console.log(event.target.value);
   };
 
   const handleFileChange = (event) => {
@@ -56,7 +53,6 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
     const formData = new FormData();
     formData.append('avatar', file);
     formData.append('name', username);
-    console.log(formData);
     dispatch(updateUser(formData));
     handleClose();
     setSubmitting(false);

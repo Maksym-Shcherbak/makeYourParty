@@ -11,8 +11,8 @@ import {
   selectIsLoading,
   selectOwnDrinks,
 } from '../../redux/drinks/drinksSelectors';
-import { Container } from '@mui/material';
 import { Section } from '../../styled/Section';
+import { Container } from '../../styled/Container';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import { Loader } from '../../components/Loader/Loader';
 import { Paginator } from '../../components/Paginator/Paginator';

@@ -17,7 +17,7 @@ import DrinkPage from './pages/DrinkPage/DrinkPage';
 import { useEffect } from 'react';
 import { currentUser } from './redux/auth/authOperations';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsRefreshing } from './redux/auth/auth-selectors';
+import { selectIsRefreshing } from './redux/auth/authSelectors';
 import { Loader } from './components/Loader/Loader';
 
 //----------------------
