@@ -2,21 +2,6 @@ import { Circles } from 'react-loader-spinner';
 
 import { Wrapper } from './Loader.styled';
 
-// export const Spiner = () => {
-//   return (
-//     <Wrapper>
-//       <Dna
-//         visible={true}
-//         height="120"
-//         width="120"
-//         ariaLabel="dna-loading"
-//         wrapperStyle={{}}
-//         wrapperClass="dna-wrapper"
-//       />
-//     </Wrapper>
-//   );
-// };
-
 export const Loader = () => {
   return (
     <Wrapper>
