@@ -1,7 +1,7 @@
+import React, { useEffect, useState } from 'react';
 import { Section } from '../../styled/Section';
 import { Container } from '../../styled/Container';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import {
   fetchFavoriteDrink,
   removeFavoriteDrink,
@@ -15,25 +15,57 @@ import {
   selectIsLoading,
 } from '../../redux/drinks/drinksSelectors';
 import { Loader } from '../../components/Loader/Loader';
+import { Paginator } from '../../components/Paginator/Paginator';
+import { useMediaQuery } from 'react-responsive';
 
 const FavoriteDrinksPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
-
-  useEffect(() => {
-    dispatch(fetchFavoriteDrink());
-  }, [dispatch]);
-
   const favoriteDrinks = useSelector(selectFavoriteDrinks);
 
-  const handleDelete = (drinkId) => {
+  const [currentPage, setCurrentPage] = useState(0);
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+  const initialItemsPerPage = isDesktop ? 9 : 8;
+  const [itemsPerPage, setItemsPerPage] = useState(initialItemsPerPage);
+
+  useEffect(() => {
+    setItemsPerPage(isDesktop ? 9 : 8);
+  }, [isDesktop]);
+
+  const totalHits = favoriteDrinks?.totalHits || 0;
+
+  useEffect(() => {
+    dispatch(
+      fetchFavoriteDrink({ page: currentPage + 1, limit: itemsPerPage })
+    );
+  }, [dispatch, currentPage, itemsPerPage]);
+
+  const handleDelete = async (drinkId) => {
     dispatch(removeFavoriteDrink({ drinkId }));
+    const newTotalHits = totalHits - 1;
+    const remainingItemsOnCurrentPage = newTotalHits % itemsPerPage;
+    await setCurrentPage((prevPage) => {
+      if (remainingItemsOnCurrentPage === 0) {
+        const totalPages = Math.ceil(newTotalHits / itemsPerPage);
+        const newPage = prevPage + 1 > totalPages ? totalPages : prevPage + 1;
+        return newPage - 1;
+      }
+      return prevPage;
+    });
+
+    await dispatch(
+      fetchFavoriteDrink({ page: currentPage + 1, limit: itemsPerPage })
+    );
   };
 
   const drinksData = Array.isArray(favoriteDrinks)
     ? favoriteDrinks
     : favoriteDrinks.data;
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page - 1);
+  };
 
   return (
     <>
@@ -44,11 +76,18 @@ const FavoriteDrinksPage = () => {
           {drinksData.length === 0 ? (
             <EmptyDrinks />
           ) : (
-            <DrinkList
-              drinks={drinksData}
-              text={'See more'}
-              onDelete={handleDelete}
-            />
+            <>
+              <DrinkList
+                drinks={drinksData}
+                text={'See more'}
+                onDelete={handleDelete}
+              />
+              <Paginator
+                totalHits={totalHits}
+                itemsPerPage={itemsPerPage}
+                onPageChange={handlePageChange}
+              />
+            </>
           )}
         </Container>
       </Section>

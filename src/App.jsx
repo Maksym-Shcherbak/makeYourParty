@@ -85,6 +85,37 @@ function App() {
         </AppWrapper>
       )}
     </ThemeProvider>
+
+  return isRefreshing ? (
+    <Loader />
+  ) : (
+    <AppWrapper>
+      <Routes>
+        <Route
+          path="/welcome"
+          element={<RestrictedRoute component={<WelcomePage />} />}
+        />
+        <Route
+          path="/signup"
+          element={<RestrictedRoute component={<SignupPage />} />}
+        />
+        <Route
+          path="/signin"
+          element={<RestrictedRoute component={<SigninPage />} />}
+        />
+        <Route element={<PrivateRoute />}>
+        <Route path="/" element={<SharedLayout />}>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/drinks" element={<DrinksPage />} />
+          <Route path="/drinks/:drinkId" element={<DrinkPage />} />
+          <Route path="/add" element={<AddDrinkPage />} />
+          <Route path="/favorites" element={<FavoriteDrinksPage />} />
+          <Route path="/my" element={<MyDrinksPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Route>
+        </Route>
+      </Routes>
+    </AppWrapper>
   );
 }
 

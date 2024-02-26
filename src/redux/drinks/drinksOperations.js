@@ -44,7 +44,6 @@ export const getMainPage = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get('/drinks/mainpage');
-      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -126,11 +125,13 @@ export const removeDrinkOwn = createAsyncThunk(
 
 export const fetchDrinkOwn = createAsyncThunk(
   'drinks/own',
-  async (_, thunkAPI) => {
+  async ({ page, limit }, thunkAPI) => {
     try {
-      const { data } = await axios.get('/drinks/own');
-
-      return data.result || [];
+      const { data } = await axios.get(
+        `/drinks/own?page=${page}&limit=${limit}`
+      );
+      console.log(data);
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -163,9 +164,11 @@ export const removeFavoriteDrink = createAsyncThunk(
 
 export const fetchFavoriteDrink = createAsyncThunk(
   'drinks/favorite',
-  async (_, thunkAPI) => {
+  async ({ page, limit }, thunkAPI) => {
     try {
-      const { data } = await axios.get('/drinks/favorite');
+      const { data } = await axios.get(
+        `/drinks/favorite?page=${page}&limit=${limit}`
+      );
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

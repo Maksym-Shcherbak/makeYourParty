@@ -144,7 +144,7 @@ const drinksSlice = createSlice({
       })
       .addCase(removeDrinkOwn.fulfilled, (state, action) => {
         const removedId = action.meta.arg.drinkId;
-        state.own = state.own.filter((drink) => drink._id !== removedId);
+        state.own = state.own.data.filter((drink) => drink._id !== removedId);
         state.isLoading = false;
         state.error = null;
       })
