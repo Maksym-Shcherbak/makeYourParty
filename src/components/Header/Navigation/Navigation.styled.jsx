@@ -7,7 +7,7 @@ export const NavContainer = styled.nav`
   bottom: 0;
   left: 0;
   right: 0;
-  display: grid;
+  display: none;
   background-color: $backgroundColor;
 
   @media screen and (min-width: 1440px) {
