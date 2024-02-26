@@ -8,8 +8,7 @@ const MainButton = ({ type = "button", onClick, title, disabled = false, propCla
 			disabled={disabled}
 			onClick={onClick}
 			className={propClass}
-		>
-			{title}
+		>{title}
 		</StyledButton>
 	);
 };

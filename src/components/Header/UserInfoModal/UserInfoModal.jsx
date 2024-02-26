@@ -59,17 +59,17 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   };
 
   useEffect(() => {
-    if (avatar) {
-      setAvatar(userAvatar);
+    if (avatarURL) { 
+      setAvatar(avatarURL); 
     }
-  }, [avatar, avatarURL]);
+  }, [avatarURL]);
 
   return (
     <Modal isOpen={isOpen} handleClose={handleClose} gradient={true}>
       <Formik initialValues={{ name: username }} onSubmit={handleSubmit}>
         <Form>
           <FileInputWrapper>
-            <Image src={userAvatar} />
+            <Image src={avatar} />
             <SelectAvatarInput
               type="file"
               name="file"
