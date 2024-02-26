@@ -36,7 +36,7 @@ const DrinksPageList = () => {
   }, [dispatch, page,countCards]);
 
   let allDrinksIsArray = Array.isArray(search) ? search : search;
-  console.log(search, 'всі');
+ 
 
   return (
     <>
@@ -55,7 +55,7 @@ const DrinksPageList = () => {
           ))
         )}
       </DrinksPgList>
-      { allDrinksIsArray.length < 9 ? (false) :
+      {totalHits.totalHits < 9 ? (false) :
         (<Pagination
         pageCount={totalHits ? totalHits.totalHits : 0}
         onPageChange={handlePaginPageClick}

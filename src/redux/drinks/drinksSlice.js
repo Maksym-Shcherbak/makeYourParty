@@ -28,7 +28,7 @@ const drinksSlice = createSlice({
     main: [],
     populars: [],
     search: [],
-    totalHits: null,
+    totalHits: 0,
     // totalDrinks: null,
     id: null,
     own: [],
