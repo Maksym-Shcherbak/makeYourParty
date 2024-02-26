@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { ButtonFavorite } from './Button.styled';
 
+import Notiflix from 'notiflix';
+
 import {
   addFavoriteDrink,
   removeFavoriteDrink,
@@ -15,7 +17,6 @@ import { reset } from '../../../redux/drinks/drinksSlice';
 const Button = ({ id, favoriteDrink }) => {
   const [favorite, setFavorite] = useState(null);
   const dispatch = useDispatch();
-  console.log(favorite);
 
   const userId = useSelector((state) => state.auth.user.id);
 
@@ -51,8 +52,12 @@ const Button = ({ id, favoriteDrink }) => {
         drinkId: id,
       })
     );
-
     setFavorite(true);
+    Notiflix.Notify.success(`Add to your favorite`, {
+      width: '460px',
+      svgSize: '220px',
+      fontSize: '16px',
+    });
   };
 
   const handleRemoveFavorite = () => {
@@ -63,6 +68,11 @@ const Button = ({ id, favoriteDrink }) => {
     );
 
     setFavorite(false);
+    Notiflix.Notify.warning(`Remove from your favorite`, {
+      width: '460px',
+      svgSize: '220px',
+      fontSize: '16px',
+    });
   };
 
   return (
