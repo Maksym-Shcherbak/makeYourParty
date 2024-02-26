@@ -22,6 +22,11 @@ body {
   margin: 0;
 }
 
+#root {
+  position: relative;
+  overflow-x: hidden;
+}
+
 main {
   flex: 1 0 auto;
 }

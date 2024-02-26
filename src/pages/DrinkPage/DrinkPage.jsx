@@ -17,6 +17,7 @@ import {
 } from '../../redux/drinks/drinksSelectors';
 
 import { getById } from '../../redux/drinks/drinksOperations';
+import { Backdrop } from '../../components/MotivatingModal/MotivatingModal.styled';
 
 const DrinkPage = () => {
   const dispatch = useDispatch();
@@ -32,7 +33,11 @@ const DrinkPage = () => {
   return (
     <Section>
       <Container>
-        {isLoading && <Loader />}
+        {isLoading && (
+          <Backdrop>
+            <Loader />
+          </Backdrop>
+        )}
         {isError && <h1>{isError}</h1>}
         {drink && (
           <>
