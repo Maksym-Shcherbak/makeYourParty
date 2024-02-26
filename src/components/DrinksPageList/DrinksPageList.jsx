@@ -30,23 +30,24 @@ const DrinksPageList = () => {
   //   );
   // }, [dispatch, page]);
 
-  let allDrinksIsArray = Array.isArray(drinks) ? drinks : drinks;
-
   return (
     <>
       <DrinksPgList>
-        {allDrinksIsArray.length === 0 ? (
+        {drinks.length === 0 ? (
           <Loader />
         ) : (
-          drinks.map((item) => (
-            <DrinksPageItem
-              key={item._id}
-              text={'see more'}
-              url={item.drinkThumb}
-              title={item.drink}
-              id={item._id}
-            />
-          ))
+          drinks.map((item) => {
+            console.log(item.drink);
+            return (
+              <DrinksPageItem
+                key={item._id}
+                text={'see more'}
+                url={item.drinkThumb}
+                title={item.drink}
+                id={item._id}
+              />
+            );
+          })
         )}
       </DrinksPgList>
       {/* <Pagination pageCount={totalHits} onPageChange={handlePaginPageClick} /> */}

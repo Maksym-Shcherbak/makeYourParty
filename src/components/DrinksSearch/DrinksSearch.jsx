@@ -5,15 +5,15 @@ import { SearchForm } from '../SerarchForm/SearchForm';
 import { useEffect, useState } from 'react';
 import { getSearch } from '../../redux/drinks/drinksOperations';
 
-const DrinksSearch = ({ categories, ingredients, page }) => {
+const DrinksSearch = ({ categories, ingredients, page, limit }) => {
   const [category, setCategory] = useState(null);
   const [ingredient, setIngredient] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getSearch({ category, ingredient, page, limit: '10' }));
-  }, [dispatch, category, ingredient, page]);
+    dispatch(getSearch({ category, ingredient, page, limit }));
+  }, [dispatch, category, ingredient, page, limit]);
 
   const handleChangeCategory = (e) => {
     setCategory(e.value);
@@ -44,9 +44,7 @@ const DrinksSearch = ({ categories, ingredients, page }) => {
     if (searchQuery.trim() === '') {
       return;
     }
-    dispatch(
-      getSearch({ searchQuery, category, ingredient, page, limit: '10' })
-    );
+    dispatch(getSearch({ searchQuery, category, ingredient, page, limit }));
     setSearchQuery('');
     const form = e.target;
     form.reset();

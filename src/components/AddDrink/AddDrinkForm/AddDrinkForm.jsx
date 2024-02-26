@@ -107,7 +107,6 @@ const AddDrinkForm = () => {
       ingredients,
     };
 
-    console.log(newDrink);
     dispatch(addDrinkOwn(newDrink));
   };
 

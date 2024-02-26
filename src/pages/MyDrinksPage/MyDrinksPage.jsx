@@ -64,9 +64,9 @@ const MyDrinksPage = () => {
     <>
       <Section>
         <Container>
-          {isLoading && !isError && <Loader />}
           <PageTitle title="My drinks" />
-          {mydrinksData.length === 0 ? (
+          {isLoading && !isError && <Loader />}
+          {!isLoading && !isError && mydrinksData.length === 0 ? (
             <>
               <EmptyDrinks />
             </>

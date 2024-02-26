@@ -12,7 +12,7 @@ const DrinksPageItem = ({ title, url, text, id }) => {
   return (
     <DrinksPgItem>
       <UtilsStiledLinkMain to={`/drinks/${id}`}>
-        <UtilsStyleImgCard src={url || imgDef} alt="Photo drinks" />
+        <UtilsStyleImgCard src={url} alt="Photo drinks" />
         <UtilsTitleLinkWrap>
           <UtilsStyleTitleCard>{title}</UtilsStyleTitleCard>
           <UtilsStyleLink>{text}</UtilsStyleLink>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Section } from '../../styled/Section';
 import { Container } from '../../styled/Container';
 import { useDispatch, useSelector } from 'react-redux';
@@ -71,9 +71,9 @@ const FavoriteDrinksPage = () => {
     <>
       <Section>
         <Container>
-          {isLoading && !isError && <Loader />}
           <PageTitle title="Favorites" />
-          {drinksData.length === 0 ? (
+          {isLoading && !isError && <Loader />}
+          {!isLoading && !isError && drinksData.length === 0 ? (
             <EmptyDrinks />
           ) : (
             <>

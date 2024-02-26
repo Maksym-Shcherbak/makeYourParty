@@ -51,7 +51,7 @@ const AuthForm = () => {
     try {
       const response = dispatch(signUp({ name, dateOfBirth, email, password }));
       if (response.payload.token) {
-        navigate('/', { replace: true });
+        navigate('/home', { replace: true });
         resetForm();
       } else {
         Notify.failure('Registration error');
