@@ -26,8 +26,8 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   const {
     user: { avatarURL, name },
   } = useAuth();
-  const { width } = useResize();
-  const userAvatar = avatarURL
+  const {  } = useResize();
+  const width = avatarURL
     ? avatarURL
     : 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
   const [username, setUsername] = useState(name);
@@ -63,17 +63,17 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   };
 
   useEffect(() => {
-    if (avatar) {
-      setAvatar(userAvatar);
+    if (avatarURL) { 
+      setAvatar(avatarURL); 
     }
-  }, [avatar, avatarURL]);
+  }, [avatarURL]);
 
   return (
     <Modal isOpen={isOpen} handleClose={handleClose} gradient={true}>
       <Formik initialValues={{ name: username }} onSubmit={handleSubmit}>
         <Form>
           <FileInputWrapper>
-            <Image src={userAvatar} />
+            <Image src={avatar} />
             <SelectAvatarInput
               type="file"
               name="file"
