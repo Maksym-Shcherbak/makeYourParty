@@ -1,0 +1,1 @@
+const i=s=>s.drinks.favorite,t=s=>s.drinks.own,o=s=>s.drinks.isLoading,r=s=>s.drinks.error,e=s=>{var n;return(n=s.drinks)==null?void 0:n.id},a=s=>{var n;return(n=s.drinks)==null?void 0:n.motivation};export{r as a,a as b,e as c,i as d,t as e,o as s};
