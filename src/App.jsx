@@ -1,4 +1,4 @@
-import { Route, Routes, useParams } from 'react-router-dom';
+import { Route, Routes, useSearchParams } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import { AppWrapper } from './App.styled';
 import { PrivateRoute } from './PrivateRoute';
@@ -39,7 +39,8 @@ function App() {
   const theme = useSelector(selectTheme);
   // const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
-  let { token } = useParams();
+  const [searchParams] = useSearchParams();
+  const token = searchParams.get();
   console.log(token);
   useEffect(() => {
     dispatch(setToken(token));
