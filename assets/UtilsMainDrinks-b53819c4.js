@@ -1,4 +1,4 @@
-import{u as i,L as t}from"./index-210e22cd.js";const n=i.img`
+import{u as i,L as t}from"./index-80725bcb.js";const n=i.img`
   border-radius: 8px;
   display: block;
   width: 100%;

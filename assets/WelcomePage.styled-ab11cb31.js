@@ -1,4 +1,4 @@
-import{u as e}from"./index-210e22cd.js";const t="300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)",n=e.section`
+import{u as e}from"./index-80725bcb.js";const t="300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)",n=e.section`
   width: 100vw;
   height: 100vh;
   display: flex;
