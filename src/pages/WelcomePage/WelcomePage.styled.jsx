@@ -13,7 +13,7 @@ export const Container = styled.section`
     ),
     linear-gradient(0.95deg, #0a0a11 -0.56%, rgba(10, 10, 17, 0) 21.93%),
     linear-gradient(85.07deg, #060609 5.92%, rgba(10, 10, 17, 0) 51.07%),
-    url('../images/img-welcome-mob.jpg');
+    url('src/images/img-welcome-mob.jpg');
   background-color: #0a0a11;
   background-size: contain;
   background-position: right center;
@@ -83,29 +83,29 @@ export const Container = styled.section`
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url('/src/images/img-welcome-mob@2x.jpg');
+    background-image: url('src/images/img-welcome-mob@2x.jpg');
   }
 
   @media screen and (min-width: 768px) {
-    background-image: url('/src/images/img-welcome-tablet.jpg');
+    background-image: url('src/images/img-welcome-tablet.jpg');
     justify-content: left;
     padding-left: 64px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: url('/src/images/img-welcome-tablet@2x.jpg');
+      background-image: url('src/images/img-welcome-tablet@2x.jpg');
     }
   }
   @media screen and (min-width: 1440px) {
-    background-image: url('/src/images/img-welcome-descctop.jpg');
+    background-image: url('src/images/img-welcome-descctop.jpg');
     background-color: rgb(7, 7, 11);
     padding-left: 97px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: url('/src/images/img-welcome-desctop@2x.jpg');
+      background-image: url('src/images/img-welcome-desctop@2x.jpg');
     }
   }
 `;
