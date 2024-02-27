@@ -13,7 +13,7 @@ export const Container = styled.section`
     ),
     linear-gradient(0.95deg, #0a0a11 -0.56%, rgba(10, 10, 17, 0) 21.93%),
     linear-gradient(85.07deg, #060609 5.92%, rgba(10, 10, 17, 0) 51.07%),
-    url('/src/images/img-welcome-mob.jpg');
+    url('../images/img-welcome-mob.jpg');
   background-color: #0a0a11;
   background-size: contain;
   background-position: right center;
