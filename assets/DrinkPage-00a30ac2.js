@@ -1,4 +1,4 @@
-import{u as i,j as e,r as a,m as C,I as v,a as u,b as d,n as k,o as y,p as j,q as B,t as E,c as z}from"./index-5e3d413d.js";import{N as x}from"./notiflix-aio-3.2.7.min-af4736a2.js";import{b as S,c as R,s as F,a as J}from"./drinksSelectors-9def1c59.js";import{M as W}from"./index-e9e31f38.js";import{S as Z,C as H}from"./Section-87b1f5f2.js";const Q=i.div`
+import{u as i,j as e,r as a,m as C,I as v,a as u,b as d,n as k,o as y,p as j,q as B,t as E,c as z}from"./index-210e22cd.js";import{N as x}from"./notiflix-aio-3.2.7.min-034dba13.js";import{b as S,c as R,s as F,a as J}from"./drinksSelectors-9def1c59.js";import{M as W}from"./index-8ce4e008.js";import{S as Z,C as H}from"./Section-204d0c89.js";const Q=i.div`
   @media screen and (min-width: 1440px) {
     display: flex;
     justify-content: space-between;
