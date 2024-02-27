@@ -1,4 +1,4 @@
-import{u as t,L as l,j as i,a as d,r as m,g as x,b as o,c as p}from"./index-80725bcb.js";import{P as h}from"./PageTitle-35972f09.js";import{C as g,S as f}from"./Section-997c78e2.js";import{e as u,a as w,b as j,c as b}from"./blue_iced_tea_mobile@2x-cecc14df.js";import{U as k,a as y,b as L,c as D,d as H}from"./UtilsMainDrinks-b53819c4.js";import{s as M,a as S}from"./drinksSelectors-9def1c59.js";const c=t(l)`
+import{u as t,L as c,j as i,a as o,r as d,g as x,b as l}from"./index-a7fc88b4.js";import{P as p}from"./PageTitle-a58f09a9.js";import{C as h,S as g}from"./Section-b3d712f2.js";import{e as f,a as u,b as w,c as j}from"./blue_iced_tea_mobile@2x-cecc14df.js";import{U as b,a as k,b as y,c as D,d as L}from"./UtilsMainDrinks-6c606851.js";const m=t(c)`
   display: inline-flex;
   align-items: center;
   border-radius: 42px;
@@ -15,10 +15,10 @@ import{u as t,L as l,j as i,a as d,r as m,g as x,b as o,c as p}from"./index-8072
     border-color: rgba(243, 243, 243, 0.5);
     color: rgba(243, 243, 243, 0.5);
   }
-`,U=t.li`
+`,H=t.li`
   display: flex;
   justify-content: center;
-`,z=t.p`
+`,M=t.p`
   margin-top: 40px;
   margin-bottom: 40px;
   font-size: 14px;
@@ -36,7 +36,7 @@ import{u as t,L as l,j as i,a as d,r as m,g as x,b as o,c as p}from"./index-8072
    
   }
   
-`,C=t.section`
+`,S=t.section`
   flex-wrap: wrap;
   @media screen and (min-width: 768px) {
   display: flex;
@@ -48,7 +48,7 @@ import{u as t,L as l,j as i,a as d,r as m,g as x,b as o,c as p}from"./index-8072
    
   }
   
-`,E=t.div`
+`,U=t.div`
   margin-bottom: 45px;
   @media screen and (min-width: 1440px) { 
     width: 715px;
@@ -57,7 +57,7 @@ import{u as t,L as l,j as i,a as d,r as m,g as x,b as o,c as p}from"./index-8072
    
   }
   
-`,I=t.div`
+`,z=t.div`
   width: 100%;
   @media screen and (min-width: 1440px) {
     padding-top: 20px;
@@ -65,25 +65,25 @@ import{u as t,L as l,j as i,a as d,r as m,g as x,b as o,c as p}from"./index-8072
    
   }
   
-`,P=t.img`
+`,C=t.img`
  
   height: 313px;
   margin: 0 auto;
 
   @media (max-width: 767px) {
-    content: url(${u});
+    content: url(${f});
   
   }
   @media (max-width: 767px) and (min-resolution: 2dppx) {
-    content: url(${w});
+    content: url(${u});
      
   }
   @media (min-width: 768px) {
-    content: url(${j});
+    content: url(${w});
     
   }
   @media (min-width: 768px) and (min-resolution: 2dppx) {
-    content: url(${b});
+    content: url(${j});
     height: 445px;
   }
    @media screen and (min-width: 1440px) {
@@ -91,7 +91,7 @@ import{u as t,L as l,j as i,a as d,r as m,g as x,b as o,c as p}from"./index-8072
     margin: 0;
    
   }
-`,$=t.li`
+`,P=t.li`
   display: flex;
 	flex-direction: column;
   
@@ -112,7 +112,7 @@ import{u as t,L as l,j as i,a as d,r as m,g as x,b as o,c as p}from"./index-8072
     max-width: 400px;
     min-height: 438px;
   }
-`,v=({title:e,url:n,text:r,id:s})=>i.jsx($,{children:i.jsxs(k,{to:`/drinks/${s}`,children:[i.jsx(y,{src:n,alt:"Photo drinks"}),i.jsxs(L,{children:[i.jsx(D,{children:e}),i.jsx(H,{children:r})]})]})}),T=t.ul`
+`,I=({title:e,url:n,text:r,id:s})=>i.jsx(P,{children:i.jsxs(b,{to:`/drinks/${s}`,children:[i.jsx(k,{src:n,alt:"Photo drinks"}),i.jsxs(y,{children:[i.jsx(D,{children:e}),i.jsx(L,{children:r})]})]})}),$=t.ul`
   margin-bottom: 40px;
   display: flex;
 	flex-direction: row;
@@ -123,7 +123,7 @@ import{u as t,L as l,j as i,a as d,r as m,g as x,b as o,c as p}from"./index-8072
    
   }
 
-`,W=t.h2`
+`,v=t.h2`
   margin-bottom: 40px;
   font-weight: 600;
   font-size: 28px;
@@ -136,4 +136,4 @@ import{u as t,L as l,j as i,a as d,r as m,g as x,b as o,c as p}from"./index-8072
   }
 
 
-`,A=({header:e,data:n})=>i.jsxs(i.Fragment,{children:[i.jsx(W,{children:e}),i.jsx(T,{children:n==null?void 0:n.map(({drink:r,drinkThumb:s,_id:a})=>i.jsx(v,{title:r,text:"see more",url:s,id:a},a))})]}),F=({drinks:e})=>{const n=d();m.useEffect(()=>{n(x())},[n]);let r=Array.isArray(e)?e:Object.keys(e.drinks);return i.jsx(i.Fragment,{children:i.jsxs("ul",{children:[r.map(s=>i.jsx(A,{header:s,data:e.drinks[s]},s)),i.jsx(U,{children:i.jsx(c,{to:"/drinks",children:"Other drinks"})})]})})},J=()=>{const e=o(M),n=o(S),r=d();m.useEffect(()=>{r(x())},[r]);const s=o(a=>a.drinks.main);return i.jsxs(g,{children:[i.jsxs(C,{children:[i.jsxs(E,{children:[i.jsx(h,{title:"Craft Your Perfect Drink with Drink Master"}),i.jsx(z,{children:"Unlock your inner mixologist with Drink Master, your one-stop destination for exploring, crafting, and mastering the world`s finest beverages."}),i.jsx(c,{to:"/add",children:"Add drink"})]}),i.jsx(I,{children:i.jsx(P,{})})]}),e&&!n&&i.jsx(p,{}),i.jsx(f,{children:i.jsx(F,{drinks:s})})]})};export{J as default};
+`,E=({header:e,data:n})=>i.jsxs(i.Fragment,{children:[i.jsx(v,{children:e}),i.jsx($,{children:n==null?void 0:n.map(({drink:r,drinkThumb:s,_id:a})=>i.jsx(I,{title:r,text:"see more",url:s,id:a},a))})]}),T=({drinks:e})=>{const n=o();d.useEffect(()=>{n(x())},[n]);let r=Array.isArray(e)?e:Object.keys(e.drinks);return i.jsx(i.Fragment,{children:i.jsxs("ul",{children:[r.map(s=>i.jsx(E,{header:s,data:e.drinks[s]},s)),i.jsx(H,{children:i.jsx(m,{to:"/drinks",children:"Other drinks"})})]})})},Y=()=>{const e=o();d.useEffect(()=>{e(x())},[e]);const n=l(r=>r.drinks.main);return i.jsxs(h,{children:[i.jsxs(S,{children:[i.jsxs(U,{children:[i.jsx(p,{title:"Craft Your Perfect Drink with Drink Master"}),i.jsx(M,{children:"Unlock your inner mixologist with Drink Master, your one-stop destination for exploring, crafting, and mastering the world`s finest beverages."}),i.jsx(m,{to:"/add",children:"Add drink"})]}),i.jsx(z,{children:i.jsx(C,{})})]}),i.jsx(g,{children:i.jsx(T,{drinks:n})})]})};export{Y as default};
