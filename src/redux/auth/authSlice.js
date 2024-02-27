@@ -34,6 +34,9 @@ const authSlice = createSlice({
     toggleTheme(state) {
       state.theme = state.theme === 'light' ? 'dark' : 'light';
     },
+    setToken(state, action) {
+      state.token = action.payload;
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -98,4 +101,5 @@ const authSlice = createSlice({
 });
 
 export const { toggleTheme } = authSlice.actions;
+export const { setToken } = authSlice.actions;
 export const authReducer = authSlice.reducer;
