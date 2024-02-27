@@ -1,4 +1,10 @@
 import styled from 'styled-components';
+import imgWelcomeMob from 'src/images/img-welcome-mob.jpg';
+import imgWelcomeMob2x from 'src/images/img-welcome-mob@2x.jpg';
+import imgWelcomeTab from 'src/images/img-welcome-tablet.jpg';
+import imgWelcomeTab2x from 'src/images/img-welcome-tablet@2x.jpg';
+import imgWelcomeDesc from 'src/images/img-welcome-descctop.jpg';
+import imgWelcomeDesc2x from 'src/images/img-welcome-desctop@2x.jpg';
 
 export const Container = styled.section`
   width: 100vw;
@@ -13,7 +19,7 @@ export const Container = styled.section`
     ),
     linear-gradient(0.95deg, #0a0a11 -0.56%, rgba(10, 10, 17, 0) 21.93%),
     linear-gradient(85.07deg, #060609 5.92%, rgba(10, 10, 17, 0) 51.07%),
-    url('src/images/img-welcome-mob.jpg');
+    url(${imgWelcomeMob});
   background-color: #0a0a11;
   background-size: contain;
   background-position: right center;
@@ -83,29 +89,29 @@ export const Container = styled.section`
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url('src/images/img-welcome-mob@2x.jpg');
+    background-image: url(${imgWelcomeMob2x});
   }
 
   @media screen and (min-width: 768px) {
-    background-image: url('src/images/img-welcome-tablet.jpg');
+    background-image: url(${imgWelcomeTab});
     justify-content: left;
     padding-left: 64px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: url('src/images/img-welcome-tablet@2x.jpg');
+      background-image: url(${imgWelcomeTab2x});
     }
   }
   @media screen and (min-width: 1440px) {
-    background-image: url('src/images/img-welcome-descctop.jpg');
+    background-image: url(${imgWelcomeDesc});
     background-color: rgb(7, 7, 11);
     padding-left: 97px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: url('src/images/img-welcome-desctop@2x.jpg');
+      background-image: url(${imgWelcomeDesc2x});
     }
   }
 `;

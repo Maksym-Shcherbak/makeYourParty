@@ -1,8 +1,7 @@
 // import ReactPaginate from "react-paginate";
-import { PaginationList } from "./PaginationStyle";
+import { PaginationList } from './PaginationStyle';
 
-const Pagination = ({ pageCount, onPageChange })=>{
-
+const Pagination = ({ pageCount, onPageChange }) => {
   return (
     <>
       <PaginationList
@@ -20,13 +19,13 @@ const Pagination = ({ pageCount, onPageChange })=>{
         breakLinkClassName="page-link"
         containerClassName="pagination"
         activeClassName="active"
-        pageRangeDisplayed={2}
-        marginPagesDisplayed={2}
+        pageRangeDisplayed={1}
+        marginPagesDisplayed={1}
         nextLabel=">"
         previousLabel="<"
       />
     </>
   );
-}
+};
 
 export default Pagination;

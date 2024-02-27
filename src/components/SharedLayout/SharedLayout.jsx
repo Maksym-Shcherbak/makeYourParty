@@ -20,7 +20,7 @@ const SharedLayout = () => {
       <main>
         <Suspense fallback={<Loader />}>
           {isLoading && (
-            <Backdrop>
+            <Backdrop open={true}>
               <Loader />
             </Backdrop>
           )}
