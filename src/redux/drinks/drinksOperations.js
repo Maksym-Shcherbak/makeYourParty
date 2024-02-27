@@ -138,7 +138,6 @@ export const fetchDrinkOwn = createAsyncThunk(
       const { data } = await axios.get(
         `/drinks/own?page=${page}&limit=${limit}`
       );
-      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

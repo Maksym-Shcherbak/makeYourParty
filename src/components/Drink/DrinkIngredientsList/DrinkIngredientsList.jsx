@@ -19,7 +19,7 @@ const RecipeIngredientsItems = ({ data }) => {
           return (
             <ItemIngredient key={item._id}>
               <ImagesIngredient
-                src={item.ingredientId.ingredientThumb}
+                src={item.ingredientId?.ingredientThumb}
                 alt={item.title}
                 onError={({ currentTarget }) => {
                   currentTarget.src = defaultCoctail;

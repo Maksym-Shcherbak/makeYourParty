@@ -1,19 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
-import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
-// import { Suspense, lazy } from 'react';
-import WelcomePage from './pages/WelcomePage/WelcomePage';
-import SignupPage from './pages/SignupPage/SighupPage';
-import SigninPage from './pages/SigninPage/SigninPage';
-import HomePage from './pages/HomePage/HomePage';
-import DrinksPage from './pages/DrinksPage/DrinksPage';
-import AddDrinkPage from './pages/AddDrinkPage/AddDrinkPage';
-import FavoriteDrinksPage from './pages/FavoriteDrinksPage/FavoriteDrinksPage';
-import MyDrinksPage from './pages/MyDrinksPage/MyDrinksPage';
-import DrinkPage from './pages/DrinkPage/DrinkPage';
+import { Suspense, lazy } from 'react';
 import { useEffect } from 'react';
 import { currentUser } from './redux/auth/authOperations';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,20 +15,22 @@ import { darkTheme, lightTheme } from './components/Themes';
 import { ThemeProvider } from 'styled-components';
 import { selectTheme } from './redux/auth/authSelectors';
 
-// const WelcomePage = lazy(() => import('pages/WelcomePage'));
-// const HomePage = lazy(() => import('pages/HomePage'));
-// const SignupPage = lazy(() => import('pages/SignupPage'));
-// const SigninPage = lazy(() => import('pages/SigninPage'));
-// const DrinksPage = lazy(() => import('pages/DrinksPage'));
-// const AddDrinkPage = lazy(() => import('pages/AddDrinkPage'));
-// const FavoriteDrinksPage = lazy(() => import('pages/FavoriteDrinksPage'));
-// const MyDrinksPage = lazy(() => import('pages/MyDrinksPage'));
+const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage.jsx'));
+const HomePage = lazy(() => import('pages/HomePage/HomePage.jsx'));
+const SignupPage = lazy(() => import('pages/SignupPage/SighupPage.jsx'));
+const SigninPage = lazy(() => import('pages/SigninPage/SigninPage.jsx'));
+const DrinkPage = lazy(() => import('pages/DrinkPage/DrinkPage.jsx'));
+const DrinksPage = lazy(() => import('pages/DrinksPage/DrinksPage.jsx'));
+const AddDrinkPage = lazy(() => import('pages/AddDrinkPage/AddDrinkPage.jsx'));
+const FavoriteDrinksPage = lazy(() =>
+  import('pages/FavoriteDrinksPage/FavoriteDrinksPage.jsx')
+);
+const MyDrinksPage = lazy(() => import('pages/MyDrinksPage/MyDrinksPage.jsx'));
+const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage.jsx'));
 
 // const test = import.meta.env.VITE_API_TEST;
 
 //------------
-
-// import { useSelector, useDispatch } from 'react-redux';
 // import { darkTheme, lightTheme } from './components/Themes';
 //--------------------
 
@@ -57,31 +49,33 @@ function App() {
         <Loader />
       ) : (
         <AppWrapper>
-          <Routes>
-            <Route
-              path="/welcome"
-              element={<RestrictedRoute component={<WelcomePage />} />}
-            />
-            <Route
-              path="/signup"
-              element={<RestrictedRoute component={<SignupPage />} />}
-            />
-            <Route
-              path="/signin"
-              element={<RestrictedRoute component={<SigninPage />} />}
-            />
-            <Route element={<PrivateRoute />}>
-              <Route path="/" element={<SharedLayout />}>
-                <Route path="/home" element={<HomePage />} />
-                <Route path="/drinks" element={<DrinksPage />} />
-                <Route path="/drinks/:drinkId" element={<DrinkPage />} />
-                <Route path="/add" element={<AddDrinkPage />} />
-                <Route path="/favorites" element={<FavoriteDrinksPage />} />
-                <Route path="/my" element={<MyDrinksPage />} />
-                <Route path="*" element={<ErrorPage />} />
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route
+                path="/welcome"
+                element={<RestrictedRoute component={<WelcomePage />} />}
+              />
+              <Route
+                path="/signup"
+                element={<RestrictedRoute component={<SignupPage />} />}
+              />
+              <Route
+                path="/signin"
+                element={<RestrictedRoute component={<SigninPage />} />}
+              />
+              <Route element={<PrivateRoute />}>
+                <Route path="/" element={<SharedLayout />}>
+                  <Route path="/home" element={<HomePage />} />
+                  <Route path="/drinks" element={<DrinksPage />} />
+                  <Route path="/drinks/:drinkId" element={<DrinkPage />} />
+                  <Route path="/add" element={<AddDrinkPage />} />
+                  <Route path="/favorites" element={<FavoriteDrinksPage />} />
+                  <Route path="/my" element={<MyDrinksPage />} />
+                  <Route path="*" element={<ErrorPage />} />
+                </Route>
               </Route>
-            </Route>
-          </Routes>
+            </Routes>
+          </Suspense>
         </AppWrapper>
       )}
     </ThemeProvider>

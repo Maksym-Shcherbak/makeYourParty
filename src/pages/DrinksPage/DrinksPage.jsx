@@ -25,24 +25,21 @@ const DrinksPage = () => {
   const [page, setPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(9);
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-  const initialItemsPerPage = () => {
-    if (isDesktop) {
-      setItemsPerPage(9);
-    } else if (isMobile) {
-      setItemsPerPage(10);
-    } else {
-      setItemsPerPage(8);
-    }
-  };
 
   const handlePaginPageClick = (e) => {
     setPage(e.selected + 1);
   };
 
   useEffect(() => {
+    const initialItemsPerPage = () => {
+      if (isDesktop) {
+        setItemsPerPage(9);
+      } else {
+        setItemsPerPage(10);
+      }
+    };
     initialItemsPerPage();
-  }, [initialItemsPerPage]);
+  }, [isDesktop]);
 
   useEffect(() => {
     dispatch(getCategories());
@@ -57,6 +54,7 @@ const DrinksPage = () => {
           categories={categories}
           ingredients={ingredients}
           page={page}
+          limit={itemsPerPage}
         />
         <Section>
           <DrinksPageList />

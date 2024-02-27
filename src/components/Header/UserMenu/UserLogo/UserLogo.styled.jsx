@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Button = styled.div`
-  height:32px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -12,8 +11,6 @@ export const Button = styled.div`
   // padding-right: 14px;
 
   @media screen and (min-width: 768px) {
-    width:38px;
-  height:38px;
     grid-gap: 16px;
     padding-right: 24px;
   }
@@ -28,14 +25,12 @@ export const Image = styled.img`
   height: 38px;
   border-radius: 50%;
   object-fit: cover;
-`
+`;
 
 export const TextContainer = styled.div`
-  margin-left: 14px; 
-  
+  margin-left: 14px;
 `;
 
 export const Text = styled.span`
-  font-size: 16px; 
-  
+  font-size: 16px;
 `;

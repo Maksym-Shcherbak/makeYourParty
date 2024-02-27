@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Formik } from 'formik'; // Добавляем импорт компонента Formik
 import { HiPlusSm } from 'react-icons/hi';
 import { FiEdit2 } from 'react-icons/fi';
@@ -17,14 +17,14 @@ import {
 } from './UserInfoModal.styled';
 import { useAuth } from '../../../redux/hooks/useAuth';
 import { useDispatch } from 'react-redux';
-import { useResize } from '../../../redux/hooks/useResize';
+// import { useResize } from '../../../redux/hooks/useResize';
 import { toast } from 'react-toastify';
 
 export const UserInfoModal = ({ isOpen, handleClose }) => {
   const {
     user: { avatarURL, name },
   } = useAuth();
-  const { width } = useResize();
+  // const { width } = useResize();
   const userAvatar = avatarURL
     ? avatarURL
     : 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
@@ -59,10 +59,10 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   };
 
   useEffect(() => {
-    if (avatarURL) { 
-      setAvatar(avatarURL); 
+    if (!avatar) {
+      setAvatar(userAvatar);
     }
-  }, [avatarURL]);
+  }, [setAvatar, avatar, userAvatar]);
 
   return (
     <Modal isOpen={isOpen} handleClose={handleClose} gradient={true}>

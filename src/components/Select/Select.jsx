@@ -32,6 +32,14 @@ const customStyles = {
     width: '20px',
     height: '20px',
   }),
+
+  clearIndicator: (provided) => ({
+    ...provided,
+    padding: '0',
+    width: '20px',
+    height: '20px',
+  }),
+
   placeholder: (provided) => ({
     ...provided,
     fontWeight: '400',
@@ -66,13 +74,21 @@ const customStyles = {
   }),
 };
 
-export const CustomSelect = ({ options, onChange, placeholder }) => {
+export const CustomSelect = ({
+  options,
+  onChange,
+  placeholder,
+  isLoading,
+  isClearable,
+}) => {
   return (
     <Select
       options={options}
       onChange={onChange}
       styles={customStyles}
       placeholder={placeholder}
+      isLoading={isLoading}
+      isClearable={isClearable}
     />
   );
 };
