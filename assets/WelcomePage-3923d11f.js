@@ -1,4 +1,4 @@
-import{u as i,N as e,j as o}from"./index-bc835076.js";import{t as n,C as r,T as t,a,W as s}from"./WelcomePage.styled-7a01fcaa.js";const d=i(e)`
+import{u as i,N as e,j as o}from"./index-4366aac6.js";import{t as n,C as r,T as t,a,W as s}from"./WelcomePage.styled-3fa80ee9.js";const d=i(e)`
   text-decoration: none;
   background-color: #f3f3f3;
   border: 1px solid rgba(243, 243, 243, 0.2);
@@ -28,6 +28,7 @@ import{u as i,N as e,j as o}from"./index-bc835076.js";import{t as n,C as r,T as 
   font-size: 14px;
   font-weight: 600;
   line-height: 1.28;
+  cursor: pointer;
   border: 1px solid rgba(243, 243, 243, 0.2);
   transition: border-color ${n};
 

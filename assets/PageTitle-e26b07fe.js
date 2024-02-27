@@ -1,4 +1,4 @@
-import{u as t,j as e}from"./index-bc835076.js";const n={colors:{primaryWhite:"#F3F3F3",bgDark:"#0A0A11",secondDark:"#161f37",greyBlue:"#434d67",blue:"#434d67"}},o=t.h1`
+import{u as t,j as e}from"./index-4366aac6.js";const n={colors:{primaryWhite:"#F3F3F3",bgDark:"#0A0A11",secondDark:"#161f37",greyBlue:"#434d67",blue:"#434d67"}},o=t.h1`
   // margin-top: 82px;
   margin-bottom: 0;
   font-weight: 600;
