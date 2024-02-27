@@ -4,20 +4,19 @@ export const SectionTitleAddDrink = styled.h2`
   font-weight: 600;
   font-size: 32px;
   line-height: 118.75%;
-  padding-top: 80px;
+
   margin-bottom: 40px;
 
   @media screen and (min-width: 768px) {
     font-size: 56px;
     line-height: 107.43%;
-    padding-top: 140px;
+
     margin-bottom: 60px;
   }
 
   @media screen and (min-width: 1440px) {
     font-size: 62px;
     line-height: 106.25%;
-    padding-top: 160px;
   }
 `;
 
@@ -27,7 +26,7 @@ export const ButtonAdd = styled.button`
   height: 46px;
 
   border-radius: 42px;
-  border: none;
+  border: 2px solid rgba(64, 112, 205, 0.5);
 
   font-size: 16px;
   font-weight: 600;

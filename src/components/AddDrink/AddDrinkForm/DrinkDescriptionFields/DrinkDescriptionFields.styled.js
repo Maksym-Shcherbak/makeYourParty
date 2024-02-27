@@ -134,12 +134,13 @@ export const SelectWrapper = styled.div`
 export const SelectCategories = styled.select`
   position: absolute;
 
-  top: 0;
+  top: -4px;
   right: 0;
 
   width: 131px;
+  height: 30px;
   // text-align: right;
-  // padding-right: 28px;
+  padding-left: 10px;
 
   border-radius: 12px;
   color: #f3f3f3;

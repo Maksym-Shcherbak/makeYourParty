@@ -45,18 +45,17 @@ const FavoriteDrinksPage = () => {
     dispatch(removeFavoriteDrink({ drinkId }));
     const newTotalHits = totalHits - 1;
     const remainingItemsOnCurrentPage = newTotalHits % itemsPerPage;
-    await setCurrentPage((prevPage) => {
-      if (remainingItemsOnCurrentPage === 0) {
-        const totalPages = Math.ceil(newTotalHits / itemsPerPage);
-        const newPage = prevPage + 1 > totalPages ? totalPages : prevPage + 1;
-        return newPage - 1;
-      }
-      return prevPage;
-    });
 
-    await dispatch(
-      fetchFavoriteDrink({ page: currentPage + 1, limit: itemsPerPage })
-    );
+    const newPage =
+      remainingItemsOnCurrentPage === 0
+        ? Math.min(currentPage + 1, Math.ceil(newTotalHits / itemsPerPage) - 1)
+        : currentPage;
+
+    setCurrentPage(newPage);
+
+    await Promise.all([
+      dispatch(fetchFavoriteDrink({ page: newPage + 1, limit: itemsPerPage })),
+    ]);
   };
 
   const drinksData = Array.isArray(favoriteDrinks)

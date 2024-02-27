@@ -44,16 +44,17 @@ const MyDrinksPage = () => {
     const newTotalHits = totalHits - 1;
     const remainingItemsOnCurrentPage = newTotalHits % itemsPerPage;
 
-    if (remainingItemsOnCurrentPage === 0 && newTotalHits > 0) {
-      const totalPages = Math.ceil(newTotalHits / itemsPerPage);
-      const newPage =
-        currentPage + 1 > totalPages ? totalPages : currentPage + 1;
-      setCurrentPage(newPage - 1);
-    }
+    const newPage =
+      remainingItemsOnCurrentPage === 0
+        ? Math.min(currentPage + 1, Math.ceil(newTotalHits / itemsPerPage) - 1)
+        : currentPage;
 
-    dispatch(fetchDrinkOwn({ page: currentPage + 1, limit: itemsPerPage }));
+    setCurrentPage(newPage);
+
+    await Promise.all([
+      dispatch(fetchDrinkOwn({ page: newPage + 1, limit: itemsPerPage })),
+    ]);
   };
-
   const mydrinksData = Array.isArray(myDrinks) ? myDrinks : myDrinks.data;
 
   const handlePageChange = (page) => {

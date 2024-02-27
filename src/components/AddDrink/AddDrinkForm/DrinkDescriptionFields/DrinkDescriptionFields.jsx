@@ -24,6 +24,7 @@ import {
 
 import { GoPlus } from 'react-icons/go';
 import { IoMdRadioButtonOff, IoMdRadioButtonOn } from 'react-icons/io';
+// import { selectUser } from '../../../../redux/auth/authSelectors';
 
 const DrinkDescriptionFields = ({
   image,
@@ -38,14 +39,43 @@ const DrinkDescriptionFields = ({
   alcoholic,
   onChangeRadio,
 }) => {
+  // const [ageUser, setAgeUser] = useState(0);
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getGlasses());
   }, [dispatch]);
 
+  // useEffect(() => {
+  //   ageUserCurrent();
+  // });
+
   const categories = useSelector((state) => state.drinks.categories);
   const glasses = useSelector((state) => state.drinks.glasses);
+  // const user = useSelector(selectUser);
+
+  // const ageUserCurrent = () => {
+  //   const userBirthday = user.dateOfBirth;
+
+  //   const year = userBirthday.slice(0, 4);
+  //   const month = userBirthday.slice(5, 7);
+  //   const day = userBirthday.slice(8, 10);
+
+  //   const now = new Date();
+  //   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  //   const dob = new Date(year, month, day);
+  //   const dobnow = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
+  //   let age;
+
+  //   age = today.getFullYear() - dob.getFullYear();
+
+  //   if (today < dobnow) {
+  //     age = age - 1;
+  //   }
+  //   setAgeUser(age);
+  // };
 
   return (
     <AddDrinkWrapper>
@@ -141,7 +171,7 @@ const DrinkDescriptionFields = ({
         <RadioWrapper>
           <LabelRadio htmlFor="alcoholic">
             <CustomIcon>
-              {alcoholic === 'alcoholic' ? (
+              {alcoholic === 'Alcoholic' ? (
                 <IoMdRadioButtonOn />
               ) : (
                 <IoMdRadioButtonOff />
@@ -159,7 +189,7 @@ const DrinkDescriptionFields = ({
 
           <LabelRadio htmlFor="non-alcoholic">
             <CustomIcon>
-              {alcoholic === 'non-alcoholic' ? (
+              {alcoholic === 'Non alcoholic' ? (
                 <IoMdRadioButtonOn />
               ) : (
                 <IoMdRadioButtonOff />
