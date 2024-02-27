@@ -6,15 +6,24 @@ import FooterMob from '../Footer/FooterMob/FooterMob';
 import FooterTab from '../Footer/FooterTab/FooterTab';
 import { Loader } from '../Loader/Loader';
 import { useMediaQuery } from 'react-responsive';
+import { useSelector } from 'react-redux';
+import { selectIsLoading } from '../../redux/drinks/drinksSelectors';
+import { Backdrop } from '@mui/material';
 
 const SharedLayout = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  const isLoading = useSelector(selectIsLoading);
   return (
     <>
       <Header />
       <main>
         <Suspense fallback={<Loader />}>
+          {isLoading && (
+            <Backdrop>
+              <Loader />
+            </Backdrop>
+          )}
           <Outlet />
         </Suspense>
       </main>

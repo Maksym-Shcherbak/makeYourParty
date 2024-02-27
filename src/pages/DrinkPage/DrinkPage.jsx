@@ -8,7 +8,7 @@ import RecipePreparation from '../../components/Drink/RecipePreparation/RecipePr
 
 import { Section } from '../../styled/Section';
 import { Container } from '../../styled/Container';
-import { Loader } from '../../components/Loader/Loader';
+// import { Loader } from '../../components/Loader/Loader';
 
 import {
   selectDrinkById,
@@ -17,13 +17,13 @@ import {
 } from '../../redux/drinks/drinksSelectors';
 
 import { getById } from '../../redux/drinks/drinksOperations';
-import { Backdrop } from '../../components/MotivatingModal/MotivatingModal.styled';
+// import { Backdrop } from '../../components/MotivatingModal/MotivatingModal.styled';
 
 const DrinkPage = () => {
   const dispatch = useDispatch();
   const { drinkId } = useParams();
   const drink = useSelector(selectDrinkById);
-  const isLoading = useSelector(selectIsLoading);
+  // const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
 
   useEffect(() => {
@@ -33,11 +33,11 @@ const DrinkPage = () => {
   return (
     <Section>
       <Container>
-        {isLoading && (
+        {/* {isLoading && (
           <Backdrop>
             <Loader />
           </Backdrop>
-        )}
+        )} */}
         {isError && <h1>{isError}</h1>}
         {drink && (
           <>

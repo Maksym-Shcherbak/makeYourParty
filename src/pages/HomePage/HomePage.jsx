@@ -18,11 +18,10 @@ import {
   selectIsLoading,
   selectError,
 } from '../../redux/drinks/drinksSelectors.js';
-import { Loader } from '../../components/Loader/Loader.jsx';
 
 const HomePage = () => {
-  const isLoading = useSelector(selectIsLoading);
-  const isError = useSelector(selectError);
+  // const isLoading = useSelector(selectIsLoading);
+  // const isError = useSelector(selectError);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -47,7 +46,6 @@ const HomePage = () => {
           <HomeHeroImg />
         </HeroImgWrap>
       </HomeSection>
-      {isLoading && !isError && <Loader />}
       <Section>
         <HomeDrinks drinks={main} />
       </Section>

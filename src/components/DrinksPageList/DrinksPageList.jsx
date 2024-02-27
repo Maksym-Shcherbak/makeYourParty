@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSearch } from '../../redux/drinks/drinksOperations';
 import { DrinksPgList } from './DrinksPageStyle';
 import DrinksPageItem from './DrinksPageItem';
-import { Loader } from '../Loader/Loader';
 import Pagination from '../Pagination/Pagination.jsx';
 
 const DrinksPageList = () => {
@@ -34,7 +33,7 @@ const DrinksPageList = () => {
     <>
       <DrinksPgList>
         {drinks.length === 0 ? (
-          <Loader />
+          <div>Nothing found</div>
         ) : (
           drinks.map((item) => {
             return (

@@ -10,16 +10,21 @@ const DrinksSearch = ({ categories, ingredients, page, limit }) => {
   const [category, setCategory] = useState(null);
   const [ingredient, setIngredient] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(page);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getSearch({ category, ingredient, currentPage, limit }));
+  }, [dispatch, category, ingredient, limit, currentPage]);
 
   useEffect(() => {
-    dispatch(getSearch({ category, ingredient, page, limit }));
-  }, [dispatch, category, ingredient, page, limit]);
+    setCurrentPage(page);
+  }, [page]);
 
   const handleChangeCategory = (e) => {
     if (e) {
       setCategory(e.value);
+      setCurrentPage(1);
       return;
     }
     setCategory(null);
@@ -28,6 +33,7 @@ const DrinksSearch = ({ categories, ingredients, page, limit }) => {
   const handleChangeIngredient = (e) => {
     if (e) {
       setIngredient(e.value);
+      setCurrentPage(1);
       return;
     }
     setIngredient(null);
@@ -54,7 +60,10 @@ const DrinksSearch = ({ categories, ingredients, page, limit }) => {
     if (searchQuery.trim() === '') {
       return;
     }
-    dispatch(getSearch({ searchQuery, category, ingredient, page, limit }));
+    setCurrentPage(1);
+    dispatch(
+      getSearch({ searchQuery, category, ingredient, currentPage, limit })
+    );
     const form = e.target;
     form.reset();
   };

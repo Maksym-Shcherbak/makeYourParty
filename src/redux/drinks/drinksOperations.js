@@ -71,7 +71,7 @@ export const getSearch = createAsyncThunk(
       category,
       ingredient: ingredients,
       limit,
-      page,
+      currentPage: page,
     } = credentials;
     try {
       const { data } = await axios.get('/drinks/search', {

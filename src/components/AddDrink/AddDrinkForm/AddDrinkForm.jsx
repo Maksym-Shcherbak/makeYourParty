@@ -102,43 +102,41 @@ const AddDrinkForm = () => {
     switch (value) {
       case imageURL:
         Notiflix.Notify.warning(`Upload a photo of the drink`);
-        return;
+        return false;
 
       case drink:
         Notiflix.Notify.warning(`Fill in required fields - title`);
-        return;
+        return false;
 
       case shortDescription:
         Notiflix.Notify.warning(`Fill in required fields - recipe`);
-        return;
+        return false;
 
       case category:
         Notiflix.Notify.warning(`Fill in required fields - category`);
-        return;
+        return false;
 
       case glass:
         Notiflix.Notify.warning(`Fill in required fields - glass`);
-        return;
+        return false;
 
       case alcoholic:
         Notiflix.Notify.warning(
           `Select the type of drink - alcoholic or non-alcoholic`
         );
-        return;
+        return false;
 
       case instructions:
         Notiflix.Notify.warning(`Fill in required fields - recipe preparation`);
-        return;
+        return false;
 
       default:
-        return;
+        return true;
     }
   };
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    validateBody();
-
     const newDrink = {
       image,
       drink,
@@ -149,10 +147,10 @@ const AddDrinkForm = () => {
       instructions,
       ingredients,
     };
-
-    navigate('/my');
-
-    dispatch(addDrinkOwn(newDrink));
+    if (!validateBody()) {
+      return;
+    }
+    dispatch(addDrinkOwn(newDrink)).then(() => navigate('/my'));
   };
 
   return (
