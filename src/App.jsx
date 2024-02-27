@@ -40,7 +40,7 @@ function App() {
   // const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
   let { token } = useParams();
-
+  console.log(token);
   useEffect(() => {
     dispatch(setToken(token));
     dispatch(currentUser());
