@@ -14,7 +14,6 @@ import {
   selectFavoriteDrinks,
   selectIsLoading,
 } from '../../redux/drinks/drinksSelectors';
-import { Loader } from '../../components/Loader/Loader';
 import { Paginator } from '../../components/Paginator/Paginator';
 import { useMediaQuery } from 'react-responsive';
 
@@ -70,7 +69,6 @@ const FavoriteDrinksPage = () => {
       <Section>
         <Container>
           <PageTitle title="Favorites" />
-          {isLoading && !isError && <Loader />}
           {!isLoading && !isError && drinksData.length === 0 ? (
             <EmptyDrinks />
           ) : (

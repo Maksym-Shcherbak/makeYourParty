@@ -14,7 +14,6 @@ import {
 import { Section } from '../../styled/Section';
 import { Container } from '../../styled/Container';
 import PageTitle from '../../components/PageTitle/PageTitle';
-import { Loader } from '../../components/Loader/Loader';
 import { Paginator } from '../../components/Paginator/Paginator';
 import { useMediaQuery } from 'react-responsive';
 
@@ -66,7 +65,6 @@ const MyDrinksPage = () => {
       <Section>
         <Container>
           <PageTitle title="My drinks" />
-          {isLoading && !isError && <Loader />}
           {!isLoading && !isError && mydrinksData.length === 0 ? (
             <>
               <EmptyDrinks />

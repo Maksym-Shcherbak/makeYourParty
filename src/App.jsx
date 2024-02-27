@@ -7,7 +7,7 @@ import { Suspense, lazy } from 'react';
 import { useEffect } from 'react';
 import { currentUser } from './redux/auth/authOperations';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsRefreshing } from './redux/auth/authSelectors';
+// import { selectIsRefreshing } from './redux/auth/authSelectors';
 import { Loader } from './components/Loader/Loader';
 
 //----------------------
@@ -36,7 +36,7 @@ const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage.jsx'));
 
 function App() {
   const theme = useSelector(selectTheme);
-  const isRefreshing = useSelector(selectIsRefreshing);
+  // const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -45,39 +45,39 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-      {isRefreshing ? (
+      {/* {isRefreshing ? (
         <Loader />
-      ) : (
-        <AppWrapper>
-          <Suspense fallback={<Loader />}>
-            <Routes>
-              <Route
-                path="/welcome"
-                element={<RestrictedRoute component={<WelcomePage />} />}
-              />
-              <Route
-                path="/signup"
-                element={<RestrictedRoute component={<SignupPage />} />}
-              />
-              <Route
-                path="/signin"
-                element={<RestrictedRoute component={<SigninPage />} />}
-              />
-              <Route element={<PrivateRoute />}>
-                <Route path="/" element={<SharedLayout />}>
-                  <Route path="/home" element={<HomePage />} />
-                  <Route path="/drinks" element={<DrinksPage />} />
-                  <Route path="/drinks/:drinkId" element={<DrinkPage />} />
-                  <Route path="/add" element={<AddDrinkPage />} />
-                  <Route path="/favorites" element={<FavoriteDrinksPage />} />
-                  <Route path="/my" element={<MyDrinksPage />} />
-                  <Route path="*" element={<ErrorPage />} />
-                </Route>
+      ) : ( */}
+      <AppWrapper>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route
+              path="/welcome"
+              element={<RestrictedRoute component={<WelcomePage />} />}
+            />
+            <Route
+              path="/signup"
+              element={<RestrictedRoute component={<SignupPage />} />}
+            />
+            <Route
+              path="/signin"
+              element={<RestrictedRoute component={<SigninPage />} />}
+            />
+            <Route element={<PrivateRoute />}>
+              <Route path="/" element={<SharedLayout />}>
+                <Route path="/home" element={<HomePage />} />
+                <Route path="/drinks" element={<DrinksPage />} />
+                <Route path="/drinks/:drinkId" element={<DrinkPage />} />
+                <Route path="/add" element={<AddDrinkPage />} />
+                <Route path="/favorites" element={<FavoriteDrinksPage />} />
+                <Route path="/my" element={<MyDrinksPage />} />
+                <Route path="*" element={<ErrorPage />} />
               </Route>
-            </Routes>
-          </Suspense>
-        </AppWrapper>
-      )}
+            </Route>
+          </Routes>
+        </Suspense>
+      </AppWrapper>
+      {/* )} */}
     </ThemeProvider>
   );
 }
