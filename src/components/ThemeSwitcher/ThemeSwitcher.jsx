@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Switch, SwitchInput } from './ThemeSwitcher.styled';
 
-const ThemeSwitcher = ({ handleToggleTheme }) => { 
+const ThemeSwitcher = ({ handleToggleTheme }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const toggleTheme = () => {
     setIsChecked((prev) => !prev);
-    handleToggleTheme(); 
+    handleToggleTheme();
   };
 
   return (
@@ -22,4 +22,3 @@ const ThemeSwitcher = ({ handleToggleTheme }) => {
 };
 
 export default ThemeSwitcher;
-

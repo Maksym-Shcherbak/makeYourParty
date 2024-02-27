@@ -13,6 +13,7 @@ import {
 import { selectMotivation } from '../../../redux/drinks/drinksSelectors';
 import MotivatingModal from '../../MotivatingModal/MotivatingModal';
 import { reset } from '../../../redux/drinks/drinksSlice';
+import { toastSuccess } from '../../../services/notification';
 
 const Button = ({ id, favoriteDrink }) => {
   const [favorite, setFavorite] = useState(null);
@@ -53,11 +54,7 @@ const Button = ({ id, favoriteDrink }) => {
       })
     );
     setFavorite(true);
-    Notiflix.Notify.success(`Add to your favorite`, {
-      width: '460px',
-      svgSize: '220px',
-      fontSize: '16px',
-    });
+    toastSuccess(`Add to your favorite`);
   };
 
   const handleRemoveFavorite = () => {
@@ -68,11 +65,7 @@ const Button = ({ id, favoriteDrink }) => {
     );
 
     setFavorite(false);
-    Notiflix.Notify.warning(`Remove from your favorite`, {
-      width: '460px',
-      svgSize: '220px',
-      fontSize: '16px',
-    });
+    toastSuccess(`Remove from your favorite`);
   };
 
   return (

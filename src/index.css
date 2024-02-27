@@ -1,14 +1,18 @@
 /* @import 'node_modules/modern-normalize/modern-normalize.css'; */
 :root {
   --font-family: 'Manrope', sans-serif;
-  --main-color: #f3f3f3;
-  --secondary-color: #161f37;
+  --main-color: rgb(243, 243, 243);
+  --secondary-color: rgb(22, 31, 55);
+  --main-background-color: rgba(10, 10, 17, 1);
+  --activated-color: rgba(64, 112, 205, 0.5);
   --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-theme='dark'] {
+  --main-background-color: rgb(243, 243, 243);
 }
 
 body {
-  background-color: #0a0a11;
-  /* background-image: url('./assets/background.png');  */
+  background-color: var(--main-background-color);
   background-size: auto 100%;
   background-position: center center;
   background-repeat: no-repeat;
