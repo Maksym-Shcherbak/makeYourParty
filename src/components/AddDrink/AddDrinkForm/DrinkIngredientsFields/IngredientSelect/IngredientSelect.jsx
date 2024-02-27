@@ -17,8 +17,6 @@ const IngredientSelect = ({
   onSelectHandleIng,
   onChangeInputCl,
 }) => {
-  // console.log(data);
-
   return (
     <>
       <ItemSelect>
@@ -26,7 +24,11 @@ const IngredientSelect = ({
           <SelectIng data-id={id} onChange={onSelectHandleIng}>
             {ingredients.map(({ ingredientId, title }) => {
               return (
-                <SelectOption key={title} value={ingredientId}>
+                <SelectOption
+                  key={title}
+                  value={ingredientId}
+                  data-title={title}
+                >
                   {title}
                 </SelectOption>
               );

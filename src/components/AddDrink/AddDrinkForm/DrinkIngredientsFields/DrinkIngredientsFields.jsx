@@ -12,7 +12,6 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getIngredients } from '../../../../redux/drinks/drinksOperations';
 import IngredientSelect from './IngredientSelect/IngredientSelect';
-import Notiflix from 'notiflix';
 
 const DrinkIngredientsFields = ({ onChildData }) => {
   const [counter, setCounter] = useState(0);
@@ -36,7 +35,10 @@ const DrinkIngredientsFields = ({ onChildData }) => {
   const increaseCounter = () => {
     setCounter((prevCount) => prevCount + 1);
     const id = 'a,s.dfa?' + Math.random() * 1024.333 + 'adftghjftjfgjfgj';
-    setData((prevData) => [...prevData, { id, ingredientId: '', measure: '' }]);
+    setData((prevData) => [
+      ...prevData,
+      { id, ingredientId: '', measure: '', title: '' },
+    ]);
   };
 
   const decreaseCounter = () => {
@@ -57,21 +59,29 @@ const DrinkIngredientsFields = ({ onChildData }) => {
       if (item.id !== searchObject.id) {
         return item;
       }
-      return { ...searchObject, ingredientId: e.target.value };
+      const ingredient = ingredients.filter(
+        ({ ingredientId }) => ingredientId === e.target.value
+      );
+      return {
+        ...searchObject,
+        ingredientId: e.target.value,
+        title: ingredient[0].title,
+      };
     });
-
     setData(updatedIngredients);
   };
 
   const onChangeInputCl = (e) => {
     const id = e.currentTarget.dataset.id;
     const searchObject = data.find((el) => el.id === id);
-
     const updatedIngredients = data.map((item) => {
       if (item.id !== searchObject.id) {
         return item;
       }
-      return { ...searchObject, measure: e.target.value };
+      return {
+        ...searchObject,
+        measure: e.target.value,
+      };
     });
     setData(updatedIngredients);
   };
@@ -95,7 +105,7 @@ const DrinkIngredientsFields = ({ onChildData }) => {
         </ButtonWrapper>
       </IngredientsWrapper>
       <SectionWrapperList>
-        <ListSelectIng key={data.id}>
+        <ListSelectIng>
           {data.length > 0 &&
             data.map(({ id }) => {
               return (
