@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Image } from './UserLogo.styled';
 import { useAuth } from '../../../../redux/hooks/useAuth';
 

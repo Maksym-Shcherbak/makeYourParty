@@ -57,7 +57,6 @@ const FavoriteDrinksPage = () => {
       dispatch(fetchFavoriteDrink({ page: newPage + 1, limit: itemsPerPage })),
     ]);
   };
-
   const drinksData = Array.isArray(favoriteDrinks)
     ? favoriteDrinks
     : favoriteDrinks.data;

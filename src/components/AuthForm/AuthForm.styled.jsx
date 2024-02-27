@@ -53,6 +53,7 @@ export const SignUpBtn = styled.button`
   position: relative;
   padding: 18px;
   background-color: #f3f3f3;
+  border: 1px solid rgba(243, 243, 243, 0.58);
   border-radius: 42px;
   line-height: 1.28;
   color: #161f37;
@@ -70,7 +71,7 @@ export const SignUpBtn = styled.button`
   &:hover {
     background-color: transparent;
     color: #f3f3f3;
-    border: 1px solid rgba(243, 243, 243, 0.58);
+
     transition:
       border ${transition},
       background-color ${transition};

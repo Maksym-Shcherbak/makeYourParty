@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
   width: 375px;
-  padding: 20px 0px;
+  padding: 20px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -79,7 +79,6 @@ export const UserWrap = styled.div`
   align-items: center;
   gap: 24px;
   justify-content: flex-end;
-  
 
   @media screen and (max-width: 374.98px) {
     column-gap: 3.5vw;

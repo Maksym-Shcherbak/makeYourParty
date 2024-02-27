@@ -3,7 +3,7 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 import { AppWrapper } from './App.styled';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
-import { lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { useEffect } from 'react';
 import { currentUser } from './redux/auth/authOperations';
 import { useDispatch, useSelector } from 'react-redux';
@@ -49,31 +49,33 @@ function App() {
         <Loader />
       ) : (
         <AppWrapper>
-          <Routes>
-            <Route
-              path="/welcome"
-              element={<RestrictedRoute component={<WelcomePage />} />}
-            />
-            <Route
-              path="/signup"
-              element={<RestrictedRoute component={<SignupPage />} />}
-            />
-            <Route
-              path="/signin"
-              element={<RestrictedRoute component={<SigninPage />} />}
-            />
-            <Route element={<PrivateRoute />}>
-              <Route path="/" element={<SharedLayout />}>
-                <Route path="/home" element={<HomePage />} />
-                <Route path="/drinks" element={<DrinksPage />} />
-                <Route path="/drinks/:drinkId" element={<DrinkPage />} />
-                <Route path="/add" element={<AddDrinkPage />} />
-                <Route path="/favorites" element={<FavoriteDrinksPage />} />
-                <Route path="/my" element={<MyDrinksPage />} />
-                <Route path="*" element={<ErrorPage />} />
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route
+                path="/welcome"
+                element={<RestrictedRoute component={<WelcomePage />} />}
+              />
+              <Route
+                path="/signup"
+                element={<RestrictedRoute component={<SignupPage />} />}
+              />
+              <Route
+                path="/signin"
+                element={<RestrictedRoute component={<SigninPage />} />}
+              />
+              <Route element={<PrivateRoute />}>
+                <Route path="/" element={<SharedLayout />}>
+                  <Route path="/home" element={<HomePage />} />
+                  <Route path="/drinks" element={<DrinksPage />} />
+                  <Route path="/drinks/:drinkId" element={<DrinkPage />} />
+                  <Route path="/add" element={<AddDrinkPage />} />
+                  <Route path="/favorites" element={<FavoriteDrinksPage />} />
+                  <Route path="/my" element={<MyDrinksPage />} />
+                  <Route path="*" element={<ErrorPage />} />
+                </Route>
               </Route>
-            </Route>
-          </Routes>
+            </Routes>
+          </Suspense>
         </AppWrapper>
       )}
     </ThemeProvider>

@@ -30,7 +30,6 @@ const HomePage = () => {
   }, [dispatch]);
 
   const main = useSelector((state) => state.drinks.main);
-  console.log(main);
 
   return (
     <Container>

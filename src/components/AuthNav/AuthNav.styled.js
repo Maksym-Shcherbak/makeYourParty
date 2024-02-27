@@ -5,6 +5,7 @@ import transition from '../../transition/transition';
 export const SignupLink = styled(NavLink)`
   text-decoration: none;
   background-color: #f3f3f3;
+  border: 1px solid rgba(243, 243, 243, 0.2);
   border-radius: 42px;
   padding: 14px 40px;
   color: #161f37;
@@ -21,7 +22,6 @@ export const SignupLink = styled(NavLink)`
     background-color: transparent;
     color: #f3f3f3;
     transition: background-color ${transition};
-    border: 1px solid rgba(243, 243, 243, 0.2);
   }
 `;
 
