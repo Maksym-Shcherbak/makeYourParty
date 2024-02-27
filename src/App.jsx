@@ -40,7 +40,7 @@ function App() {
   // const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
-  const token = searchParams.get();
+  const token = searchParams.get('token');
   console.log(token);
   useEffect(() => {
     dispatch(setToken(token));
