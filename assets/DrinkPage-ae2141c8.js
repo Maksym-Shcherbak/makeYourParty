@@ -1,4 +1,4 @@
-import{u as n,j as e,r as a,l as C,B as k,O as v,m as b,M as y,n as B,I as j,o as E,a as u,b as l,p as S,q as z,t as R,v as F,w as J,x as W,y as Z,z as H}from"./index-6aca6ceb.js";import"./notiflix-aio-3.2.7.min-cd5e5bfd.js";import{M as Q}from"./index-caf3053d.js";import{S as U,C as T}from"./Section-624cd9cc.js";const M=n.div`
+import{u as n,j as e,r as a,l as C,B as k,O as v,m as b,M as y,n as B,I as j,o as E,a as u,b as l,p as S,q as z,t as R,v as F,w as J,x as W,y as Z,z as H}from"./index-045d8466.js";import"./notiflix-aio-3.2.7.min-7647b022.js";import{M as Q}from"./index-ffc10fef.js";import{S as U,C as T}from"./Section-2c26f77a.js";const M=n.div`
   @media screen and (min-width: 1440px) {
     display: flex;
     justify-content: space-between;
