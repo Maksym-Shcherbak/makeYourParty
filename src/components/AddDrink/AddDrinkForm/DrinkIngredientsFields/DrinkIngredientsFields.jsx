@@ -12,12 +12,11 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getIngredients } from '../../../../redux/drinks/drinksOperations';
 import IngredientSelect from './IngredientSelect/IngredientSelect';
+import Notiflix from 'notiflix';
 
 const DrinkIngredientsFields = ({ onChildData }) => {
   const [counter, setCounter] = useState(0);
   const [data, setData] = useState([]);
-
-  console.log(data);
 
   useEffect(() => {
     const sendDataToParent = () => {
@@ -53,31 +52,21 @@ const DrinkIngredientsFields = ({ onChildData }) => {
   const onSelectHandleIng = (e) => {
     const id = e.currentTarget.dataset.id;
     const searchObject = data.find((el) => el.id === id);
-    console.log(searchObject);
+
     const updatedIngredients = data.map((item) => {
       if (item.id !== searchObject.id) {
         return item;
       }
       return { ...searchObject, ingredientId: e.target.value };
     });
+
     setData(updatedIngredients);
-
-    // setData((prev) => [{ ...prev, ingredientId: e.target.value }]);
-
-    // setData((prev) => {
-    //   prev.map(({ id }) => {
-    //     const searchId = data.find((el) => el.id === id);
-    //     if (searchId) {
-    //       return [{ ...prev, ingredientId: e.target.value }];
-    //     }
-    //   });
-    // });
   };
 
   const onChangeInputCl = (e) => {
     const id = e.currentTarget.dataset.id;
     const searchObject = data.find((el) => el.id === id);
-    console.log(searchObject);
+
     const updatedIngredients = data.map((item) => {
       if (item.id !== searchObject.id) {
         return item;
@@ -115,7 +104,6 @@ const DrinkIngredientsFields = ({ onChildData }) => {
                   ingredients={ingredients}
                   id={id}
                   onHandleDeleteIngredient={onHandleDeleteIngredient}
-                  data={data}
                   onSelectHandleIng={onSelectHandleIng}
                   onChangeInputCl={onChangeInputCl}
                 />
@@ -127,5 +115,4 @@ const DrinkIngredientsFields = ({ onChildData }) => {
   );
 };
 
-// ingredientId, title
 export default DrinkIngredientsFields;
