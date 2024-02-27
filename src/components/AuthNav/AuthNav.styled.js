@@ -34,6 +34,7 @@ export const SigninLink = styled(NavLink)`
   font-size: 14px;
   font-weight: 600;
   line-height: 1.28;
+  cursor: pointer;
   border: 1px solid rgba(243, 243, 243, 0.2);
   transition: border-color ${transition};
 
