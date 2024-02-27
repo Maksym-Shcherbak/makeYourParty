@@ -58,10 +58,12 @@ const DrinksPage = () => {
         />
         <Section>
           <DrinksPageList />
-          <Pagination
-            pageCount={Math.ceil(totalHits / itemsPerPage)}
-            onPageChange={handlePaginPageClick}
-          />
+          {totalHits > itemsPerPage && (
+            <Pagination
+              pageCount={Math.ceil(totalHits / itemsPerPage)}
+              onPageChange={handlePaginPageClick}
+            />
+          )}
         </Section>
       </Container>
     </Section>
