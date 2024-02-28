@@ -1,4 +1,4 @@
-import{u as t,G as F,a as S,r as c,T as Y,V as Z,b as I,j as e,U as J,f as K,W as Q,X as _,L as ee,Y as te}from"./index-84d31b75.js";import{M as ne}from"./index-eadfff9d.js";import{N as b}from"./notiflix-aio-3.2.7.min-66f798c7.js";import{C as ie,S as re}from"./Section-7ae78bed.js";const ae=t.h2`
+import{u as t,G as F,a as S,r as c,T as Y,V as Z,b as I,j as e,U as J,f as K,W as Q,X as _,L as ee,Y as te}from"./index-075ea953.js";import{M as ne}from"./index-5df69931.js";import{N as b}from"./notiflix-aio-3.2.7.min-197f6464.js";import{C as ie,S as re}from"./Section-99781750.js";const ae=t.h2`
   font-weight: 600;
   font-size: 32px;
   line-height: 118.75%;
