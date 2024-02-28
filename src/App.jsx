@@ -44,12 +44,12 @@ function App() {
   console.log(token);
   if (token) {
     console.log('params', token);
-    localStorage.setItem('token', token);
+    JSON.stringify(localStorage.setItem('token', token));
     dispatch(setToken(token));
   }
   const localToken = JSON.parse(localStorage.getItem('token'));
   console.log(localToken);
-  if (localToken !== null) {
+  if (localToken) {
     console.log('local', localToken);
     dispatch(setToken(localToken));
   }
