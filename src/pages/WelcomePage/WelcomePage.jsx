@@ -6,18 +6,8 @@ import {
   WelcomeText,
 } from './WelcomePage.styled';
 import { GoogleLoginButton } from 'react-social-login-buttons';
-import { useSearchParams } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const WelcomePage = () => {
-  const [searchParams] = useSearchParams();
-  const token = searchParams.get('token');
-  console.log(token);
-
-  useEffect(() => {
-    localStorage.setItem('token', token);
-  }, [token]);
-
   return (
     <Container>
       <TextAndControls>

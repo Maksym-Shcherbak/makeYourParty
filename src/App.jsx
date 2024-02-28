@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useSearchParams } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import { AppWrapper } from './App.styled';
 import { PrivateRoute } from './PrivateRoute';
@@ -39,9 +39,16 @@ function App() {
   const theme = useSelector(selectTheme);
   // const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
-  const token = localStorage.getItem('token');
+  const [searchParams] = useSearchParams();
+  const token = searchParams.get('token');
+  console.log(token);
 
   useEffect(() => {
+    localStorage.setItem('token', token);
+  }, [token]);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
     setToken(token);
     dispatch(currentUser());
   }, [dispatch, token]);
