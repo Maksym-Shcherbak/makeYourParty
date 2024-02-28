@@ -14,6 +14,7 @@ import { Loader } from './components/Loader/Loader';
 import { darkTheme, lightTheme } from './components/Themes';
 import { ThemeProvider } from 'styled-components';
 import { selectTheme } from './redux/auth/authSelectors';
+import { setToken } from './redux/auth/authSlice';
 
 const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage.jsx'));
 const HomePage = lazy(() => import('pages/HomePage/HomePage.jsx'));
@@ -38,10 +39,12 @@ function App() {
   const theme = useSelector(selectTheme);
   // const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
+    setToken(token);
     dispatch(currentUser());
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
