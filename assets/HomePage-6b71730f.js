@@ -1,4 +1,4 @@
-import{u as t,L as c,j as i,a as o,r as d,g as x,c as l}from"./index-0fa1d55b.js";import{P as p}from"./PageTitle-8df1f567.js";import{C as h,S as g}from"./Section-942e838f.js";import{e as f,a as u,b as w,c as j}from"./blue_iced_tea_mobile@2x-cecc14df.js";import{U as k,a as b,b as y,c as D,d as L}from"./UtilsMainDrinks-988db576.js";const m=t(c)`
+import{u as t,L as c,j as i,b as o,r as d,g as x,c as l}from"./index-1fb5c3f3.js";import{P as p}from"./PageTitle-4c120b1d.js";import{C as h,S as g}from"./Section-57605829.js";import{e as f,a as u,b as w,c as j}from"./blue_iced_tea_mobile@2x-cecc14df.js";import{U as b,a as k,b as y,c as D,d as L}from"./UtilsMainDrinks-eaaabdb7.js";const m=t(c)`
   display: inline-flex;
   align-items: center;
   border-radius: 42px;
@@ -112,7 +112,7 @@ import{u as t,L as c,j as i,a as o,r as d,g as x,c as l}from"./index-0fa1d55b.js
     max-width: 400px;
     min-height: 438px;
   }
-`,I=({title:e,url:n,text:r,id:s})=>i.jsx(P,{children:i.jsxs(k,{to:`/drinks/${s}`,children:[i.jsx(b,{src:n,alt:"Photo drinks"}),i.jsxs(y,{children:[i.jsx(D,{children:e}),i.jsx(L,{children:r})]})]})}),$=t.ul`
+`,I=({title:e,url:n,text:r,id:s})=>i.jsx(P,{children:i.jsxs(b,{to:`/drinks/${s}`,children:[i.jsx(k,{src:n,alt:"Photo drinks"}),i.jsxs(y,{children:[i.jsx(D,{children:e}),i.jsx(L,{children:r})]})]})}),$=t.ul`
   margin-bottom: 40px;
   display: flex;
 	flex-direction: row;

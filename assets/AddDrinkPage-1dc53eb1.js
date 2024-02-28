@@ -1,4 +1,4 @@
-import{u as t,G as F,a as S,r as c,W as X,Y,c as I,j as e,X as J,i as K,Z as Q,$ as _,L as ee,a0 as te}from"./index-0fa1d55b.js";import{M as ne}from"./index-8227777e.js";import{N as b}from"./notiflix-aio-3.2.7.min-d89f5289.js";import{C as ie,S as re}from"./Section-942e838f.js";const ae=t.h2`
+import{u as t,G as F,b as S,r as c,U as X,W as Y,c as I,j as e,V as J,h as K,X as Q,Y as _,L as ee,Z as te}from"./index-1fb5c3f3.js";import{M as ne}from"./index-7a24d20d.js";import{N as b}from"./notiflix-aio-3.2.7.min-ac8f2398.js";import{C as ie,S as re}from"./Section-57605829.js";const ae=t.h2`
   font-weight: 600;
   font-size: 32px;
   line-height: 118.75%;
@@ -462,7 +462,7 @@ import{u as t,G as F,a as S,r as c,W as X,Y,c as I,j as e,X as J,i as K,Z as Q,$
     font-size: 40px;
     line-height: 1.1;
   }
-`,Be=({instructions:r,onHandleTexteria:p})=>e.jsx(e.Fragment,{children:e.jsxs(Le,{children:[e.jsx(We,{children:"Recipe Preparation"}),e.jsx(Ne,{name:"instructions",id:"instructions",placeholder:"Enter the recipe",value:r,onChange:p})]})}),Re=()=>{const r=S(),p=K(),[s,a]=c.useState(null),[l,m]=c.useState(""),[g,v]=c.useState(""),[u,j]=c.useState(""),[f,w]=c.useState("Beer"),[n,d]=c.useState("Balloon Glass"),[i,y]=c.useState(""),[h,D]=c.useState(""),[C,E]=c.useState([]),O=o=>{E(o)},M=o=>{const x=o.target.files[0];a(x),m(URL.createObjectURL(x))},U=o=>{const x=o.target.value;switch(o.target.name){case"drink":v(x);return;case"shortDescription":j(x);return;default:return}},G=o=>{const x=o.target.value;switch(o.target.name){case"category":w(x);return;case"glass":d(x);return;default:return}},H=o=>{const x=o.target.value;switch(x){case"Alcoholic":y(x);return;case"Non alcoholic":y(x);return;default:return}},q=o=>{D(o.target.value)},V=()=>{switch(""){case l:return b.Notify.warning("Upload a photo of the drink"),!1;case g:return b.Notify.warning("Fill in required fields - title"),!1;case u:return b.Notify.warning("Fill in required fields - recipe"),!1;case f:return b.Notify.warning("Fill in required fields - category"),!1;case n:return b.Notify.warning("Fill in required fields - glass"),!1;case i:return b.Notify.warning("Select the type of drink - alcoholic or non-alcoholic"),!1;case h:return b.Notify.warning("Fill in required fields - recipe preparation"),!1;default:return!0}},$=o=>{o.preventDefault();const x={image:s,drink:g,shortDescription:u,category:f,glass:n,alcoholic:i,instructions:h,ingredients:C};V()&&r(Q(x)).then(()=>p("/my"))};return e.jsx(e.Fragment,{children:e.jsxs("form",{onSubmit:$,children:[e.jsx(ue,{image:s,imageURL:l,handleOnChangeImage:M,drink:g,shortDescription:u,onChangeInput:U,category:f,glass:n,onChangeSelect:G,alcoholic:i,onChangeRadio:H}),e.jsx(Ae,{onChildData:O}),e.jsx(Be,{instructions:h,onHandleTexteria:q}),e.jsx(oe,{type:"submit",children:"Add"})]})})},Te=t.h3`
+`,Be=({instructions:r,onHandleTexteria:p})=>e.jsx(e.Fragment,{children:e.jsxs(Le,{children:[e.jsx(We,{children:"Recipe Preparation"}),e.jsx(Ne,{name:"instructions",id:"instructions",placeholder:"Enter the recipe",value:r,onChange:p})]})}),Re=()=>{const r=S(),p=K(),[s,a]=c.useState(null),[l,m]=c.useState(""),[g,v]=c.useState(""),[u,j]=c.useState(""),[f,w]=c.useState("Beer"),[n,d]=c.useState("Balloon Glass"),[i,y]=c.useState(""),[h,D]=c.useState(""),[C,E]=c.useState([]),O=o=>{E(o)},U=o=>{const x=o.target.files[0];a(x),m(URL.createObjectURL(x))},M=o=>{const x=o.target.value;switch(o.target.name){case"drink":v(x);return;case"shortDescription":j(x);return;default:return}},G=o=>{const x=o.target.value;switch(o.target.name){case"category":w(x);return;case"glass":d(x);return;default:return}},H=o=>{const x=o.target.value;switch(x){case"Alcoholic":y(x);return;case"Non alcoholic":y(x);return;default:return}},q=o=>{D(o.target.value)},V=()=>{switch(""){case l:return b.Notify.warning("Upload a photo of the drink"),!1;case g:return b.Notify.warning("Fill in required fields - title"),!1;case u:return b.Notify.warning("Fill in required fields - recipe"),!1;case f:return b.Notify.warning("Fill in required fields - category"),!1;case n:return b.Notify.warning("Fill in required fields - glass"),!1;case i:return b.Notify.warning("Select the type of drink - alcoholic or non-alcoholic"),!1;case h:return b.Notify.warning("Fill in required fields - recipe preparation"),!1;default:return!0}},$=o=>{o.preventDefault();const x={image:s,drink:g,shortDescription:u,category:f,glass:n,alcoholic:i,instructions:h,ingredients:C};V()&&r(Q(x)).then(()=>p("/my"))};return e.jsx(e.Fragment,{children:e.jsxs("form",{onSubmit:$,children:[e.jsx(ue,{image:s,imageURL:l,handleOnChangeImage:U,drink:g,shortDescription:u,onChangeInput:M,category:f,glass:n,onChangeSelect:G,alcoholic:i,onChangeRadio:H}),e.jsx(Ae,{onChildData:O}),e.jsx(Be,{instructions:h,onHandleTexteria:q}),e.jsx(oe,{type:"submit",children:"Add"})]})})},Te=t.h3`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33;
@@ -501,7 +501,7 @@ import{u as t,G as F,a as S,r as c,W as X,Y,c as I,j as e,X as J,i as K,Z as Q,$
   height: 90px;
 
   border-radius: 8px;
-`,Me=t.div`
+`,Ue=t.div`
   width: 175px;
   height: 87px;
 
@@ -514,7 +514,7 @@ import{u as t,G as F,a as S,r as c,W as X,Y,c as I,j as e,X as J,i as K,Z as Q,$
   @media screen and (min-width: 375px) {
     width: 232px;
   }
-`,Ue=t.h4`
+`,Me=t.h4`
   font-size: 16px;
   line-height: 1.375;
   color: #f3f3f3;
@@ -531,7 +531,7 @@ import{u as t,G as F,a as S,r as c,W as X,Y,c as I,j as e,X as J,i as K,Z as Q,$
   @media screen and (min-width: 768px) {
     line-height: 1.42857;
   }
-`,He=()=>{const r=S();c.useEffect(()=>{r(_())},[r]);const p=I(s=>s.drinks.populars);return e.jsxs(e.Fragment,{children:[e.jsx(Te,{children:"Popular drinks"}),e.jsx(Pe,{children:p.map(({_id:s,drink:a,drinkThumb:l,description:m})=>e.jsx(ee,{to:`/drinks/${s}`,children:e.jsxs(Ee,{children:[e.jsx(Oe,{src:l,alt:a}),e.jsxs(Me,{children:[e.jsx(Ue,{children:a}),e.jsx(Ge,{children:m})]})]})},s))})]})},qe=t.div`
+`,He=()=>{const r=S();c.useEffect(()=>{r(_())},[r]);const p=I(s=>s.drinks.populars);return e.jsxs(e.Fragment,{children:[e.jsx(Te,{children:"Popular drinks"}),e.jsx(Pe,{children:p.map(({_id:s,drink:a,drinkThumb:l,description:m})=>e.jsx(ee,{to:`/drinks/${s}`,children:e.jsxs(Ee,{children:[e.jsx(Oe,{src:l,alt:a}),e.jsxs(Ue,{children:[e.jsx(Me,{children:a}),e.jsx(Ge,{children:m})]})]})},s))})]})},qe=t.div`
   @media screen and (min-width: 1440px) {
     display: flex;
   }
