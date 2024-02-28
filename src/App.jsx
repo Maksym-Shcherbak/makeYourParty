@@ -44,7 +44,7 @@ function App() {
   console.log(token);
   if (token) {
     console.log('params', token);
-    JSON.stringify(localStorage.setItem('token', token));
+    localStorage.setItem('token', JSON.stringify(token));
     dispatch(setToken(token));
   }
   const localToken = JSON.parse(localStorage.getItem('token'));
