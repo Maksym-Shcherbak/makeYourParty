@@ -1,4 +1,4 @@
-import { Route, Routes, useSearchParams } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import { AppWrapper } from './App.styled';
 import { PrivateRoute } from './PrivateRoute';
@@ -13,8 +13,7 @@ import { Loader } from './components/Loader/Loader';
 //----------------------
 import { darkTheme, lightTheme } from './components/Themes';
 import { ThemeProvider } from 'styled-components';
-import { selectTheme, selectToken } from './redux/auth/authSelectors';
-import { setToken } from './redux/auth/authSlice';
+import { selectTheme } from './redux/auth/authSelectors';
 
 const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage.jsx'));
 const HomePage = lazy(() => import('pages/HomePage/HomePage.jsx'));
@@ -39,16 +38,11 @@ function App() {
   const theme = useSelector(selectTheme);
   // const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
-  const [searchParams] = useSearchParams();
-  const token = searchParams.get('token');
-  console.log(token);
 
   useEffect(() => {
-    dispatch(setToken(token));
     dispatch(currentUser());
-  }, [dispatch, token]);
+  }, [dispatch]);
 
-  console.log(useSelector(selectToken));
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       {/* {isRefreshing ? (

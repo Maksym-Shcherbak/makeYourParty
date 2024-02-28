@@ -1,3 +1,4 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { AuthNav } from '../../components/AuthNav/AuthNav';
 import {
   Container,
@@ -6,8 +7,23 @@ import {
   WelcomeText,
 } from './WelcomePage.styled';
 import { GoogleLoginButton } from 'react-social-login-buttons';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { setToken } from '../../redux/auth/authSlice';
+import { selectToken } from '../../redux/auth/authSelectors';
 
 const WelcomePage = () => {
+  const dispatch = useDispatch();
+  const [searchParams] = useSearchParams();
+  const token = searchParams.get('token');
+  console.log(token);
+
+  useEffect(() => {
+    dispatch(setToken(token));
+  }, [dispatch, token]);
+
+  console.log(useSelector(selectToken));
+
   return (
     <Container>
       <TextAndControls>
