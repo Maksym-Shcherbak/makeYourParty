@@ -42,6 +42,7 @@ function App() {
   const [searchParams] = useSearchParams();
   const token = searchParams.get('token');
   console.log(token);
+
   useEffect(() => {
     dispatch(setToken(token));
     dispatch(currentUser());
