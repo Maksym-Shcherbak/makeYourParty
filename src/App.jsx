@@ -49,10 +49,10 @@ function App() {
   useEffect(() => {
     if (!token) {
       console.log('local', localStorage.getItem('token'));
-      setToken(localStorage.getItem('token'));
+      dispatch(setToken(localStorage.getItem('token')));
     } else {
       console.log('params', token);
-      setToken(token);
+      dispatch(setToken(token));
     }
     dispatch(currentUser());
   }, [dispatch, token]);
