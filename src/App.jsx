@@ -42,14 +42,14 @@ function App() {
   const [searchParams] = useSearchParams();
   const token = searchParams.get('token');
   console.log(token);
+  localStorage.setItem('token', token);
 
   useEffect(() => {
-    localStorage.setItem('token', token);
-  }, [token]);
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    setToken(token);
+    if (!token) {
+      setToken(localStorage.getItem('token'));
+    } else {
+      setToken(token);
+    }
     dispatch(currentUser());
   }, [dispatch, token]);
 
