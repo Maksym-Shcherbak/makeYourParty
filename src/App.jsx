@@ -42,7 +42,9 @@ function App() {
   const [searchParams] = useSearchParams();
   const token = searchParams.get('token');
   console.log(token);
-  localStorage.setItem('token', token);
+  if (token) {
+    localStorage.setItem('token', token);
+  }
 
   useEffect(() => {
     if (!token) {
