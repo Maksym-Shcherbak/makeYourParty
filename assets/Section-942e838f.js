@@ -1,4 +1,4 @@
-import{u as d}from"./index-78db73be.js";const p=d.div`
+import{u as d}from"./index-0fa1d55b.js";const p=d.div`
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
