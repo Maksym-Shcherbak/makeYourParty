@@ -43,19 +43,20 @@ function App() {
   const token = searchParams.get('token');
   console.log(token);
   if (token) {
+    console.log('params', token);
     localStorage.setItem('token', token);
+    dispatch(setToken(token));
+  }
+  const localToken = JSON.parse(localStorage.getItem('token'));
+  console.log(localToken);
+  if (localToken !== null) {
+    console.log('local', localToken);
+    dispatch(setToken(localToken));
   }
 
   useEffect(() => {
-    if (!token) {
-      console.log('local', localStorage.getItem('token'));
-      dispatch(setToken(localStorage.getItem('token')));
-    } else {
-      console.log('params', token);
-      dispatch(setToken(token));
-    }
     dispatch(currentUser());
-  }, [dispatch, token]);
+  }, [dispatch]);
 
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
