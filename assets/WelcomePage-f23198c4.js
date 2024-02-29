@@ -1,4 +1,4 @@
-import{u as B,N as U,j as u,r}from"./index-0b065139.js";import{t as p,C as g1,T as v1,a as h1,W as m1}from"./WelcomePage.styled-fcfbc5e1.js";const p1=B(U)`
+import{u as B,N as U,j as u,r}from"./index-4acb20a6.js";import{t as p,C as g1,T as v1,a as h1,W as m1}from"./WelcomePage.styled-a050f191.js";const p1=B(U)`
   text-decoration: none;
   background-color: #f3f3f3;
   border: 1px solid rgba(243, 243, 243, 0.2);
