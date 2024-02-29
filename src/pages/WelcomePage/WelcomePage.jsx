@@ -1,4 +1,5 @@
 import { AuthNav } from '../../components/AuthNav/AuthNav';
+import { GoogleButton } from '../../components/GoogleButton/GoogleButton';
 import {
   Container,
   TextAndControls,
@@ -18,12 +19,7 @@ const WelcomePage = () => {
           retrieve your own recipes at any time.
         </WelcomeText>
         <AuthNav />
-        <GoogleLoginButton
-          onClick={() =>
-            (window.location.href =
-              'https://project-backend-0pzg.onrender.com/api/auth/google')
-          }
-        />
+        <GoogleButton />
       </TextAndControls>
     </Container>
   );

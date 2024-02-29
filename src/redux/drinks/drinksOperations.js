@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toastSuccess } from '../../services/notification';
 
 axios.defaults.baseURL = 'https://project-backend-0pzg.onrender.com/api';
 
@@ -77,6 +78,7 @@ export const getSearch = createAsyncThunk(
       const { data } = await axios.get('/drinks/search', {
         params: { drink, category, ingredients, limit, page },
       });
+      toastSuccess(`We found ${data.totalHits} drinks for you`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -111,6 +113,7 @@ export const addDrinkOwn = createAsyncThunk(
           'Content-Type': 'multipart/form-data',
         },
       });
+      toastSuccess(`Congratulations! You created your own drink`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -123,7 +126,7 @@ export const removeDrinkOwn = createAsyncThunk(
   async ({ drinkId }, thunkAPI) => {
     try {
       const { data } = await axios.delete(`/drinks/own/remove/${drinkId}`);
-      console.log(data);
+      toastSuccess(`Removed from your own drinks`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -150,6 +153,7 @@ export const addFavoriteDrink = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const { data } = await axios.post('/drinks/favorite/add', credentials);
+      toastSuccess(`Added to your favorite`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -162,6 +166,7 @@ export const removeFavoriteDrink = createAsyncThunk(
   async ({ drinkId }, thunkAPI) => {
     try {
       const { data } = await axios.delete(`/drinks/favorite/remove/${drinkId}`);
+      toastSuccess(`Removed from your favorite`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

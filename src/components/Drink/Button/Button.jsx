@@ -13,7 +13,6 @@ import {
 import { selectMotivation } from '../../../redux/drinks/drinksSelectors';
 import MotivatingModal from '../../MotivatingModal/MotivatingModal';
 import { reset } from '../../../redux/drinks/drinksSlice';
-import { toastSuccess } from '../../../services/notification';
 
 const Button = ({ id, favoriteDrink }) => {
   const [favorite, setFavorite] = useState(null);
@@ -54,7 +53,6 @@ const Button = ({ id, favoriteDrink }) => {
       })
     );
     setFavorite(true);
-    toastSuccess(`Add to your favorite`);
   };
 
   const handleRemoveFavorite = () => {
@@ -63,9 +61,7 @@ const Button = ({ id, favoriteDrink }) => {
         drinkId: id,
       })
     );
-
     setFavorite(false);
-    toastSuccess(`Remove from your favorite`);
   };
 
   return (

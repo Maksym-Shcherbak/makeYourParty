@@ -1,8 +1,7 @@
- import React from 'react';
 import MuiModal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 // import { IoClose } from 'react-icons/io5';
-import {  Backdrop, StyledBox, CloseBtn } from './Modal.styled'; 
+import { Backdrop, StyledBox, CloseBtn } from './Modal.styled';
 import { IoCloseSharp } from 'react-icons/io5';
 
 export const Modal = ({ children, isOpen, handleClose, gradient }) => {
@@ -21,14 +20,13 @@ export const Modal = ({ children, isOpen, handleClose, gradient }) => {
       <Fade in={isOpen}>
         <StyledBox gradient={gradient.toString()}>
           <CloseBtn onClick={handleClose}>
-            <IoCloseSharp size={32} /> 
+            <IoCloseSharp size={32} />
           </CloseBtn>
           {children}
         </StyledBox>
       </Fade>
     </MuiModal>
   );
-}
+};
 
-export default Modal; 
-
+export default Modal;

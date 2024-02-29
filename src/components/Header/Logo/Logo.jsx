@@ -1,16 +1,13 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
 import icons from '../../../images/icons.svg'; // Импорт вашего спрайта
 import { LogoIcon, LogoName, LogoWrapper } from './Logo.styled';
-
 
 const Logo = () => {
   return (
     <NavLink to="/home">
       <LogoWrapper>
         <LogoIcon>
-          <use href={`${icons}#logo`} /> 
+          <use href={`${icons}#logo`} />
         </LogoIcon>
         <LogoName>Drink Master</LogoName>
       </LogoWrapper>
@@ -19,4 +16,3 @@ const Logo = () => {
 };
 
 export default Logo;
-

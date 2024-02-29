@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toastError, toastSuccess } from '../../services/notification';
 
 axios.defaults.baseURL = 'https://project-backend-0pzg.onrender.com/api';
 
@@ -52,9 +53,7 @@ export const currentUser = createAsyncThunk(
   'user/current',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-    console.log('staet', state);
     const persistedToken = state.auth.token;
-    console.log('cuurentUser', persistedToken);
 
     if (persistedToken === 'null') {
       return thunkAPI.rejectWithValue('Unable to fetch user');
@@ -62,10 +61,8 @@ export const currentUser = createAsyncThunk(
     token.set(persistedToken);
     try {
       const { data } = await axios.get('/users/current');
-      console.log(data);
       return data;
     } catch (error) {
-      console.log(error);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -80,6 +77,7 @@ export const updateUser = createAsyncThunk(
           'Content-Type': 'multipart/form-data',
         },
       });
+      toastSuccess(`You're successfully updated your personal info`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -91,11 +89,13 @@ export const subscribeUser = createAsyncThunk(
   'users/subscribe',
   async (credentials, thunkAPI) => {
     try {
-      console.log(credentials);
       const { data } = await axios.post('/users/subscribe', credentials);
+      toastSuccess(`Greetings! You're subcribed now`);
       console.log(data);
       return data;
     } catch (error) {
+      console.log(error);
+      toastError(`Sorry, ${error.response.data.message}`);
       return thunkAPI.rejectWithValue(error.message);
     }
   }

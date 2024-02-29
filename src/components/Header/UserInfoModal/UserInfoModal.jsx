@@ -24,7 +24,6 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   const {
     user: { avatarURL, name },
   } = useAuth();
-  console.log(name, avatarURL);
   // const { width } = useResize();
   const userAvatar = avatarURL
     ? avatarURL
