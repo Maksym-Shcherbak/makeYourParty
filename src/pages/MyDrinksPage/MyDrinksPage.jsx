@@ -67,7 +67,7 @@ const MyDrinksPage = () => {
           <PageTitle title="My drinks" />
           {!isLoading && !isError && mydrinksData.length === 0 ? (
             <>
-              <EmptyDrinks />
+              <EmptyDrinks text={`You haven't added any own cocktails yet`} />
             </>
           ) : (
             <>

@@ -70,7 +70,9 @@ const FavoriteDrinksPage = () => {
         <Container>
           <PageTitle title="Favorites" />
           {!isLoading && !isError && drinksData.length === 0 ? (
-            <EmptyDrinks />
+            <EmptyDrinks
+              text={`You haven't added any favorite cocktails yet`}
+            />
           ) : (
             <>
               <DrinkList

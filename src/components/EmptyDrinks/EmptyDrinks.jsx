@@ -4,14 +4,12 @@ import {
   EmptyDescription,
 } from './EmptyDrinks.styled';
 
-export const EmptyDrinks = () => {
+export const EmptyDrinks = ({ text }) => {
   return (
     <>
       <EmptyFavoriteDrinksContainer>
         <EmptyFavoriteDrinks />
-        <EmptyDescription>
-          You haven't added any favorite cocktails yet
-        </EmptyDescription>
+        <EmptyDescription>{text}</EmptyDescription>
       </EmptyFavoriteDrinksContainer>
     </>
   );

@@ -6,7 +6,6 @@ import {
   Title,
   WelcomeText,
 } from './WelcomePage.styled';
-import { GoogleLoginButton } from 'react-social-login-buttons';
 
 const WelcomePage = () => {
   return (
