@@ -1,8 +1,3 @@
-// import styled from 'styled-components';
-
-// import { BiLogoFacebook } from 'react-icons/bi';
-// import { IconContext } from 'react-icons';
-// import { AiFillInstagram } from 'react-icons/ai';
 import PageTitle from '../../components/PageTitle/PageTitle.jsx';
 import { Container } from '../../styled/Container.js';
 import { Section } from '../../styled/Section.js';
@@ -23,8 +18,9 @@ const DrinksPage = () => {
   const ingredients = useSelector((state) => state.drinks.ingredients);
   const totalHits = useSelector((state) => state.drinks.totalDrinks);
   const [page, setPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(9);
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+  const initialItemsPerPage = isDesktop ? 9 : 10;
+  const [itemsPerPage, setItemsPerPage] = useState(initialItemsPerPage);
 
   const handlePaginPageClick = (e) => {
     setPage(e.selected + 1);
