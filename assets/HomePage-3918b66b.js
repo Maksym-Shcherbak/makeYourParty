@@ -1,4 +1,4 @@
-import{u as t,L as c,j as i,a as o,r as d,g as x,b as l}from"./index-da4514d5.js";import{P as p}from"./PageTitle-06bfe8fc.js";import{C as h,S as g}from"./Section-0101e667.js";import{e as f,a as u,b as w,c as j}from"./blue_iced_tea_mobile@2x-cecc14df.js";import{U as b,a as k,b as y,c as D,d as L}from"./UtilsMainDrinks-c40287ec.js";const m=t(c)`
+import{u as t,L as c,j as i,a as o,r as d,g as x,b as l}from"./index-0b065139.js";import{e as p,a as h,b as g,c as f,P as u}from"./blue_iced_tea_mobile@2x-f552d545.js";import{C as w,S as j}from"./Section-b9224b3f.js";import{U as b,a as k,b as y,c as D,d as L}from"./UtilsMainDrinks-8599e128.js";const m=t(c)`
   display: inline-flex;
   align-items: center;
   border-radius: 42px;
@@ -71,19 +71,19 @@ import{u as t,L as c,j as i,a as o,r as d,g as x,b as l}from"./index-da4514d5.js
   margin: 0 auto;
 
   @media (max-width: 767px) {
-    content: url(${f});
+    content: url(${p});
   
   }
   @media (max-width: 767px) and (min-resolution: 2dppx) {
-    content: url(${u});
+    content: url(${h});
      
   }
   @media (min-width: 768px) {
-    content: url(${w});
+    content: url(${g});
     
   }
   @media (min-width: 768px) and (min-resolution: 2dppx) {
-    content: url(${j});
+    content: url(${f});
     height: 445px;
   }
    @media screen and (min-width: 1440px) {
@@ -112,7 +112,7 @@ import{u as t,L as c,j as i,a as o,r as d,g as x,b as l}from"./index-da4514d5.js
     max-width: 400px;
     min-height: 438px;
   }
-`,I=({title:e,url:n,text:r,id:s})=>i.jsx(P,{children:i.jsxs(b,{to:`/drinks/${s}`,children:[i.jsx(k,{src:n,alt:"Photo drinks"}),i.jsxs(y,{children:[i.jsx(D,{children:e}),i.jsx(L,{children:r})]})]})}),$=t.ul`
+`,I=({title:e,url:n,text:s,id:r})=>i.jsx(P,{children:i.jsxs(b,{to:`/drinks/${r}`,children:[i.jsx(k,{src:n,alt:"Photo drinks"}),i.jsxs(y,{children:[i.jsx(D,{children:e}),i.jsx(L,{children:s})]})]})}),$=t.ul`
   margin-bottom: 40px;
   display: flex;
 	flex-direction: row;
@@ -136,4 +136,4 @@ import{u as t,L as c,j as i,a as o,r as d,g as x,b as l}from"./index-da4514d5.js
   }
 
 
-`,E=({header:e,data:n})=>i.jsxs(i.Fragment,{children:[i.jsx(v,{children:e}),i.jsx($,{children:n==null?void 0:n.map(({drink:r,drinkThumb:s,_id:a})=>i.jsx(I,{title:r,text:"see more",url:s,id:a},a))})]}),T=({drinks:e})=>{const n=o();d.useEffect(()=>{n(x())},[n]);let r=Array.isArray(e)?e:Object.keys(e.drinks);return i.jsx(i.Fragment,{children:i.jsxs("ul",{children:[r.map(s=>i.jsx(E,{header:s,data:e.drinks[s]},s)),i.jsx(H,{children:i.jsx(m,{to:"/drinks",children:"Other drinks"})})]})})},Y=()=>{const e=o();d.useEffect(()=>{e(x())},[e]);const n=l(r=>r.drinks.main);return i.jsxs(h,{children:[i.jsxs(S,{children:[i.jsxs(U,{children:[i.jsx(p,{title:"Craft Your Perfect Drink with Drink Master"}),i.jsx(M,{children:"Unlock your inner mixologist with Drink Master, your one-stop destination for exploring, crafting, and mastering the world`s finest beverages."}),i.jsx(m,{to:"/add",children:"Add drink"})]}),i.jsx(z,{children:i.jsx(C,{})})]}),i.jsx(g,{children:i.jsx(T,{drinks:n})})]})};export{Y as default};
+`,E=({header:e,data:n})=>i.jsxs(i.Fragment,{children:[i.jsx(v,{children:e}),i.jsx($,{children:n==null?void 0:n.map(({drink:s,drinkThumb:r,_id:a})=>i.jsx(I,{title:s,text:"see more",url:r,id:a},a))})]}),T=({drinks:e})=>{const n=o();d.useEffect(()=>{n(x())},[n]);let s=Array.isArray(e)?e:Object.keys(e.drinks);return i.jsx(i.Fragment,{children:i.jsxs("ul",{children:[s.map(r=>i.jsx(E,{header:r,data:e.drinks[r]},r)),i.jsx(H,{children:i.jsx(m,{to:"/drinks",children:"Other drinks"})})]})})},R=()=>{const e=o();d.useEffect(()=>{e(x())},[e]);const n=l(s=>s.drinks.main);return i.jsxs(w,{children:[i.jsxs(S,{children:[i.jsxs(U,{children:[i.jsx(u,{title:"Craft Your Perfect Drink with Drink Master"}),i.jsx(M,{children:"Unlock your inner mixologist with Drink Master, your one-stop destination for exploring, crafting, and mastering the world`s finest beverages."}),i.jsx(m,{to:"/add",children:"Add drink"})]}),i.jsx(z,{children:i.jsx(C,{})})]}),i.jsx(j,{children:i.jsx(T,{drinks:n})})]})};export{R as default};
