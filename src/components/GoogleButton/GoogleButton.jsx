@@ -2,7 +2,7 @@ import { GoogleLoginButton } from 'react-social-login-buttons';
 import transition from '../../transition/transition';
 
 const style = {
-  width: '240px',
+  width: '60%',
   marginRight: 'auto',
   textDecoration: 'none',
   backgroundColor: 'transparent',
@@ -15,7 +15,7 @@ const style = {
   cursor: 'pointer',
   border: '1px solid rgba(243, 243, 243, 0.2)',
   transition: `border-color ${transition}`,
-
+  textAlign: 'center',
   //   @media screen and (min-width: 768px) {
   //     padding: '18px 44px',
   //     fontSize: '16px',

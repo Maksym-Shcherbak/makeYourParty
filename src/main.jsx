@@ -7,12 +7,14 @@ import { persistor, store } from '../src/redux/store.js';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ToastContainer } from 'react-toastify';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="/makeYourParty">
+          <ScrollToTop />
           <App />
           <ToastContainer />
         </BrowserRouter>
