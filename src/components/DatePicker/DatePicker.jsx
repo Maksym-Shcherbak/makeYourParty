@@ -1,5 +1,4 @@
 import AirDatepicker from 'air-datepicker';
-import 'air-datepicker/air-datepicker.css';
 import localeEn from 'air-datepicker/locale/en';
 import { useEffect, useRef } from 'react';
 import { StyledCalendarIcon, CalendarGlobalStyles } from './DatePicker.styled';
