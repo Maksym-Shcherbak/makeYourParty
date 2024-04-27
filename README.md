@@ -1,6 +1,6 @@
 # Drink Master App
 
-![Preview](/assets/sign.png)
+![Preview](src/assets/sign.png)
 
 Drink Master, a handy app designed to help you have a good time with your
 friends, impress your new friends with your skills, or find something new for
@@ -10,10 +10,17 @@ yourself. Search, create, and share a wide variety of drinks.
 
 - 🖼️ FRONTEND - https://maksym-shcherbak.github.io/makeYourParty/
 - ✨ FRONTEND REPO - https://github.com/Maksym-Shcherbak/makeYourParty
-
 - 🛠️ BACKEND REPO - https://github.com/Pasha2407/project-backend
 - 🔗 API_URL - https://project-backend-0pzg.onrender.com/
 - 📄 API_DOCS(Swagger) - https://project-backend-0pzg.onrender.com/api-docs/
+
+## Table of Contents
+
+- [Features](#features)
+- [Routing](#routing)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Contributors](#contributors)
 
 ## Features
 
@@ -28,6 +35,29 @@ yourself. Search, create, and share a wide variety of drinks.
 - The ability to create your own recipes that can be shared with other
   users.<br />
 
+## Routing
+
+The app uses React Router for navigation.
+
+- `/` - Home page
+
+![Preview](./assets/main-page.png) The home page features the most popular
+drinks from four categories, and you can go straight to creating your own drink
+or browse other drinks.
+
+- `/drinks` - Search drink
+
+![Preview](./assets/statistics.png) All drinks are presented on this page, and
+you can also search by name or using filters. You can also view detailed
+information about each drink.
+
+- `/add` - Add your own drink
+
+![Preview](./assets/settings.png) This page will help you create your unique
+drink recipe that you can add to your favorites. Other users will also be able
+to use your recipe. All the drinks you make will be displayed on a separate
+page.
+
 ## Technologies
 
 <p align="center">
@@ -37,10 +67,10 @@ yourself. Search, create, and share a wide variety of drinks.
   <img alt="React" src="https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=white">&nbsp;
   <img alt="Redux" src="https://img.shields.io/badge/Redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white">&nbsp;
   <img alt="Styled-Components" src="https://img.shields.io/badge/Styled_Components-%23DB7093.svg?style=for-the-badge&logo=styled-components&logoColor=white">&nbsp;
-  <img alt="Vite" src="https://img.shields.io/badge/Create%20React%20App-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=white">&nbsp;
+  <img alt="Vite" src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white">&nbsp;
   <img alt="React Router" src="https://img.shields.io/badge/React_Router-%23CA4245.svg?style=for-the-badge&logo=react-router&logoColor=white">&nbsp;
   <img alt="React Redux" src="https://img.shields.io/badge/React_Redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white">&nbsp;
-  <img alt="React loader spinners" src="https://img.shields.io/badge/React_Spinners-%23000000.svg?style=for-the-badge&logo=react&logoColor=white">&nbsp;
+  <img alt="React loader spinner" src="https://img.shields.io/badge/React-loader-spinner-%23000000.svg?style=for-the-badge&logo=react&logoColor=white">&nbsp;
   <img alt="React Toastify" src="https://img.shields.io/badge/React_Toastify-%23FF6C37.svg?style=for-the-badge&logo=react&logoColor=white">&nbsp;
   <img a;t="Yup" src="https://img.shields.io/badge/Yup-%23FF6C37.svg?style=for-the-badge&logo=yup&logoColor=white">&nbsp;
   <img alt="Formik" src="https://img.shields.io/badge/Formik-%23FF6C37.svg?style=for-the-badge&logo=formik&logoColor=white">&nbsp;
@@ -101,10 +131,13 @@ http://localhost:5173
   [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pavlo-khimchuk/)
 
 - **Developers:** [Olha Chala](https://github.com/Chalaya22) ||
-  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olha-chala-5ba223295/)|[Olena Kaspruk ](https://github.com/Ferst1)
-  ||
-  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/coding777/)|[Denys Yehorov](https://github.com/dozeran)
-  ||
-  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/denys-yehorov/)|[Vladyslav Todosiichuk](https://github.com/VladyslavTodo)|[Valerii Lykhatskyi](https://github.com/ValeraBladee)|[Mariia Beisiuk](https://github.com/mariiaglushak)|[Artem Cherchuk](https://github.com/ArtemCherchuk)
-  ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olha-chala-5ba223295/)
+  | [Olena Kaspruk ](https://github.com/Ferst1) ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/coding777/)
+  | [Denys Yehorov](https://github.com/dozeran) ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/denys-yehorov/)
+  | [Vladyslav Todosiichuk](https://github.com/VladyslavTodo) |
+  [Valerii Lykhatskyi](https://github.com/ValeraBladee) |
+  [Mariia Beisiuk](https://github.com/mariiaglushak) |
+  [Artem Cherchuk](https://github.com/ArtemCherchuk) ||
   [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/artem-cherchuk/)
