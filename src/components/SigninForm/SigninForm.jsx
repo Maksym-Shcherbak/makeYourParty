@@ -1,7 +1,6 @@
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Notify } from 'notiflix';
 import { useNavigate } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 import FormErr from '../FormErr/FormErr';
@@ -18,6 +17,7 @@ import {
   SuccessIcon,
 } from '../AuthForm/AuthForm.styled';
 import { signIn } from '../../redux/auth/authOperations';
+import { toastError } from '../../services/notification';
 
 const initialValues = { email: '', password: '' };
 const schema = Yup.object().shape({
@@ -53,7 +53,7 @@ const SigninForm = () => {
         resetForm();
         navigate('/home', { replace: true });
       } else {
-        Notify.failure('Password or email is invalide');
+        toastError('Password or email is invalide');
       }
     } catch (error) {
       resetForm();

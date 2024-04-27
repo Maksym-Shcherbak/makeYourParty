@@ -1,108 +1,114 @@
-# React + Vite template
+# Drink Master App
 
-Цей проєкт було створено за допомогою [Create Vite](https://vitejs.dev/). Для
-знайомства і налаштування додаткових можливостей
-[звернися до документації](https://vitejs.dev/guide/).
+![Preview](./assets/sign.png)
 
-## Створення репозиторію за шаблоном
+Drink Master, a handy app designed to help you have a good time with your
+friends, impress your new friends with your skills, or find something new for
+yourself. Search, create, and share a wide variety of drinks.
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення
-репозиторію свого проєкту. Для цього натисни на кнопку `"Use this template"` і
-обери опцію `"Create a new repository"`, як показано на зображенні.
+## Links
 
-![Creating repo from a template step 1](./src/assets/template-step-1.png)
+- 🖼️ FRONTEND - https://maksym-shcherbak.github.io/makeYourParty/
+- ✨ FRONTEND REPO - https://github.com/Maksym-Shcherbak/makeYourParty
 
-На наступному кроці відкриється сторінка створення нового репозиторію. Заповни
-поле його імені, переконайся що репозиторій публічний, після чого натисни кнопку
-`"Create repository from template"`.
+- 🛠️ BACKEND REPO - https://github.com/Pasha2407/project-backend
+- 🔗 API_URL - https://project-backend-0pzg.onrender.com/
+- 📄 API_DOCS(Swagger) - https://project-backend-0pzg.onrender.com/api-docs/
 
-![Creating repo from a template step 2](./src/assets/template-step-2.png)
+## Features
 
-Після того як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як показано
-на зображенні.
+- Google authorization and user account to access the application, where you can
+  change your avatar and name.<br />
 
-![Settings GitHub Actions permissions step 1](./src/assets/gh-actions-perm-1.png)
+- Hundreds of drink recipes to browse and search by filters.<br />
 
-Проскроливши сторінку до самого кінця, у секції `"Workflow permissions"` вибери
-опцію `"Read and write permissions"` і постав галочку в чекбоксі. Це необхідно
-для автоматизації процесу деплою проєкту.
+- The ability to add drinks to your favorites for quick access at your
+  convenience.<br />
 
-![Settings GitHub Actions permissions step 2](./src/assets/gh-actions-perm-2.png)
+- The ability to create your own recipes that can be shared with other
+  users.<br />
 
-Тепер у тебе є особистий репозиторій проєкту, зі структурою файлів і папок
-репозиторія-шаблону. Далі працюй з ним як з будь-яким іншим особистим
-репозиторієм, клонуй його собі на комп'ютер, пиши код, роби комміти і відправляй
-їх на GitHub.
+## Technologies
 
-## Підготовка до роботи
+<p align="center">
+  <b>Drink Master frontend part was built using the following technologies & tools:</b>
+</p>
+<p align="center">
+  <img alt="React" src="https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=white">&nbsp;
+  <img alt="Redux" src="https://img.shields.io/badge/Redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white">&nbsp;
+  <img alt="Styled-Components" src="https://img.shields.io/badge/Styled_Components-%23DB7093.svg?style=for-the-badge&logo=styled-components&logoColor=white">&nbsp;
+  <img alt="Vite" src="https://img.shields.io/badge/Create%20React%20App-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=white">&nbsp;
+  <img alt="React Router" src="https://img.shields.io/badge/React_Router-%23CA4245.svg?style=for-the-badge&logo=react-router&logoColor=white">&nbsp;
+  <img alt="React Redux" src="https://img.shields.io/badge/React_Redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white">&nbsp;
+  <img alt="React loader spinners" src="https://img.shields.io/badge/React_Spinners-%23000000.svg?style=for-the-badge&logo=react&logoColor=white">&nbsp;
+  <img alt="React Toastify" src="https://img.shields.io/badge/React_Toastify-%23FF6C37.svg?style=for-the-badge&logo=react&logoColor=white">&nbsp;
+  <img a;t="Yup" src="https://img.shields.io/badge/Yup-%23FF6C37.svg?style=for-the-badge&logo=yup&logoColor=white">&nbsp;
+  <img alt="Formik" src="https://img.shields.io/badge/Formik-%23FF6C37.svg?style=for-the-badge&logo=formik&logoColor=white">&nbsp;
+  <img alt="Redux Toolkit" src="https://img.shields.io/badge/Redux_Toolkit-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white">&nbsp;
+  <img alt="Axios" src="https://img.shields.io/badge/Axios-%23FF6C37.svg?style=for-the-badge&logo=axios&logoColor=white">&nbsp;
 
-1. Переконайся, що на комп'ютері встановлена LTS-версія Node.js.
-   [Скачай і встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встановіть базові залежності проекту командою `npm install`.
-3. Запустіть режим розробки, виконавши команду `npm run dev`.
-4. Перейди в браузері за адресою, що зазначено в терміналі.
+</p>
 
-## Деплой
+<p align="center">
+  <b>Drink Master backend part was built using the following technologies & tools:</b>
+</p>
+<p align="center">
+  <img alt="Node.js" src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white">&nbsp;
+  <img alt="Express" src="https://img.shields.io/badge/Express-%23404d59.svg?style=for-the-badge&logo=express&logoColor=white">&nbsp;
+  <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white">&nbsp;
+  <img alt="Swagger" src="https://img.shields.io/badge/Swagger-%2385EA2D.svg?style=for-the-badge&logo=swagger&logoColor=white">&nbsp;
+  <img alt="JWT" src="https://img.shields.io/badge/JWT-%23000000.svg?style=for-the-badge&logo=json-web-tokens&logoColor=white">&nbsp;
+  <img alt="Postman" src="https://img.shields.io/badge/Postman-%23FF6C37.svg?style=for-the-badge&logo=postman&logoColor=white">&nbsp;
+  <img alt="Mongoose" src="https://img.shields.io/badge/Mongoose-%23880000.svg?style=for-the-badge&logo=mongoose&logoColor=white">&nbsp;
+  <img alt="Bcrypt" src="https://img.shields.io/badge/Bcrypt-%23FF6C37.svg?style=for-the-badge&logo=bcrypt&logoColor=white">&nbsp;
+</p>
 
-Продакшн версія проєкту буде автоматично збиратися і деплоїтися на GitHub Pages,
-у гілку `gh-pages`, щоразу, коли оновлюється гілка `main`. Наприклад, після
-прямого пушу або прийнятого пул-реквесту. Для цього необхідно у файлі
-`vite.config.js` відредагувати поле `base`, замінивши `react_vite` на свою назву
-репозиторію `"/your_repo_name"`, і відправити зміни на GitHub.
+## Installation
 
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) і
-виставити роздачу продакшн версії файлів із папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
+1. Clone the repo
 
-![GitHub Pages settings](./src/assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
-
-- **Жовтий колір** - виконується збірка і деплой проєкту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час збирання або деплою сталася помилка.
-
-Детальнішу інформацію про статус можна подивитися, клікнувши на іконку, і в
-випадаючому вікні перейти за посиланням `Details`.
-
-![Deployment status](./src/assets/deploy-status.png)
-
-### Жива сторінка
-
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися за
-адресою, вказаною в налаштуваннях GitHub-репозиторію (`Settings` > `Pages`).
-
-![GitHub-pages URL](./src/assets/gh-pages-url.png)
-
-Якщо відкривається порожня сторінка, переконайся що у вкладці `Console` немає
-помилок пов'язаних із неправильними шляхами до CSS і JS файлів проекту
-(**404**). Швидше за все найімовірніше, у тебе неправильне значення поля `base`
-у файлі `vite.config.js`.
-
-### Маршрутизація
-
-Якщо додаток використовує бібліотеку `react-router-dom` для маршрутизації,
-необхідно додатково налаштувати компонент `<BrowserRouter>`, передавши в пропе
-`basename` точну назву твого репозиторію. Слеш на початку рядка обов'язковий.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
+```sh
+git clone https://github.com/Maksym-Shcherbak/makeYourParty.git
 ```
-### Додавання змінних в  .env
-Для зберігання конфігураційних даних, таких як API ключі, адреси серверів, порти та інші змінні використовуйте файл `.env`. Для цього необхідно з назви файлу `.env.template` видалити зайві ".template",після чого файл відповідатиме умовам файлу `.ignore` і буде зберігатися лише локально, не публікуючись на віддаленому репозиторії з метою безпеки. Задля використання змінних на GitHub-pages усі змінні, передбачені файлом .env, слід додати до файлу `.github/workflows/deploy.yml`, а також до налаштувань репозиторію. Для цього слід перейти (`Settings` > `Secrets and variables` > `Actions`)
 
-![Add enviroments from .env](./src/assets/secrets.png)
+2. Install NPM packages
 
-## Як це працює
+```sh
+npm install
+```
 
-1. Після кожного пушу в гілку `main` GitHub-репозиторію, запускається
-   спеціальний скрипт (GitHub Action) з файлу `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проєкт ініціалізується і
-   проходить збірку перед деплоєм. 3 Якщо всі кроки пройшли успішно, зібрана
-   продакшн-версія файлів проєкту відправляється в гілку `gh-pages`. В іншому
-   випадку, в логах виконання скрипта буде вказано в чому проблема.
+3. Run the app
+
+```sh
+npm run dev
+```
+
+4. Open the app in your browser
+
+```sh
+http://localhost:5173
+```
+
+5. Enjoy!
+
+## Contributors
+
+- **Team lead:** [Maksym Shcherbak](https://github.com/Maksym-Shcherbak) ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maksym-shcherbak/)
+- **Scrum master:** [Kateryna Vasylieva](https://github.com/Katysha94) ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/katerina-vasylieva-303747274/)
+- **Team lead of BACKEND:** [Pavlo Khimchuk](https://github.com/Pasha2407) ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pavlo-khimchuk/)
+
+- **Developers:** - [Olha Chala](https://github.com/Chalaya22) ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olha-chala-5ba223295/)
+- [Olena Kaspruk ](https://github.com/Ferst1) ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/coding777/)
+- [Denys Yehorov](https://github.com/dozeran) ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/denys-yehorov/)
+- [Vladyslav Todosiichuk](https://github.com/VladyslavTodo)
+- [Valerii Lykhatskyi](https://github.com/ValeraBladee)
+- [Mariia Beisiuk](https://github.com/mariiaglushak)
+- [Artem Cherchuk](https://github.com/ArtemCherchuk) ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/artem-cherchuk/)
+-

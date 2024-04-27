@@ -11,3 +11,5 @@ const toastOptions = {
 export const toastSuccess = (message) => toast.success(message, toastOptions);
 
 export const toastError = (message) => toast.error(message, toastOptions);
+
+export const toastWarning = (message) => toast.warn(message, toastOptions);

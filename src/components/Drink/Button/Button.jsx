@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { ButtonFavorite } from './Button.styled';
 
-import Notiflix from 'notiflix';
-
 import {
   addFavoriteDrink,
   removeFavoriteDrink,

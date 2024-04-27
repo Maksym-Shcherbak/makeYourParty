@@ -6,8 +6,7 @@ import DrinkIngredientsFields from './DrinkIngredientsFields/DrinkIngredientsFie
 import RecipePreparation from './RecipePreparation/RecipePreparation';
 import { addDrinkOwn } from '../../../redux/drinks/drinksOperations';
 import { useNavigate } from 'react-router-dom';
-
-import Notiflix from 'notiflix';
+import { toastWarning } from '../../../services/notification';
 
 const AddDrinkForm = () => {
   const dispatch = useDispatch();
@@ -101,33 +100,31 @@ const AddDrinkForm = () => {
 
     switch (value) {
       case imageURL:
-        Notiflix.Notify.warning(`Upload a photo of the drink`);
+        toastWarning(`Upload a photo of the drink`);
         return false;
 
       case drink:
-        Notiflix.Notify.warning(`Fill in required fields - title`);
+        toastWarning(`Fill in required fields - title`);
         return false;
 
       case shortDescription:
-        Notiflix.Notify.warning(`Fill in required fields - recipe`);
+        toastWarning(`Fill in required fields - recipe`);
         return false;
 
       case category:
-        Notiflix.Notify.warning(`Fill in required fields - category`);
+        toastWarning(`Fill in required fields - category`);
         return false;
 
       case glass:
-        Notiflix.Notify.warning(`Fill in required fields - glass`);
+        toastWarning(`Fill in required fields - glass`);
         return false;
 
       case alcoholic:
-        Notiflix.Notify.warning(
-          `Select the type of drink - alcoholic or non-alcoholic`
-        );
+        toastWarning(`Select the type of drink - alcoholic or non-alcoholic`);
         return false;
 
       case instructions:
-        Notiflix.Notify.warning(`Fill in required fields - recipe preparation`);
+        toastWarning(`Fill in required fields - recipe preparation`);
         return false;
 
       default:

@@ -2,7 +2,6 @@ import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { signUp } from '../../redux/auth/authOperations.js';
-import { Notify } from 'notiflix';
 import { useNavigate } from 'react-router-dom';
 import DatePicker from '../../components/DatePicker/DatePicker.jsx';
 import FormErr from '../../components/FormErr/FormErr.jsx';
@@ -18,6 +17,7 @@ import {
   ErrorIcon,
   SuccessIcon,
 } from './AuthForm.styled.jsx';
+import { toastError } from '../../services/notification.js';
 
 const initialValues = { name: '', dateOfBirth: '', email: '', password: '' };
 
@@ -54,7 +54,7 @@ const AuthForm = () => {
         navigate('/home', { replace: true });
         resetForm();
       } else {
-        Notify.failure('Registration error');
+        toastError('Registration error');
       }
     } catch (error) {
       resetForm();
