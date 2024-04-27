@@ -1,6 +1,6 @@
 # Drink Master App
 
-![Preview](./assets/sign.png)
+![Preview](/assets/sign.png)
 
 Drink Master, a handy app designed to help you have a good time with your
 friends, impress your new friends with your skills, or find something new for
@@ -100,15 +100,11 @@ http://localhost:5173
 - **Team lead of BACKEND:** [Pavlo Khimchuk](https://github.com/Pasha2407) ||
   [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pavlo-khimchuk/)
 
-- **Developers:** - [Olha Chala](https://github.com/Chalaya22) ||
-  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olha-chala-5ba223295/)
-- [Olena Kaspruk ](https://github.com/Ferst1) ||
-  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/coding777/)
-- [Denys Yehorov](https://github.com/dozeran) ||
-  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/denys-yehorov/)
-- [Vladyslav Todosiichuk](https://github.com/VladyslavTodo)
-- [Valerii Lykhatskyi](https://github.com/ValeraBladee)
-- [Mariia Beisiuk](https://github.com/mariiaglushak)
-- [Artem Cherchuk](https://github.com/ArtemCherchuk) ||
+- **Developers:** [Olha Chala](https://github.com/Chalaya22) ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olha-chala-5ba223295/)|[Olena Kaspruk ](https://github.com/Ferst1)
+  ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/coding777/)|[Denys Yehorov](https://github.com/dozeran)
+  ||
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/denys-yehorov/)|[Vladyslav Todosiichuk](https://github.com/VladyslavTodo)|[Valerii Lykhatskyi](https://github.com/ValeraBladee)|[Mariia Beisiuk](https://github.com/mariiaglushak)|[Artem Cherchuk](https://github.com/ArtemCherchuk)
+  ||
   [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/artem-cherchuk/)
--
