@@ -41,22 +41,21 @@ The app uses React Router for navigation.
 
 - `/` - Home page
 
-![Preview](./assets/main-page.png) The home page features the most popular
-drinks from four categories, and you can go straight to creating your own drink
-or browse other drinks.
+![Preview](./assets/home.png) The home page features the most popular drinks
+from four categories, and you can go straight to creating your own drink or
+browse other drinks.
 
 - `/drinks` - Search drink
 
-![Preview](./assets/statistics.png) All drinks are presented on this page, and
-you can also search by name or using filters. You can also view detailed
-information about each drink.
+![Preview](./assets/drinks.png) All drinks are presented on this page, and you
+can also search by name or using filters. ![Preview](./assets/drink_info.png)
+You can also view detailed information about each drink.
 
 - `/add` - Add your own drink
 
-![Preview](./assets/settings.png) This page will help you create your unique
-drink recipe that you can add to your favorites. Other users will also be able
-to use your recipe. All the drinks you make will be displayed on a separate
-page.
+![Preview](./assets/add.png) This page will help you create your unique drink
+recipe that you can add to your favorites. Other users will also be able to use
+your recipe. All the drinks you make will be displayed on a separate page.
 
 ## Technologies
 
